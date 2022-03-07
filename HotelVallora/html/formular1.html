@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="vallorastyles.css">
+    <link rel="stylesheet" href="../css/vallorastyles.css">">
     <title>Document</title>
 </head>
 
@@ -14,14 +14,13 @@
         <label>Name: <input name="Name" size="23"></label><br>
         <label>E-Mail: <input type="email" name="EMail" placeholder="mail@example.com"></label><br>
         <label>Postleitzahl: <input type="text" name="PLZ" pattern="^(?:[Dd]\s*[-–—]?\s*)?[0-9]{5}$"></label><br>
-        
+
         <label>Password: <input type="password" name="Passwort"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></label><br>
         <label> Webseite (Angabe mit http beginnen): <input type="url" name="website"
                 pattern="https?://.+"></label><br><br>
 
-        <label>Ihre Nachricht:<br><textarea id="Mehrzeiler" rows="5"
-                cols="30">Dieser Text wird automatisch im mehrzeiligen Eingabefeld dargestellt.</textarea></label><br><br>
+        <label>Ihre Nachricht:<br><textarea id="Mehrzeiler" rows="5" cols="30">Dieser Text wird automatisch im mehrzeiligen Eingabefeld dargestellt.</textarea></label><br><br>
 
         <label>Wählen Sie Ihr Lieblingshaustier:<br>
             <select size="4" id="haustier" multiple>
@@ -51,7 +50,7 @@
             </datalist>
         </label>
 
-        
+
 
         <br><br>
         <input type="submit" name="Abschicken" value="Absenden">
