@@ -7,7 +7,8 @@ p {
     font-size: 16px;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #339966;
 }
 
@@ -18,4 +19,9 @@ h1 {
 
 h2 {
     font-size: 20px;
+}
+
+label {
+    color: #1854b5;
+    font-weight: 600;
 }
