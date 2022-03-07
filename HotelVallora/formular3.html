@@ -1,0 +1,39 @@
+<DOCTYPE html>
+    <html lang="de">
+
+    <head>
+        <title>Auswahllisten</title>
+    </head>
+
+    <body>
+        <form action="mailto:wer@adresse.web" method="POST" enctype="text/plain">
+            <label>Wählen Sie Ihr Lieblingshaustier:<br>
+                <select size="4" id="haustier" multiple>
+                    <option selected> Hund</option>
+                    <option> Katze</option>
+                    <option selected> Vogel</option>
+                    <option> Meerschweinchen</option>
+                </select></label><br><br>
+            <label>Eine "Drop-Down"-Liste mit anderen
+                Übergabewerten:
+                <select id="haustier2">
+                    <option value="1"> Hund mit Übergabewert 1</option>
+                    <option value="2"> Katze mit Übergabewert 2</option>
+                    <option selected value="3"> Vogel mit Übergabewert 3</option>
+                    <option value="4"> Meerschweinchen mit Übergabewert 4</option>
+                </select></label><br><br>
+            <label>Wählen Sie Ihr Lieblingshaustier mal auf die
+                moderne Art:
+                <input list="haustier3" type="text" name="haustier3">
+                <datalist id="haustier3">
+                    <option value="Hund">
+                    <option value="Katze">
+                    <option value="Vogel" selected>
+                    <option value="Meerschweinchen">
+                </datalist>
+            </label>
+            <p><button type="submit" id="Abschicken" value="Abschicken">Abschicken</button></p>
+        </form>
+    </body>
+
+    </html>

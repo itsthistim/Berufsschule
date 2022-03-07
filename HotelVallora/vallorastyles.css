@@ -1,0 +1,21 @@
+body {
+    font-family: Arial;
+}
+
+p {
+    color: #000336;
+    font-size: 16px;
+}
+
+h1, h2 {
+    color: #339966;
+}
+
+h1 {
+    font-size: 24px;
+    border-bottom: 1px solid #339966;
+}
+
+h2 {
+    font-size: 20px;
+}
