@@ -1,0 +1,13 @@
+<!-- A = π / 4 * d² -->
+<script>
+    let durchmesser = 10;
+    let ergebnis = 0;
+    ergebnis = flaeche(durchmesser);
+    document.write("d=", durchmesser, " m; A=", ergebnis, "m<sup>2<\/sup><br>");
+
+    function flaeche(d) {
+        let PI = Math.PI;
+        let A = (PI / 4) * d * d;
+        return A;
+    }
+</script>

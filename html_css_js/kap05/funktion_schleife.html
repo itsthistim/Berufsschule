@@ -1,0 +1,9 @@
+<script>
+    for (let durchmesser = 0; durchmesser <= 100; durchmesser += 5) {
+        document.write("d=", durchmesser, " m; A=", flaeche(durchmesser), " m<sup>2<\/sup><br>");
+    }
+
+    function flaeche(d) {
+        return (Math.PI / 4 * d * d);
+    }
+</script>

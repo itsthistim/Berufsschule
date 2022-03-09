@@ -1,0 +1,10 @@
+<script>
+    function test(par1, par2) {
+        document.write("Parameter 1 mit dem Wert: " + par1 + "<br>");
+        document.write("Parameter 2 mit dem Wert: " + par2 + "<br><br>");
+        for (let i = 2; i < arguments.length; i++)
+            document.write("Zusätzlicher Parameter " + (i - 1) + " mit dem Wert: " + arguments[i] + " <br> ");
+    }
+    
+    test(10, 11, 12, 13, 14, 15, 16);
+</script>

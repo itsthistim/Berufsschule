@@ -1,0 +1,11 @@
+<script>
+    let quadrat = function (zahl) { return zahl * zahl; }
+
+    function tueEtwas(f) {
+        return f(10);
+    }
+
+    document.write(quadrat(10), "<br>");
+    document.write(tueEtwas(function (value) { return value * value; }), "<br>"); // oder
+    document.write(tueEtwas(quadrat));
+</script>
