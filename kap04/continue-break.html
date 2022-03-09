@@ -1,0 +1,21 @@
+<h3>continue</h3>
+<script type="text/javascript">
+    let count = 0;
+    for (let i = 0; i < 5; i++) {
+        if (i == 2)
+            continue;
+        document.write("i: ", i, "; Ausgabe: ", ++count,
+            "<br>");
+    }
+</script>
+<h3>break</h3>
+<script type="text/javascript">
+    let i = 0;
+    let count = 0;
+    while (i < 5) {
+        if (i == 2) break;
+        document.write("i: ", i, "; Ausgabe: ", ++count,
+            "<br>");
+        i++;
+    }
+</script>
