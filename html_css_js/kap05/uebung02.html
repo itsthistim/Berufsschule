@@ -1,16 +1,9 @@
 <script>
-    /*
-    Entwickeln Sie eine Funktion absatzAusgabe(), die eine beliebige Anzahl von Zeichenketten als Parameter entgegennimmt
-    und diese untereinander am Bildschirm ausgibt.
-    */
-
     absatzAusgabe("Hello", "World", "1", "2", "3", "...");
 
-    function absatzAusgabe() {
-        // Rest parameters can be destructured (arrays only), that means that their data can be unpacked into distinct variables.
-        // [...arraylike_object]
-        [...arguments].forEach(element => {
-            document.write(element, "<br>");
+    function absatzAusgabe(...args) {
+        args.forEach(arg => {
+            document.write(arg + " ");
         });
     }
-</script>
+</script>   
