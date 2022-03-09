@@ -1,0 +1,70 @@
+<script>
+    wertzuweisungen();
+    maxValueAndMinValue();
+    gleitkommazahlen();
+    strings();
+    moduloAndDivision();
+    gleichheitsoperatoren();
+    logischeOperatoren();
+    zuweisungsoperatoren();
+    
+
+    function zuweisungsoperatoren() {
+        document.write("<h3>Zuweisungsoperatoren</h3>");
+        let a = 42.1;
+        a = a + 5; // erhöhe den Wert in der letiablen a um 5
+        a += 5; // erhöhe den Wert in der letiablen a um 5
+        document.write(a);
+    }
+
+    function logischeOperatoren() {
+        document.write("<h3>Logische Operatoren</h3>");
+        document.write((4 > 3) || (5 > 6), "<br>"); // (5 > 6) wird nicht mehr ausgewertet
+        document.write((3 > 4) && (testeIrgendetwas())); // testeIrgendetwas wird nicht mehr ausgeführt
+    }
+
+    function gleichheitsoperatoren() {
+        document.write("<h3>Gleichheitsoperatoren</h3>");
+        document.write(2 == "2", "<br>"); // liefert nach der Typumwandlung von "2" nach 2 true
+        document.write(2 === "2"); // liefert false, da unterschiedliche Typen vorliegen
+    }
+
+    function moduloAndDivision() {
+        document.write("<h3>Modulo and Division</h3>");
+        document.write(23 % 5, "<br>"); // liefert den Wert 3
+        document.write((23 - (23 % 5)) / 5, "<br>"); // liefert den Wert 4 = ganzzahlige Division
+        document.write(7.1 % 5, "<br>");
+        document.write(7.2 % 3.3);
+    }
+
+    function strings() {
+        document.write("<h3>Appending strings and numbers</h3>");
+        let zahl = 1;
+        let zeichen = '1';
+        let ergebnis = zahl + zahl; // ergibt 2;
+        document.write(ergebnis = zeichen + zeichen, "<br>"); // ergibt '11';
+        document.write(ergebnis = zeichen - zeichen, "<br>"); // ergibt 0;
+        document.write(ergebnis = '1a' * zahl); // ergibt NaN
+    }
+
+    function gleitkommazahlen() {
+        document.write("<h3>Gleitkommazahlen</h3>")
+        k = 12345678901234567890;
+        document.write(k);
+    }
+
+    function maxValueAndMinValue() {
+        document.write("<h3>MAX_VALUE and MIN_VALUE</h3>")
+        document.write("Max: ", Number.MAX_VALUE, "<br>");
+        document.write("Min: ", Number.MIN_VALUE);
+    }
+
+    function wertzuweisungen() {
+        document.write("<h3>Wertzuweisung</h3>")
+        let summand1 = 1;
+        let summand2 = 8;
+        let summe = 0;
+        summe = summand1 + summand2;
+        document.write(summe);
+    }
+</script>
