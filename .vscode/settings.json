@@ -2,4 +2,5 @@
     "html.format.preserveNewLines": false,
     "html.format.indentInnerHtml": true,
     "html.format.extraLiners": " ",
+    "editor.formatOnSave": true,
 }
