@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Uebung 03</title>
+    </head>
+    <body>
+        <h1 id="txt"></h1>
+        <script>
+            /*
+            Setzen Sie nach dem Laden einer Webseite deren Hintergrundfarbe auf Hellblau (das geht
+            mit der Eigenschaft document.bgColor, wobei dies nur noch aus Übungsgründen
+            gemacht werden sollte), und zeigen Sie die URL der Webseite an, von der Sie zum aktuellen
+            Dokument gewechselt sind.
+            Letzteres wird nur übermittelt, wenn sich Ihre Webseite auf einem Webserver befindet und
+            durch einen Klick auf einen Link aufgerufen wurde.
+            */
+            document.bgColor = "lightblue";
+            document.getElementById("txt").innerHTML = document.referrer;
+        </script>
+    </body>
+</html>

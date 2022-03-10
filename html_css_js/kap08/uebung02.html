@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Uebung 01</title>
+        <title>Uebung 02</title>
     </head>
     <body>
         <table>
@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <td><img src="https://www.planet-wissen.de/natur/landschaften/trockenwuesten/typischeswuestenbildausdersahara100~_v-gseagaleriexl.jpg"
-                        id="image1" alt="Wüste" width="50px" height="auto"
+                        alt="Wüste" width="50px" height="auto"
                         onclick="zeigeGrossesBild('https:\/\/www.planet-wissen.de/natur/landschaften/trockenwuesten/typischeswuestenbildausdersahara100~_v-gseagaleriexl.jpg')">
                 </td>
                 <td>Wüste</td>
@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td><img src="https://rhin-blog-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2016/05/Tropical-Island-Panorama.jpg"
-                        id="image2" alt="Insel" width="50px" height="auto"
+                        alt="Insel" width="50px" height="auto"
                         onclick="zeigeGrossesBild('https:\/\/rhin-blog-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2016/05/Tropical-Island-Panorama.jpg')">
                 </td>
                 <td>Insel</td>
@@ -35,8 +35,34 @@
             </tr>
         </table>
         <div id="image"></div>
-        <script>
+        <div id="info"></div>
+        <script type="text/javascript">
+            let sec = prompt("Wie viele Sekunden soll die Information angezeigt werden?");
+            sec *= 1000;
+
+            if (sec < 1000 || sec > 20000 || isNaN(sec)) {
+                alert("Sie haben einen ungültigen Wert eingegeben.\nDie Information wird nach 5 Sekunden gelöscht.");
+                sec = 5000;
+            }
+
+            function zeigeInfos(url) {
+                document.getElementById("info").innerHTML = '';
+
+                var image = document.querySelectorAll('[src=\'' + url + '\']')[0];
+                let text = document.createTextNode("Source: " + image.src);
+                let info = document.createElement("p");
+                info.appendChild(text);
+
+                document.getElementById("info").appendChild(info);
+
+                setTimeout(() => {
+                    document.getElementById("info").innerHTML = '';
+                }, sec);
+            }
+
             function zeigeGrossesBild(url) {
+                document.getElementById("image").innerHTML = '';
+
                 let src = document.createAttribute("src");
                 src.nodeValue = url;
 
@@ -48,6 +74,8 @@
                 pic.setAttributeNode(height);
 
                 document.getElementById("image").appendChild(pic);
+
+                zeigeInfos(url);
             }
         </script>
     </body>
