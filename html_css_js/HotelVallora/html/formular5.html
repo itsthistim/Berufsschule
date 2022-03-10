@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <title>Kontrollkästchen und Optionsfelder</title>
-</head>
-
-<body>
-    <form action="mailto:mail@example.com" method="POST" enctype="text/plain">
-        <fieldset>
-            <legend>Sie möchten Ihr Fahrrad mit folgender Ausstattung:</legend>
-            <label><input type="checkbox" name="Ausstattung" checked value="27Gang">27-Gang-Schaltung</label>
-            <label><input type="checkbox" name="Ausstattung" value="Gelsattel">Gelsattel</label>
-            <label><input type="checkbox" name="Ausstattung" value="Staender">Ständer</label>
-        </fieldset>
-        <br>
-        <fieldset>
-            <legend>Ihr Fahrrad soll folgende Farbe haben: </legend>
-            <label><input type="radio" name="Farbe" value="Rot" checked>Rot</label>
-            <label><input type="radio" name="Farbe" value="Blau">Blau</label>
-            <label><input type="radio" name="Farbe" value="Schwarz"> Schwarz</label>
-        </fieldset>
-        <p><button type="submit" name="Abschicken" value="Abschicken">Abschicken</p>
-    </form>
-</body>
-
+    <head>
+        <title>Kontrollkästchen und Optionsfelder</title>
+    </head>
+    <body>
+        <form action="mailto:mail@example.com" method="POST" enctype="text/plain">
+            <fieldset>
+                <legend>Sie möchten Ihr Fahrrad mit folgender Ausstattung:</legend>
+                <label><input type="checkbox" name="Ausstattung" checked value="27Gang">27-Gang-Schaltung</label>
+                <label><input type="checkbox" name="Ausstattung" value="Gelsattel">Gelsattel</label>
+                <label><input type="checkbox" name="Ausstattung" value="Staender">Ständer</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Ihr Fahrrad soll folgende Farbe haben: </legend>
+                <label><input type="radio" name="Farbe" value="Rot" checked>Rot</label>
+                <label><input type="radio" name="Farbe" value="Blau">Blau</label>
+                <label><input type="radio" name="Farbe" value="Schwarz"> Schwarz</label>
+            </fieldset>
+            <p><button type="submit" name="Abschicken" value="Abschicken">Abschicken</p>
+        </form>
+    </body>
 </html>
