@@ -1,0 +1,24 @@
+<h1>Erstellen von DOM-Elementen</h1>
+<hr>
+<script type="text/javascript">
+    var bildquelle = document.createAttribute("src");
+    bildquelle.nodeValue = "https://www.simfisch.de/wp-content/uploads/2017/07/an-der-elbe.jpg";
+
+    var alternativtext = document.createAttribute("alt");
+    alternativtext.nodeValue = "Am Fluss";
+
+    var titel = document.createAttribute("title");
+    titel.nodeValue = "An der Elbe";
+
+    var b1 = document.createElement("img");
+    b1.setAttributeNode(bildquelle);
+    b1.setAttributeNode(alternativtext);
+    b1.setAttributeNode(titel);
+
+    var text = document.createTextNode("Erstellen von Knoten mit Methoden von document");
+    var u2 = document.createElement("h2");
+    u2.appendChild(text);
+
+    document.getElementsByTagName("body")[0].appendChild(u2);
+    document.getElementsByTagName("body")[0].appendChild(b1);
+</script>
