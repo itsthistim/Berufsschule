@@ -3,4 +3,5 @@
     "html.format.indentInnerHtml": true,
     "html.format.extraLiners": " ",
     "editor.formatOnSave": true,
+    "html.format.templating": true,
 }
