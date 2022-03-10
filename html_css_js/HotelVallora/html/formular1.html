@@ -8,17 +8,25 @@
     <body>
         <h1>Eingabefelder</h1>
         <form action="mailto:mail@example.com" method="POST" enctype="text/plain">
-            <label>Vorname: <input type="text" name="Vorname"></label><br>
-            <label>Name: <input name="Name" size="23"></label><br>
-            <label>E-Mail: <input type="email" name="EMail" placeholder="mail@example.com"></label><br>
-            <label>Postleitzahl: <input type="text" name="PLZ" pattern="^(?:[Dd]\s*[-–—]?\s*)?[0-9]{5}$"></label><br>
+            <label>Vorname: <input type="text" name="Vorname"></label>
+            <br>
+            <label>Name: <input name="Name" size="23"></label>
+            <br>
+            <label>E-Mail: <input type="email" name="EMail" placeholder="mail@example.com"></label>
+            <br>
+            <label>Postleitzahl: <input type="text" name="PLZ" pattern="^(?:[Dd]\s*[-–—]?\s*)?[0-9]{5}$"></label>
+            <br>
             <label>Password: <input type="password" name="Passwort"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></label><br>
-            <label> Webseite (Angabe mit http beginnen): <input type="url" name="website"
-                    pattern="https?://.+"></label><br><br>
-            <label>Ihre Nachricht:<br><textarea id="Mehrzeiler" rows="5"
-                    cols="30">Dieser Text wird automatisch im mehrzeiligen Eingabefeld dargestellt.</textarea></label><br><br>
-            <label>Wählen Sie Ihr Lieblingshaustier:<br>
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></label>
+            <br>
+            <label> Webseite (Angabe mit http beginnen): <input type="url" name="website" pattern="https?://.+"></label>
+            <br>
+            <br>
+            <label>Ihre Nachricht: <br><textarea id="Mehrzeiler" rows="5"
+                    cols="30">Dieser Text wird automatisch im mehrzeiligen Eingabefeld dargestellt.</textarea></label>
+            <br>
+            <br>
+            <label>Wählen Sie Ihr Lieblingshaustier: <br>
                 <select size="4" id="haustier" multiple>
                     <option selected> Hund</option>
                     <option> Katze</option>
@@ -26,14 +34,16 @@
                     <option> Meerschweinchen</option>
                 </select>
             </label><br><br>
-            <label>Eine "Drop-Down"-Liste mit anderen Übergabewerten:<br>
+            <label>Eine "Drop-Down"-Liste mit anderen Übergabewerten: <br>
                 <select id="haustier2">
                     <option value="1"> Hund mit Übergabewert 1</option>
                     <option value="2"> Katze mit Übergabewert 2</option>
                     <option selected value="3"> Vogel mit Übergabewert 3</option>
                     <option value="4"> Meerschweinchen mit Übergabewert 4</option>
                 </select>
-            </label><br><br>
+            </label>
+            <br>
+            <br>
             <label>Wählen Sie Ihr Lieblingshaustier mal auf die moderne Art: <input list="haustier3" type="text"
                     name="haustier3">
                 <datalist id="haustier3">
@@ -43,7 +53,8 @@
                     <option value="Meerschweinchen">
                 </datalist>
             </label>
-            <br><br>
+            <br>
+            <br>
             <input type="submit" name="Abschicken" value="Absenden">
         </form>
     </body>
