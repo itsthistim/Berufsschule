@@ -10,15 +10,16 @@
         <h1 id="txt"></h1>
         <script>
             /*
-            Setzen Sie nach dem Laden einer Webseite deren Hintergrundfarbe auf Hellblau (das geht
-            mit der Eigenschaft document.bgColor, wobei dies nur noch aus Übungsgründen
-            gemacht werden sollte), und zeigen Sie die URL der Webseite an, von der Sie zum aktuellen
-            Dokument gewechselt sind.
+            
             Letzteres wird nur übermittelt, wenn sich Ihre Webseite auf einem Webserver befindet und
             durch einen Klick auf einen Link aufgerufen wurde.
+            
             */
+
             document.bgColor = "lightblue";
-            document.getElementById("txt").innerHTML = document.referrer;
+            document.write('Referred from: ' + document.referrer ? document.referrer : 'none');
+            // document.write('Called from link: ' + document.referrer ? document.referrer : 'none');
+            // document.write('Called from web server: ' + document.referrer ? document.referrer : 'none');  
         </script>
     </body>
 </html>
