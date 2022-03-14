@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <script type="text/javascript">
+            window.onkeypress = function (ev) {
+                document.getElementById("antwort").innerHTML = "Gedrückter Tastencode: " + ev.which;
+            }
+            window.onkeyup = function (ev) {
+                document.getElementById("antwort").innerHTML = "";
+            }
+        </script>
+    </head>
+    </head>
+    <body>
+        <h1>Drücken Sie eine beliebige Taste! </h1>
+        <div id="antwort"></div>
+    </body>
+</html>

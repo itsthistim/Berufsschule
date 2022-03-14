@@ -1,0 +1,12 @@
+<a href="http://www.google.de/" name="link1">Google</a> | <a href="http://www.bing.com" target="neu">Bing</a>
+<div id="info"></div>
+<script type="text/javascript">
+    for (var i = 0; i < document.links.length; i++) {
+        document.getElementById("info").innerHTML += ((i + 1) +
+            ". Link:" + "<br />" +
+            "Name: " + document.links[i].name + "<br />" +
+            "Ziel: " + document.links[i].target + "<br />" +
+            "Verweis: " + document.links[i] + "<br />" +
+            "Text: " + document.links[i].text + "<hr />");
+    }
+</script>
