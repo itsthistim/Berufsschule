@@ -2,25 +2,20 @@ window.onsubmit = function () {
     let firstname = document.getElementById('vorname').value;
     let lastname = document.getElementById('nachname').value;
     let mail = document.getElementById('mail').value;
-    let log = document.createElement('p');
 
-    let err = [validateName(firstname, lastname), validateMail(firstname, lastname)];
+    let err = [validateName(firstname, lastname), validateMail(mail)];
 
     if (err.length > 0) {
-        let errnode = document.createTextNode(err);
-        log.appendChild(errnode);
-
-        document.getElementById("logs").appendChild(log);
-        alert(err);
+        err.forEach(error => {
+            if (error) {
+                let log = document.createElement('p');
+                let errnode = document.createTextNode(error);
+                log.appendChild(errnode);
+                document.getElementById("logs").appendChild(log);
+                alert(error);
+            }
+        });
     }
-
-    // if (!isValidMail(mail)) {
-    //     let errnode = document.createTextNode("Sie haben keine gültige E-Mail-Adresse angegeben.");
-    //     log.appendChild(errnode);
-
-    //     document.getElementById("logs").appendChild(log);
-    //     alert("Sie haben keine gültige E-Mail-Adresse angegeben.");
-    // }
 
     return false;
 }
