@@ -7,12 +7,12 @@ body {
 }
 
 a {
-  color: #9babb3;
+  color: #5c646d;
   text-decoration: none;
 }
 
 a:hover {
-  color: #5c646e;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -300,7 +300,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/coloredmaze.jpg") top center;
+  /* background: url("../img/snake.jpg") top center; */
   background-size: cover;
   position: relative;
 }
@@ -314,6 +314,11 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
 }
 #hero .hero-container {
+  background: rgb(44,48,54);
+  background: -moz-linear-gradient(180deg, rgba(44,48,54,1) 0%, rgba(204,220,224,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(44,48,54,1) 0%, rgba(204,220,224,1) 100%);
+  background: linear-gradient(180deg, rgba(44,48,54,1) 0%, rgba(204,220,224,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2c3036",endColorstr="#ccdce0",GradientType=1);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -395,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
-  background: #f0f4f6;
+  background: #ccdce0;
 }
 
 .section-bg {
@@ -498,7 +503,7 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #fff;
+  background: #CCDCE0;
   box-shadow: 2px 0 35px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -508,7 +513,7 @@ section {
 .services .icon-box::before {
   content: "";
   position: absolute;
-  background: #f0f5f6;
+  background: #CCDCE0;
   right: 0;
   left: 0;
   bottom: 0;
@@ -587,7 +592,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.8)), url("../img/cta-bg.jpg") center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.8)), url("https://img1.goodfon.com/wallpaper/nbig/9/39/ocean-sea-water-aerial-view.jpg") center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -650,7 +655,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  background: #ccdce0;
+  background: #9babb3;
   color: #fff;
 }
 .portfolio #portfolio-flters li:last-child {
@@ -722,7 +727,7 @@ section {
   border: 1px solid #ccdce0;
 }
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ccdce0;
+  background-color: #2c3036;
 }
 .portfolio-details .portfolio-info {
   padding: 30px;
