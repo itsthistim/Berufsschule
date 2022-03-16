@@ -1,5 +1,4 @@
 {
-    "html.format.preserveNewLines": false,
     "html.format.indentInnerHtml": true,
     "html.format.extraLiners": " ",
     "html.format.templating": true,
