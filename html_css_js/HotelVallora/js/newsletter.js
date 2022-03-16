@@ -1,5 +1,5 @@
 const form = document.getElementById('form');
-const dropdown1 = document.getElementById('aufmerksamvon');
+const dropdown = document.getElementById('aufmerksamvon');
 const log = document.getElementById('logs');
 
 form.addEventListener('submit', validateSubmit);
@@ -8,7 +8,7 @@ function validateSubmit(event) {
     let firstname = document.getElementById('vorname').value;
     let lastname = document.getElementById('nachname').value;
     let mail = document.getElementById('mail').value;
-    let err = [validateName(firstname, lastname), validateMail(mail), validateAufmerksamkeit(dropdown1.value)];
+    let err = [validateName(firstname, lastname), validateMail(mail), validateAufmerksamkeit(dropdown.value)];
 
     let hasErr = false;
 
