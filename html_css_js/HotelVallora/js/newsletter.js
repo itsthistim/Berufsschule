@@ -14,7 +14,7 @@ function validateSubmit(event) {
 
     for (let i = 0; i < err.length; i++) {
         const error = err[i];
-        if (error != undefined) {
+        if (error != null) {
             hasErr = true;
             break;
         }
