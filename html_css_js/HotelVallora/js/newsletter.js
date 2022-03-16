@@ -8,19 +8,13 @@ function validateSubmit(event) {
     let firstname = document.getElementById('vorname').value;
     let lastname = document.getElementById('nachname').value;
     let mail = document.getElementById('mail').value;
-    let err = [validateName(firstname, lastname), validateMail(mail), validateAufmerksamkeit(dropdown.value)];
+    
+    let err = [];
+    validateName(err, firstname, lastname);
+    validateMail(err, mail);
+    validateAufmerksamkeit(err, dropdown.value);
 
-    let hasErr = false;
-
-    for (let i = 0; i < err.length; i++) {
-        const error = err[i];
-        if (error != null) {
-            hasErr = true;
-            break;
-        }
-    }
-
-    if (hasErr) {
+    if (err.length > 0) {
         err.forEach(error => {
             if (error) {
                 log.innerHTML += `${error}<br>`;
@@ -31,23 +25,23 @@ function validateSubmit(event) {
     }
 }
 
-function validateName(firstname, lastname) {
+function validateName(err, firstname, lastname) {
     if (!firstname || !lastname) {
-        return "Vor- und Nachname dürfen je nicht leer sein."
+        err.push("Vor- und Nachname dürfen je nicht leer sein.");
     }
     if (firstname == lastname) {
-        return "Vor- und Nachname dürfen nicht gleich sein."
+        err.push("Vor- und Nachname dürfen nicht gleich sein.");
     }
 }
 
-function validateAufmerksamkeit(value) {
+function validateAufmerksamkeit(err, value) {
     if (!value) {
-        return "Wovon sind Sie auf uns Aufmerksam geworden? Bitte füllen das Feld aus."
+        err.push("Wovon sind Sie auf uns Aufmerksam geworden? Bitte füllen das Feld aus.")
     }
 }
 
-function validateMail(mail) {
+function validateMail(err, mail) {
     if (!mail.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
-        return "Sie haben keine gültige E-Mail-Adresse angegeben.";
+        err.push("Sie haben keine gültige E-Mail-Adresse angegeben.");
     }
 }
