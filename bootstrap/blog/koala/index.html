@@ -55,9 +55,14 @@
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
-            <li><a class="nav-link scrollto" href="#services">Categories</a></li>
-            <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a class="nav-link scrollto " href="#blog">Blog Entries</a></li>
+            <li>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked
+                  onchange="changeview(this)">
+                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+              </div>
+            </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -115,312 +120,270 @@
         </div>
       </section><!-- End About Section -->
 
-      <!-- ======= Category Section ======= -->
-      <section id="services" class="services">
-        <div class="container">
+      <section id="blog">
+        <!-- ======= Category Section ======= -->
+        <section id="services" class="services">
+          <div class="container">
 
-          <div class="section-title">
-            <h2>Categories</h2>
-            <h3>View awesome <span>Categories</span></h3>
-            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque
-              vitae autem.</p>
+            <div class="section-title">
+              <h2>Categories</h2>
+              <h3>Most popular <span>Blog Entries</span></h3>
+              <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque
+                vitae autem.</p>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                  <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                  <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-file"></i></div>
+                  <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                  <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-tachometer"></i></div>
+                  <h4 class="title"><a href="">Magni Dolores</a></h4>
+                  <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-world"></i></div>
+                  <h4 class="title"><a href="">Nemo Enim</a></h4>
+                  <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
+        </section><!-- End Categories Section -->
 
-          <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+          <div class="container">
+
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-6 col-6">
+                <div class="icon-box">
+                  <i class="ri-store-line" style="color: #ffbb2c;"></i>
+                  <h3><a href="">Lorem Ipsum</a></h3>
+                </div>
               </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <div class="col-lg-3 col-md-4 col-6">
+                <div class="icon-box">
+                  <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                  <h3><a href="">Dolor Sitema</a></h3>
+                </div>
               </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4 class="title"><a href="">Magni Dolores</a></h4>
-                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <div class="col-lg-3 col-md-4 col-6 mt-4 mt-md-0">
+                <div class="icon-box">
+                  <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+                  <h3><a href="">Sed perspiciatis</a></h3>
+                </div>
               </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bx-world"></i></div>
-                <h4 class="title"><a href="">Nemo Enim</a></h4>
-                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <div class="col-lg-3 col-md-4 col-6 mt-4 mt-lg-0">
+                <div class="icon-box">
+                  <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+                  <h3><a href="">Magni Dolores</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-database-2-line" style="color: #47aeff;"></i>
+                  <h3><a href="">Nemo Enim</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+                  <h3><a href="">Eiusmod Tempor</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+                  <h3><a href="">Midela Teren</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+                  <h3><a href="">Pira Neve</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-anchor-line" style="color: #b2904f;"></i>
+                  <h3><a href="">Dirada Pack</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-disc-line" style="color: #b20969;"></i>
+                  <h3><a href="">Moton Ideal</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-base-station-line" style="color: #ff5828;"></i>
+                  <h3><a href="">Verdo Park</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-6 mt-4">
+                <div class="icon-box">
+                  <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+                  <h3><a href="">Flavor Nivelanda</a></h3>
+                </div>
               </div>
             </div>
 
           </div>
+        </section><!-- End Features Section -->
 
-        </div>
-      </section><!-- End Categories Section -->
+        <!-- ======= Blog Entries Section ======= -->
+        <section id="portfolio" class="portfolio">
+          <div class="container">
 
-      <!-- ======= Features Section ======= -->
-      <section id="features" class="features">
-        <div class="container">
+            <div class="section-title">
+              <h2>Blog Entries</h2>
+            </div>
 
-          <div class="row">
-            <div class="col-lg-3 col-md-4 col-6 col-6">
-              <div class="icon-box">
-                <i class="ri-store-line" style="color: #ffbb2c;"></i>
-                <h3><a href="">Lorem Ipsum</a></h3>
+            <div class="row">
+              <div class="col-lg-12">
+                <ul id="portfolio-flters">
+                  <li data-filter="*" class="filter-active">All</li>
+                  <li data-filter=".filter-app">API</li>
+                  <li data-filter=".filter-card">Categories</li>
+                  <li data-filter=".filter-web">Commands</li>
+                </ul>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-6">
-              <div class="icon-box">
-                <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                <h3><a href="">Dolor Sitema</a></h3>
+
+            <div class="row portfolio-container">
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/slashcommands.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h3><a href="assets/img/portfolio/slashcommands.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="App 1">Slash Commands</a></h3>
+                    <div>
+                      <a href="assets/img/portfolio/slashcommands.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4 mt-md-0">
-              <div class="icon-box">
-                <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-                <h3><a href="">Sed perspiciatis</a></h3>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/messages_blue.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h3><a href="assets/img/portfolio/messages_blue.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="App 2">Message Intents</a></h3>
+                    <div>
+                      <a href="assets/img/portfolio/messages_blue.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4 mt-lg-0">
-              <div class="icon-box">
-                <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-                <h3><a href="">Magni Dolores</a></h3>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/music.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h3><a href="assets/img/portfolio/music.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="Card 2">Music</a></h3>
+                    <div>
+                      <a href="assets/img/portfolio/music.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-database-2-line" style="color: #47aeff;"></i>
-                <h3><a href="">Nemo Enim</a></h3>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/messages_yellow.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h3><a href="assets/img/portfolio/messages_yellow.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="Web 2">Make koala say what you want</a></h3>
+                    <div>
+                      <a href="assets/img/portfolio/messages_yellow.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-                <h3><a href="">Eiusmod Tempor</a></h3>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/art.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h3><a href="assets/img/portfolio/art.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="Card 1">Image Manipulation</a></h3>
+                    <div>
+                      <a href="assets/img/portfolio/art.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                        title="Card 1"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-                <h3><a href="">Midela Teren</a></h3>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/street.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h3><a href="assets/img/portfolio/street.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="Web 1">Let koala inspire you</a></h3>
+                    <div>
+                      <a href="assets/img/portfolio/street.jpg" data-gallery="portfolioGallery"
+                        class="portfolio-lightbox" title="Web 1"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-                <h3><a href="">Pira Neve</a></h3>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-anchor-line" style="color: #b2904f;"></i>
-                <h3><a href="">Dirada Pack</a></h3>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-disc-line" style="color: #b20969;"></i>
-                <h3><a href="">Moton Ideal</a></h3>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-base-station-line" style="color: #ff5828;"></i>
-                <h3><a href="">Verdo Park</a></h3>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6 mt-4">
-              <div class="icon-box">
-                <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-                <h3><a href="">Flavor Nivelanda</a></h3>
-              </div>
-            </div>
+
           </div>
-
-        </div>
-      </section><!-- End Features Section -->
+        </section><!-- End Blog Entries Section -->
+      </section>
 
       <!-- ======= Cta Section ======= -->
-      <section id="cta" class="cta">
+      <!-- <section id="cta" class="cta">
         <div class="container">
 
           <div class="text-center">
-            <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.</p>
+            <h3>View mode</h3>
+            <p> It is important to show information the way <strong>you</strong> want. And this is why you can toggle
+              the view mode here. Press the button and look what happens!</p>
             <a class="cta-btn" href="#">Call To Action</a>
           </div>
 
         </div>
-      </section><!-- End Cta Section -->
-
-      <!-- ======= Our Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio">
-        <div class="container">
-
-          <div class="section-title">
-            <h2>Our Portfolio</h2>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-12">
-              <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">App</li>
-                <li data-filter=".filter-card">Card</li>
-                <li data-filter=".filter-web">Web</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="row portfolio-container">
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="App 1">App 1</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Web 3">Web 3</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="App 2">App 2</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 2">Card 2</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Web 2">Web 2</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="App 3">App 3</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 1">Card 1</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 3">Card 3</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h3><a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Web 1">Web 1</a></h3>
-                  <div>
-                    <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Web 1"><i class="bi bi-plus"></i></a>
-                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section><!-- End Our Portfolio Section -->
+      </section> -->
+      <!-- End Cta Section -->
 
     </main><!-- End #main -->
 
@@ -432,13 +395,13 @@
           <div class="row">
 
             <div class="col-lg-3 col-md-6 footer-contact">
-              <h3>Tempo</h3>
+              <h3>koala</h3>
               <p>
-                A108 Adam Street <br>
-                New York, NY 535022<br>
-                United States <br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                Wiener Straße 181 <br>
+                Linz, 4020<br>
+                Austria <br><br>
+                <strong>Phone:</strong> +43(0)732 7720 35800<br>
+                <strong>Email:</strong> bs-linz2.post@ooe.gv.at<br>
               </p>
             </div>
 
@@ -480,14 +443,14 @@
 
         <div class="me-md-auto text-center text-md-start">
           <div class="copyright">
-            &copy; Copyright <strong><span>Tempo</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>koala</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade & Tim</a>
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
@@ -512,7 +475,6 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
   </body>
 
 </html>
