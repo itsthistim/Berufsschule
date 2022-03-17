@@ -7,7 +7,7 @@ body {
 }
 
 a {
-  color: #5c646d;
+  color: #cbd4dc;
   text-decoration: none;
 }
 
@@ -729,10 +729,10 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #e43c5c;
+  border: 1px solid #9babb3;
 }
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #e43c5c;
+  background-color: #9babb3;
 }
 .portfolio-details .portfolio-info {
   padding: 30px;
@@ -770,7 +770,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #f6f4f4;
+  background: #7c8490;
   margin-top: 67px;
 }
 @media (max-width: 992px) {
