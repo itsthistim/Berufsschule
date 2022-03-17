@@ -214,12 +214,14 @@
 })()
 
 
-document.getElementById("services").style.display = "none";
-document.getElementById("features").style.display = "none";
+// document.getElementById("services").style.display = "none";
+// document.getElementById("features").style.display = "none";
+document.getElementById("portfolio").style.display = "none";
+
 function changeview() {
+  let port = document.getElementById("portfolio");
   let serv = document.getElementById("services");
   let feat = document.getElementById("features");
-  let port = document.getElementById("portfolio");
 
   if (serv.style.display === "none") {
     serv.style.display = "block";
