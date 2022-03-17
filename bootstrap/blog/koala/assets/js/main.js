@@ -4,10 +4,6 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-document.getElementById("services").style.display = "none";
-document.getElementById("features").style.display = "none";
-
-
 (function () {
   "use strict";
 
@@ -218,7 +214,8 @@ document.getElementById("features").style.display = "none";
 })()
 
 
-
+document.getElementById("services").style.display = "none";
+document.getElementById("features").style.display = "none";
 function changeview() {
   let serv = document.getElementById("services");
   let feat = document.getElementById("features");
