@@ -1,10 +1,15 @@
 <?php
-    $message = "Hello World";
+$var = 'Hello World!';
+$arr = ['Headline1', 'Headline2', 'Headline3']
 ?>
-<!DOCTYPE html>
 <html>
+
 <body>
-    <h1><?php echo "PHP Test"?></h1>
-    <p><?=$message?></p>
+    <h1><?= $var ?></h1>
+
+    <?php foreach ($arr as $value) { ?>
+        <p><?= $value ?></p>
+    <?php } ?>
 </body>
+
 </html>
