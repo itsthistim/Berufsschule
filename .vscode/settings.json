@@ -3,4 +3,6 @@
     "html.format.extraLiners": " ",
     "html.format.templating": true,
     "liveServer.settings.port": 5501,
+    "phpserver.phpPath": "C:\\php\\php.exe",
+    "php.validate.executablePath": "C:\\php\\php.exe"
 }
