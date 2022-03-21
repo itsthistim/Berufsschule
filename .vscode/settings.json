@@ -2,4 +2,5 @@
     "html.format.indentInnerHtml": true,
     "html.format.extraLiners": " ",
     "html.format.templating": true,
+    "liveServer.settings.port": 5501,
 }
