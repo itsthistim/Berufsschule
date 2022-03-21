@@ -38,10 +38,10 @@ function getBrutto($preis, $mwst)
     <p>Netto-Gesamtpreis der eingekauften Artikel: <?= $netto_gesamt . " " . EURO ?></p>
     <p>Brutto-Gesamtpreis der eingekauften Artikel: <?= $brutto_gesamt . " " . EURO ?></p>
     <hr>
-    <p>Brutto-Preis <strong>Schreibtisch</strong>: <?= $brutto_tisch . " " . EURO ?></p>
-    <p>Brutto-Preis <strong>Bürostuhl</strong>: <?= $brutto_stuhl . " " . EURO ?></p>
-    <p>Brutto-Preis <strong>Schreibtischlampe</strong>: <?= $brutto_lampe . " " . EURO ?></p>
-    <p>Brutto-Preis <strong>Computertisch</strong>: <?= $brutto_pctisch . " " . EURO ?></p>
+    <p>Brutto-Preis <strong><?=$bezeichnung_tisch?></strong>: <?= $brutto_tisch . " " . EURO ?></p>
+    <p>Brutto-Preis <strong><?=$bezeichnung_stuhl?></strong>: <?= $brutto_stuhl . " " . EURO ?></p>
+    <p>Brutto-Preis <strong><?=$bezeichnung_lampe?></strong>: <?= $brutto_lampe . " " . EURO ?></p>
+    <p>Brutto-Preis <strong><?=$bezeichnung_pctisch?></strong>: <?= $brutto_pctisch . " " . EURO ?></p>
 </body>
 
 </html>
