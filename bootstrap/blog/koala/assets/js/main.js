@@ -214,9 +214,9 @@
 })()
 
 
-// document.getElementById("services").style.display = "none";
-// document.getElementById("features").style.display = "none";
-document.getElementById("portfolio").style.display = "none";
+document.getElementById("services").style.display = "none";
+document.getElementById("features").style.display = "none";
+// document.getElementById("portfolio").style.display = "none";
 
 function changeview() {
   let port = document.getElementById("portfolio");
