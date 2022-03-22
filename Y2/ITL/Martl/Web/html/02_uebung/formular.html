@@ -1,0 +1,64 @@
+<!--T. Hofmann, 24.2.2021
+    Übung 01_ITL zu HTML -->
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formular</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <h1>Men&uuml;</h1>
+        <a href="index.html" target="_self">Bild</a> |
+        <a href="formular.html" target="_self">Formular</a> |
+        <a href="tabelle.html" target="_self">Tabelle</a>
+    </nav>
+    <main>
+        <h1>Formular: Kommen Sie doch n&auml;her!</h1>
+        <form method="get">
+            <label for="name">Ihr Name:</label><br>
+            <input type="text" id="name" name="name" required placeholder="z.B. Bibi Blocksberg"><br><br>
+
+            <label>Nichts f&uuml;r schwache Nerven!</label><br>
+            <input type="checkbox" id="spider_eyes" name="brave_food[]" value="spider_eyes">
+            <label for="spider_eyes">Spinnenaugen</label><br>
+            <input type="checkbox" id="frog_tongues" name="brave_food[]" value="frog_tongues">
+            <label for="frog_tongues">Froschzungen</label><br>
+            <input type="checkbox" id="grilled_worms" name="brave_food[]" value="grilled_worms">
+            <label for="grilled_worms">Gegrillte W&uuml;rmchen</label><br><br>
+
+            <label for="count">Anzahl der Produkte die Sie kaufen wollen:</label><br>
+            <input type="number" id="count" name="count" required placeholder="20"><br><br>
+
+            <label>D&uuml;rfen wir es zu Ihnen bringen?</label><br>
+            <input type="radio" id="witch_express" value="witch_express" name="kind_of_delivery" checked>
+            <label for="witch_express">Hexen-Express</label><br>
+            <input type="radio" id="delivery" value="delivery" name="kind_of_delivery">
+            <label for="delivery">Normale Lieferung</label><br>
+            <input type="radio" id="pickup" value="pickup" name="kind_of_delivery">
+            <label for="pickup">Selbstabholung</label><br><br>
+
+            <label for="kindOfCandy">Verpackung</label><br>
+            <select name="kindOfCandy" id="kindOfCandy">
+                <option value="1">Magische Luftblase</option>
+                <option value="2">K&auml;ngurubeutel</option>
+                <option value="3">Gewickelt in Seidenf&auml;den</option>
+            </select><br><br>
+
+            <label for="delivery-date">Liefern bis:</label><br>
+            <input type="date" name="delivery-date" id="delivery-date" min="2021-03-02" max="2021-12-31"><br><br>
+
+            <label>Vielen Dank f&uuml;r Ihre Bestellung!</label><br>
+            <input type="submit" name="send" value="Absenden"><br><br>
+
+            <label for="support">Unterst&uuml;tzen Sie uns und zahlen Sie 1€ mehr!</label><br>
+            <input class="image-button" type="submit" name="support" id="support" value="Jetzt spenden">
+        </form>
+    </main>
+</body>
+
+</html>

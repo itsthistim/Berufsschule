@@ -1,0 +1,75 @@
+nav {
+    background-color: lightslategray;
+    border: 1px solid black;
+    height: 50px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    background-color: lightgrey;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+textarea {
+    font-family: "Courier New", Consolas, serif;
+    width: 30%;
+    height: 150px;
+}
+
+th, td {
+    width: 250px;
+    margin: 10px;
+}
+
+th {
+    font-weight: bold;
+    border-bottom: 5px double black;
+    border-right: 1px solid black;
+}
+
+td {
+    border-bottom: 1px black dashed;
+    border-right: 1px solid black;
+}
+
+#reset {
+    background-color: black;
+    border: green;
+    color: white;
+}
+
+#reset:hover {
+    background-color: #00cf00;
+    color: black;
+}
+
+#fun:hover {
+    position: relative;
+    left: 500px;
+}
+
+.red-text {
+    color: red;
+}
+
+.centered {
+    text-align: center;
+}
+
+.image-submit {
+    display: block;
+    margin: auto;
+    background: url("https://tutorials-cdn.pixelmator.com/gradient-tool/top.jpg");
+    height: 70px;
+    width: 70px;
+    border: 1px solid black;
+}
+
+.image-submit:hover {
+    border: 5px dashed blueviolet;
+}

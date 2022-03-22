@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Übung zu Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-top.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="index.html">Hofmann</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="formular.html">Formular <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tabelle.html">Tabelle <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <div id="showside">
+                <h1>Formular</h1>
+                <form method="get">
+                    <div class="form-group row">
+                        <div class="col-4 font-weight-bold"><label for="vn">Vorname:</label></div>
+                        <div class="col-6"><input type="text" id="vn" class="form-control" name="vorname" required
+                                placeholder="z.B. Max"></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 font-weight-bold"><label for="nn">Nachname:</label></div>
+                        <div class="col-6"><input type="text" id="nn" class="form-control" name="nname" required
+                                placeholder="z.B. Mustermann"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group row">
+                            <div class="col-4 font-weight-bold"><label for="book">Bücher</label></div>
+                            <div class="col-6">
+                                <select class="form-control" id="book" name="buch">
+                                    <option value="1">White Fang</option>
+                                    <option value="2">The Silence of the Lambs</option>
+                                    <option value="3">The Lord of the Rings</option>
+                                    <option value="4">The Catcher in the Rye</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 font-weight-bold"><label>Farben:</label></div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="color" id="red" value="red" checked>
+                                <label class="red-font" for="red">Rot</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="color" id="blue" value="blue">
+                                <label class="blue-font" for="blue">Blau</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="color" id="green" value="green">
+                                <label class="green-font" for="green">Grün</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="color" id="yellow" value="yellow">
+                                <label class="yellow-font" for="yellow">Gelb</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="color" id="turquoise"
+                                    value="turquoise">
+                                <label class="turquoise-font" for="turquoise">T&uuml;rkis</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 font-weight-bold"><label>Reiseziele:</label></div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="destination[]" id="at"
+                                    value="Österreich" checked>
+                                <label for="at">Österreich</label>
+                                <br>
+                                <input class="form-check-input" type="checkbox" name="destination[]" id="de"
+                                    value="Deutschland">
+                                <label for="de">Deutschland</label>
+                                <br>
+                                <input class="form-check-input" type="checkbox" name="destination[]" id="gb"
+                                    value="England">
+                                <label for="gb">England</label>
+                                <br>
+                                <input class="form-check-input" type="checkbox" name="destination[]" id="fr"
+                                    value="Frankreich">
+                                <label for="fr">Frankreich</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4 font-weight-bold"><label for="comment">Anmerkung:</label></div>
+                        <div class="col-6"><textarea class="form-control" name="comment" id="comment"
+                                rows="4"></textarea>
+                            <!--<textarea class="form-control" rows="4" id="comment"></textarea>-->
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4"></div>
+                        <div class="col-6">
+                            <input type="submit" class="btn btn-primary" name="send" value="Absenden">
+                        </div>
+                    </div>
+
+                </form>
+                <label>
+                    <kbd><a href="https://www.bs-linz2.ac.at/home/">BS Linz 2</a></kbd>
+                </label>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script>window.jQuery || document.write('<script src="./vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>

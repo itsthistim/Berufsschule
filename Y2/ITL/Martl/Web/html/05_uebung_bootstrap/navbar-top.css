@@ -1,0 +1,29 @@
+/* Show it's not fixed to the top */
+body {
+    min-height: 75rem;
+}
+
+a {
+    color: #ffffff;
+}
+
+.red-font {
+    color: #ff0000;
+}
+
+.blue-font {
+    color: #0000ff;
+}
+
+.green-font {
+    color: #00cf00;
+}
+
+.yellow-font {
+    color: #ffff00;
+}
+
+.turquoise-font {
+    color: #40e0d0;
+}
+

@@ -1,0 +1,59 @@
+<!-- Tim Hofmann
+    ITL MAK-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ITL MAK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#" target="_self">Startseite</a> |
+        <a href="index.html" target="_self">Datenverarbeitung</a>
+    </nav>
+    <main>
+        <h1>Datenverarbeitung</h1>
+        <form method="get">
+            <p>Tragen Sie in das folgende Feld einen <span class="red-text">C#</span>-Sourcecode ein.</p>
+            <textarea name="code" id="code" required></textarea>
+
+            <br><br>
+            <label for="fun">Spa&szlig;feld:</label>
+            <input type="text" name="fun" id="fun" placeholder="Versuch hier was reinzuschreiben!">
+
+            <br><br>
+            <table>
+                <thead>
+                <tr>
+                    <th>Form</th>
+                    <th>Fl&auml;chenformel</th>
+                    <th colspan="2">Richtig?</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Dreieck</td>
+                    <td>A = g * h 1/2</td>
+                    <td><input type="radio" name="richtig1" id="true-dreieck" value="Ja"><label for="true-dreieck">Ja</label></td>
+                    <td><input type="radio" name="richtig1" id="false-dreieck" value="Nein" checked><label for="false-dreieck">Nein</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="centered">Weltalt - nicht berechenbar</td>
+                    <td><input type="radio" name="richtig2" id="true-weltalt" value="Ja"><label for="true-weltalt">Ja</label></td>
+                    <td><input type="radio" name="richtig2" id="false-weltalt" value="Nein" checked><label for="false-weltalt">Nein</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Danke f&uuml;r die Teilnahme!</td>
+                    <td colspan="2" rowspan="2"><input type="submit" class="image-submit" value=""></td>
+                </tr>
+                    <td colspan="2"><input type="reset" name="reset" id="reset"></td>
+                </tbody>
+
+            </table>
+        </form>
+
+    </main>
+</body>
+</html>

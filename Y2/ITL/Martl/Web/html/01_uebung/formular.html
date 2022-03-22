@@ -1,0 +1,49 @@
+<!--T. Hofmann, 23.2.2021
+    Übung zu HTML: Formular -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formular</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Men&uuml;</h1>
+        <a href="index.html" target="_self">Startseite</a> |
+        <a href="formular.html" target="_self">Formular</a> |
+        <a href="tabelle.html" target="_self">Tabelle</a>
+    </nav>
+    <main>
+        <h1>Formular</h1>
+        <!-- Formular ... ohne Formatierung -->
+        <form method="get">
+            <label for="vn">Vorname:</label>
+            <input type="text" id="vn" name="vname" required placeholder="z.B. Max">
+            <br>
+            <label>Farbe:</label>
+            <br>
+            <input type="radio" id="red" name="farbe" value="rot" checked>
+            <label for="red">Rot</label>
+            <br>
+            <input type="radio" id="blue" name="farbe" value="blau">
+            <label for="blue">Blau</label>
+            <br>
+            <label>Länder:</label>
+            <br>
+            <input type="checkbox" id="at" name="land[]" value="aut"><label for="at">Österreich</label><br>
+            <input type="checkbox" id="de" name="land[]" value="ger"><label for="de">Deutschland</label><br>
+            <label for="car">Auto:</label>
+            <br>
+            <select name="auto" id="car" title="Wählen Sie ein Auto aus!">
+                <option value="1">BMW</option>
+                <option value="2" selected>Audi</option>
+            </select>
+            <br>
+            <input type="submit" name="send" value="Absenden">
+        </form>
+    </main>
+</body>
+
+</html>

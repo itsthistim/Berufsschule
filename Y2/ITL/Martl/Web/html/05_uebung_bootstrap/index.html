@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+
+  <title>Übung zu Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="navbar-top.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="index.html">Hofmann</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <div class="jumbotron">
+      <div id="showside">
+
+        <h1>Anmeldung</h1>
+        <form method="get">
+          <div class="form-group row">
+            <div class="col-4 font-weight-bold"><label for="nn">Nickname:</label></div>
+            <div class="col-5"><input type="text" id="nn" class="form-control" name="nname" placeholder="z.B. bond007" required></div>
+            <div class="col-2"><input type="checkbox" id="encrypted" name="encrypted" value="encrypted"><label for="encrypted">&nbspVerschlüsseln</label></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4 font-weight-bold"><label for="pw">Password:</label></div>
+            <div class="col-3"><input type="password" id="pw" class="form-control border-warning" name="pw" placeholder="mind. 8 Zeichen" required></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4 font-weight-bold"><label>Hobbies:</label></div>
+            <div class="col-3"><input type="checkbox" id="coding" name="hobbies" value="coding"><label for="coding">&nbspProgrammieren</label></div>
+            <div class="col-4"><input type="checkbox" id="reading" name="hobbies" value="reading"><label for="reading">&nbspLesen</label></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4"></div>
+            <div class="col-3"><input type="checkbox" id="skiing" name="hobbies" value="skiing"><label for="skiing">&nbspSki fahren</label></div>
+            <div class="col-3"><input type="checkbox" id="cinema" name="hobbies" value="cinema"><label for="cinema">&nbspKino</label></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4"></div>
+            <div class="col-0"><input type="checkbox" id="other" name="hobbies" value="other"></div>
+            <div class="col-2"><input type="text" id="sonstiges" class="form-control" name="sonstiges" placeholder="Sonstiges"></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4 font-weight-bold"><label>Sternzeichen:</label></div>
+            <div class="col-3">
+              <select name="chinese_sign" id="chinese_sign">
+                <option value="1">--- Chinesische Sternzeichen ---</option>
+                <option value="2">Ratte</option>
+                <option value="3">Büffel</option>
+                <option value="4">Tiger</option>
+                <option value="5">Hase</option>
+                <option value="6">Drache</option>
+                <option value="7">Schlange</option>
+                <option value="8">Pferd</option>
+                <option value="9">Schaf</option>
+                <option value="10">Affe</option>
+                <option value="11">Hahn</option>
+                <option value="12">Hund</option>
+                <option value="13">Schwein</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <select name="occidental_sign" id="occidental_sign">
+                <option value="1">--- Abendländische Sternzeichen ---</option>
+                <option value="2">Steinbock</option>
+                <option value="3">Wassermann</option>
+                <option value="4">Fische</option>
+                <option value="5">Widder</option>
+                <option value="6">Stier</option>
+                <option value="7">Zwillinge</option>
+                <option value="8">Krebs</option>
+                <option value="9">Löwe</option>
+                <option value="10">Jungfrau</option>
+                <option value="11">Waage</option>
+                <option value="12">Skorpion</option>
+                <option value="13">Schütze</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4 font-weight-bold">Newsletter:</div>
+            <div class="col-2"><input type="radio" id="yes" name="letter" value="yes" checked><label for="yes">&nbspYes</label></div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4"><input type="radio" id="no" name="letter" value="no"><label for="no">&nbspNo</label></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-4"></div>
+            <div class="col-3"><input type="submit" class="btn btn-outline-primary" name="send" value="Absenden"></div>
+            <div class="col-3"><input type="reset" class="btn btn-outline-danger" name="reset" value="Formulardaten löschen"></div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script>window.jQuery || document.write('<script src="./vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>
