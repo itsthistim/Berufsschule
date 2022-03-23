@@ -87,8 +87,9 @@
 
             <!-- <div class="col-lg-8 mt-5 mt-lg-0"> -->
             <div class="col-4">
+              <!-- method="post" role="form"  -->
 
-              <form method="post" role="form" class="php-email-form">
+              <form id="contactform" class="php-email-form">
                 <div class="row">
 
                   <div class="col-md-6 form-group">
@@ -118,13 +119,8 @@
                 <div class="form-group mt-3">
                   <textarea class="form-control" name="message" rows="5" placeholder="Question"></textarea>
                 </div>
-
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <!-- <div class="error-message"></div> -->
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit" onclick="checkFields()">Submit</button></div>
+                
+                <div class="text-center"><button type="submit">Submit</button></div>
               </form>
             </div>
 
@@ -228,7 +224,7 @@
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
     <!-- JS Files -->
     <script src="assets/js/main.js"></script>
