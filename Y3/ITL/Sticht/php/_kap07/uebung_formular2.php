@@ -25,11 +25,24 @@
         <p>Vorname: <input type="text" name="firstname" <?= $firstname ? "value=$firstname" : '' ?>></p>
         <p>Nachname: <input type="text" name="lastname" <?= $lastname ? "value=$lastname" : '' ?>></p>
         <p>Mailadresse: <input type="text" name="email" <?= $mail ? "value=$mail" : '' ?>></p>
-        
+
         <p>
             <input type="submit" name="bewerben" value="bei Ihnen bewerben">
             <input type="submit" name="abo" value="Newsletter abonnieren">
             <input type="submit" name="anfordern" value="Infomaterial anfordern">
+        </p>
+        <p style="font-style: italic;">
+            <?php
+            if (isset($_POST["bewerben"])) {
+                echo "Herzlichen Dank, $anrede $lastname, für Ihre Bewerbungsanfrage. Unsere Personalabteilung wird per Mail - an Ihre Adresse $mail - Kontakt zu Ihnen aufnehmen.";
+            }
+            if (isset($_POST["abo"])) {
+                echo "Herzlichen Dank, $anrede $lastname, für Ihre Abonnementsanfrage. Unsere Personalabteilung wird per Mail - an Ihre Adresse $mail - Kontakt zu Ihnen aufnehmen.";
+            }
+            if (isset($_POST["anfordern"])) {
+                echo "Herzlichen Dank, $anrede $lastname, für Ihre Infomaterialanforderung. Unsere Personalabteilung wird per Mail - an Ihre Adresse $mail - Kontakt zu Ihnen aufnehmen.";
+            }
+            ?>
         </p>
     </form>
 </body>
