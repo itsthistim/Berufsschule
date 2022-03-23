@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Übung (Kapitel 7)</title>
+    </head>
+    <body>
+        <h1>Bitte füllen Sie das Formular komplett aus</h1>
+        <form action="./uebung_auswertung.php" method="post">
+            <h2>Persönliche Daten</h2>
+            <p>Vorname: <input type="text" name="firstname"></p>
+            <p>Nachname: <input type="text" name="lastname"></p>
+            <p>Wohnort: <input type="text" name="address"></p>
+            <h2>Was wir wissen wollen</h2>
+            <p>Wie wohnen Sie?
+                <input type="radio" name="home" value="Einfamilienhaus"> Einfamilienhaus
+                <input type="radio" name="home" value="Eigentumswohnung"> Eigentumswohnung
+                <input type="radio" name="home" value="Mehrfamilienhaus"> Mehrfamilienhaus
+            </p>
+            <p>Welche TV-Sendungen sehen Sie gern?
+                <input type="checkbox" name="tvshow[]" value="Dokumentationen"> Dokumentationen
+                <input type="checkbox" name="tvshow[]" value="Nachrichten"> Nachrichten
+                <input type="checkbox" name="tvshow[]" value="Spielfilme"> Spielfilme
+                <input type="checkbox" name="tvshow[]" value="Sport"> Sport
+            </p>
+            <p>Haben Sie noch eine Nachricht für uns?
+                <textarea name="nachricht" id="nachricht" cols="30" rows="5"></textarea>
+            </p>
+            <p>
+                <input type="submit" name="send" value="Daten speichern">
+                <input type="reset" value="Zurücksetzen">
+            </p>
+        </form>
+    </body>
+</html>
