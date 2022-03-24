@@ -22,9 +22,9 @@
             <input type="radio" name="anrede" value="Frau" <?= $anrede == "Frau" ? 'checked' : '' ?>> Frau
         </p>
 
-        <p>Vorname: <input type="text" name="firstname" <?= $firstname ? "value=$firstname" : '' ?>></p>
-        <p>Nachname: <input type="text" name="lastname" <?= $lastname ? "value=$lastname" : '' ?>></p>
-        <p>Mailadresse: <input type="text" name="email" <?= $mail ? "value=$mail" : '' ?>></p>
+        <p>Vorname: <input type="text" name="firstname" value=<?= $firstname ?>></p>
+        <p>Nachname: <input type="text" name="lastname" value=<?= $lastname ?>></p>
+        <p>Mailadresse: <input type="text" name="email" value=<?= $mail ?>></p>
 
         <p>
             <input type="submit" name="bewerben" value="bei Ihnen bewerben">
@@ -33,13 +33,13 @@
         </p>
         <p style="font-style: italic;">
             <?php
-            if (isset($_POST["bewerben"])) {
+            if (isset($_POST["bewerben"]) && isset($_POST["anrede"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"])) {
                 echo "Herzlichen Dank, $anrede $lastname, für Ihre Bewerbungsanfrage. Unsere Personalabteilung wird per Mail - an Ihre Adresse $mail - Kontakt zu Ihnen aufnehmen.";
             }
-            if (isset($_POST["abo"])) {
+            if (isset($_POST["abo"]) && isset($_POST["anrede"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"])) {
                 echo "Herzlichen Dank, $anrede $lastname, für Ihre Abonnementsanfrage. Unsere Personalabteilung wird per Mail - an Ihre Adresse $mail - Kontakt zu Ihnen aufnehmen.";
             }
-            if (isset($_POST["anfordern"])) {
+            if (isset($_POST["anfordern"]) && isset($_POST["anrede"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["email"])) {
                 echo "Herzlichen Dank, $anrede $lastname, für Ihre Infomaterialanforderung. Unsere Personalabteilung wird per Mail - an Ihre Adresse $mail - Kontakt zu Ihnen aufnehmen.";
             }
             ?>
