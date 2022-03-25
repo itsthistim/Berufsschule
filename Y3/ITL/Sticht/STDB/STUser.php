@@ -1,5 +1,5 @@
 <?php
-class User extends DB
+class STUser extends DB
 {
     public $id;
     public $email;

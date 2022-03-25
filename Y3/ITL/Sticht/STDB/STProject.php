@@ -1,5 +1,5 @@
 <?php
-class Project extends DB
+class STProject extends DB
 {
     public $id;
     public $title;

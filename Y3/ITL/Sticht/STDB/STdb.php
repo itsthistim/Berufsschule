@@ -1,5 +1,5 @@
 <?php
-class DB
+class STDB
 {
     private $host = 'localhost';
     private $dbname = "blog_cms";

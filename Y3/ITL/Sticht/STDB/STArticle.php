@@ -1,5 +1,5 @@
 <?php
-class Article extends Database
+class STArticle extends Database
 {
     public $id;
     public $project_id;

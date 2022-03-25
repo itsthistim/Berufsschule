@@ -5,5 +5,6 @@
     "liveServer.settings.port": 5501,
     "phpserver.phpPath": "C:\\php\\php.exe",
     "php.validate.executablePath": "C:\\php\\php.exe",
-    "intelephense.environment.phpVersion": "7.9.5"
+    "intelephense.environment.phpVersion": "7.9.5",
+    "php.validate.run": "onType"
 }

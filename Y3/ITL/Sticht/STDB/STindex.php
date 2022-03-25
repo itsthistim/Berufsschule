@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <?php
-        require_once './db.php';
-        require_once './Article.php';
-        require_once './Project.php';
-        require_once './User.php';
-        $article = new Article();
-        $project = new Project();
-        $user = new User();
+        require_once './STdb.php';
+        require_once './STArticle.php';
+        require_once './STProject.php';
+        require_once './STUser.php';
+        $article = new STArticle();
+        $project = new STProject();
+        $user = new STUser();
     ?>
 </head>
 <body>
@@ -35,6 +35,9 @@
                 {
                     echo "<option value=".$row['id'].">".$row['title']."</option>";
                 }
+
+                
+
                 ?></select>
         </label><br><br>
         <label>Titel: <input type="text" name="title"></label><br><br>
