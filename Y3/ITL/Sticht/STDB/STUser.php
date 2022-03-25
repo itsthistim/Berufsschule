@@ -1,5 +1,5 @@
 <?php
-class STUser extends DB
+class STUser extends STDB
 {
     public $id;
     public $email;
