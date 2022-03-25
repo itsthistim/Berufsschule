@@ -7,15 +7,26 @@ class Project extends Database
     public $descripton;
     public $color_main;
     public $color_secondary;
-    
-    function __construct($pdo, $id = null, $title = null, $description = null, $color_main = null, $color_secondary = null)
+
+    function __construct($id = null, $title = null, $description = null, $color_main = null, $color_secondary = null)
     {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->color_main = $color_main;
         $this->color_secondary = $color_secondary;
+    }
 
-        $this->pdo = $pdo;
+    public function getProjects()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM projects");
+        $stmt->execute();
+        $projects = array();
+
+        while ($row = $stmt->fetch()) {
+            $projects[] = $row;
+        }
+
+        return $projects;
     }
 }

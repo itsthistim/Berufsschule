@@ -12,13 +12,14 @@
     <?php
     require_once './db.php';
     require_once './article.php';
+    require_once './project.php';
+    require_once './user.php';
 
     $db = new Database();
-    $article = new Database();
-    $project = new Database();
-    $user = new Database();
-
-    $articles = $db->getArticles();
+    $article = new Article();
+    $project = new Project();
+    $user = new User();
+    $articles = $article->getArticles();
 
     foreach ($articles as $article) {
         echo "<h1>" . $article['title'] . "</h1>";
@@ -40,9 +41,9 @@
         <label>User:
             <select id="user" name="user">
                 <?php
-                $users = null;
-                foreach ($projects as $project) {
-                    echo "<option value=" . $project['id'] . ">" . $project['title'] . "</option>";
+                $users = $user->getUsers();
+                foreach ($users as $user) {
+                    echo "<option value=" . $user['id'] . ">" . $user['email'] . "</option>";
                 }
                 ?>
             </select>
@@ -54,10 +55,7 @@
         <input type="submit" name="submit" value="Create Article">
         <?php
         if (isset($_POST['submit'])) {
-
-            $date = date("Y-m-d H-i-s");
-
-            $new_article = new Article($db->pdo, $_POST['project_id'], $_POST['user'], $_POST['title'], $_POST['slug'], $_POST['body'], isset($_POST['published']) ? 0 : 1, $date, $date);
+            $new_article = new Article($_POST['project_id'], $_POST['user'], $_POST['title'], $_POST['slug'], $_POST['body'], isset($_POST['published']) ? 0 : 1, date("Y-m-d H-i-s"), date("Y-m-d H-i-s"));
             $new_article->insert();
         }
         ?>
