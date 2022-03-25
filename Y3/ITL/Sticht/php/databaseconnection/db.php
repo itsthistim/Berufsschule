@@ -24,19 +24,25 @@ class Database
     {
         $stmt = $this->pdo->prepare("SELECT * FROM articles");
         $stmt->execute();
+        $articles = array();
 
         while ($row = $stmt->fetch()) {
-            echo "<h1>" . $row["title"] . "</h1>";
+            $articles[] = $row;
         }
+
+        return $articles;
     }
 
     function getProjects()
     {
-        $stmt = $this->pdo->prepare("SELECT title FROM projects");
+        $stmt = $this->pdo->prepare("SELECT * FROM projects");
         $stmt->execute();
+        $projects = array();
 
         while ($row = $stmt->fetch()) {
-            echo "<option>" . $row["title"] . "</option>";
+            $projects[] = $row;
         }
+
+        return $projects;
     }
 }
