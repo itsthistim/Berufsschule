@@ -16,9 +16,9 @@
     require_once './user.php';
 
     $db = new Database();
-    $article = new Article();
-    $project = new Project();
-    $user = new User();
+    $article = new Article($db);
+    $project = new Project($db);
+    $user = new User($db);
     $articles = $article->getArticles();
 
     foreach ($articles as $article) {

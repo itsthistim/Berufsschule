@@ -12,7 +12,7 @@ class Article extends Database
     public $created;
     public $modified;
 
-    function __construct($project_id = null, $user_id = null, $title = null, $slug = null, $body = null, $published = null, $created = null, $modified = null)
+    function __construct($db, $project_id = null, $user_id = null, $title = null, $slug = null, $body = null, $published = null, $created = null, $modified = null)
     {
         $this->project_id = $project_id;
         $this->user_id = $user_id;
@@ -22,6 +22,7 @@ class Article extends Database
         $this->published = $published;
         $this->created = $created;
         $this->modified = $modified;
+        $this->pdo = $db;
     }
 
     public function insert()
