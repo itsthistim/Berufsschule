@@ -36,8 +36,6 @@
                     echo "<option value=".$row['id'].">".$row['title']."</option>";
                 }
 
-                
-
                 ?></select>
         </label><br><br>
         <label>Titel: <input type="text" name="title"></label><br><br>

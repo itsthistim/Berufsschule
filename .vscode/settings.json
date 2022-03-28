@@ -6,5 +6,12 @@
     "phpserver.phpPath": "C:\\php\\php.exe",
     "php.validate.executablePath": "C:\\php\\php.exe",
     "intelephense.environment.phpVersion": "7.9.5",
+    "discord.detailsEditing": "Editing a {LANG} file",
+    "discord.detailsDebugging": "Debugging a {LANG} file",
+    "discord.largeImage": "{LANG}",
+    "discord.removeRemoteRepository": true,
+    "discord.lowerDetailsEditing": "",
+    "discord.lowerDetailsNoWorkspaceFound": "",
+    "phpserver.phpConfigPath": "",
     "php.validate.run": "onType"
 }
