@@ -2,122 +2,68 @@
 require "./db.php";
 class User extends DB
 {
-	#region ctor
-	public $userId;
-	public $firstName;
-	public $lastName;
-	public $nickName;
-	public $password;
+    #region ctor
 
-	function __construct($userId = null, $firstName = null, $lastName = null, $nickName = null, $password = null, $guest = null)
-	{
-		parent::__construct();
-		$this->userId = $userId;
-		$this->firstName = $firstName;
-		$this->lastName = $lastName;
-		$this->nickName = $nickName;
-		$this->password = $password;
-		$this->guest = $guest;
-	}
-	#endregion
+    public $id;
+    public $emaiL;
+    public $password;
+    public $created;
+    public $modified;
 
-	public function insert()
-	{
-		$stmt = $this->pdo->prepare("INSERT INTO user(userId, firstName, lastName, nickName, password, guest) VALUES (?,?,?,?,?,?)");
-		$stmt->execute([$this->userId, $this->firstName, $this->lastName, $this->nickName, $this->password, $this->guest]);
-	}
+    function __construct($id = null, $email = null, $password = null, $created = null, $modified = null)
+    {
+        parent::__construct();
+        $this->id = $id;
+        $this->email = $email;
+        $this->password = $password;
+        $this->created = $created;
+        $this->modified = $modified;
+    }
 
-	public function delete()
-	{
-		$stmt = $this->pdo->prepare("DELETE FROM user WHERE userId = ?");
-		$stmt->execute([$this->userId]);
-	}
+    #endregion
 
-	public function exists()
-	{
-		try {
-			$stmt = $this->pdo->prepare("SELECT * FROM user where userId = ?");
-			$stmt->execute([$this->userId]);
+    public function insert()
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO users(id, email, password, created, modified) VALUES (?,?,?,?,?)");
+        $stmt->execute([$this->id, $this->email, $this->password, $this->created, $this->modified]);
+    }
 
-			if ($stmt->rowCount() > 0) {
-				return true;
-			}
-			return false;
-		}
-		catch (Error $th) {
-			return false;
-		}
-	}
+    public function delete()
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM users WHERE id = ?");
+        $stmt->execute([$this->id]);
+    }
 
-	#region statics
-	public static function getUsers()
-	{
-		$db = new Database();
-		$stmt = $db->pdo->prepare("SELECT * FROM user");
-		$stmt->execute();
-		$data = array();
+    #region statics
+    public static function getUsers()
+    {
+        $db = new Database();
+        $stmt = $db->pdo->prepare("SELECT * FROM users");
+        $stmt->execute();
+        $data = array();
 
-		for ($i = 0; $i < $stmt->rowCount(); $i++) {
-			$row = $stmt->fetch();
-			$data[$i] = new User($row["userId"], $row["firstName"], $row["lastName"], $row["nickName"], $row["password"], $row["guest"]);
-		}
+        for ($i = 0; $i < $stmt->rowCount(); $i++) {
+            $row = $stmt->fetch();
+            $data[$i] = new User($row["id"], $row["email"], $row["password"], $row["created"], $row["modified"]);
+        }
 
-		return $data;
-	}
+        return $data;
+    }
 
-	public static function getUserById($id)
-	{
+    public static function getUserById($id)
+    {
 
-		$db = new Database();
-		$stmt = $db->pdo->prepare("SELECT * FROM user WHERE userId = ?");
-		$stmt->execute([$id]);
-		$res = $stmt->fetch();
+        $db = new Database();
+        $stmt = $db->pdo->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        $res = $stmt->fetch();
 
-		if ($res) {
-			return new User($res["userId"], $res["firstName"], $res["lastName"], $res["nickName"], $res["password"], $res["guest"]);
-		}
-		else {
-			return false;
-		}
-	}
-
-	public static function getUserByNickName($nickName)
-	{
-		$db = new Database();
-		$stmt = $db->pdo->prepare("SELECT * FROM user WHERE nickName = ?");
-		$stmt->execute([$nickName]);
-		$res = $stmt->fetch();
-
-		if ($res) {
-			return new User($res["userId"], $res["firstName"], $res["lastName"], $res["nickName"], $res["password"], $res["guest"]);
-		}
-		else {
-			return false;
-		}
-	}
-
-	public static function nickNameExists($nickName)
-	{
-		$db = new Database();
-		$stmt = $db->pdo->prepare("SELECT * FROM user where nickName = ?");
-		$stmt->execute([$nickName]);
-
-		if ($stmt->rowCount() > 0) {
-			return true;
-		}
-		return false;
-	}
-
-	public static function idExists($id)
-	{
-		$db = new Database();
-		$stmt = $db->pdo->prepare("SELECT * FROM user where userId = ?");
-		$stmt->execute([$id]);
-
-		if ($stmt->rowCount() > 0) {
-			return true;
-		}
-		return false;
-	}
+        if ($res) {
+            return new User($res["id"], $res["email"], $res["password"], $res["created"], $res["modified"]);
+        }
+        else {
+            return false;
+        }
+    }
 #endregion
 }
