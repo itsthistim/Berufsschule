@@ -5,15 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Blog</title>
+    <title>Blog Title</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/koala_1f428.png"
-      rel="icon">
-    <link href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/koala_1f428.png"
-      rel="apple-touch-icon">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -21,15 +19,15 @@
       rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Tempo - v4.7.0
@@ -45,17 +43,13 @@
     <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center justify-content-between">
 
-        <a href="../index.html" class="logo"><img
+        <a href="index.php" class="logo"><img
             src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/koala_1f428.png"
             alt="" class="img-fluid"> Koala</a>
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="#blog">Blog</a></li>
-            <li><a class="nav-link scrollto" href="#author">Author</a></li>
-            <li><a class="nav-link scrollto " href="#comments">Comments</a></li>
-            <li>
-            </li>
+            <li><a class="nav-link scrollto " href="#">Blog Entries</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -72,7 +66,7 @@
         <div class="container">
 
           <ol>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>Blog</li>
           </ol>
           <h2>Blog</h2>
@@ -92,7 +86,7 @@
               <article class="entry entry-single">
 
                 <!-- <div class="entry-img">
-                  <img src="../assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                  <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
                 </div> -->
 
                 <!-- ======= Portfolio Details Section ======= -->
@@ -105,15 +99,15 @@
                           <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
-                              <img src="../assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                              <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
                             </div>
 
                             <div class="swiper-slide">
-                              <img src="../assets/img/portfolio/portfolio-details-2.jpg" alt="">
+                              <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
                             </div>
 
                             <div class="swiper-slide">
-                              <img src="../assets/img/portfolio/portfolio-details-3.jpg" alt="">
+                              <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
                             </div>
 
                           </div>
@@ -127,16 +121,17 @@
                 <!-- End Portfolio Details Section -->
 
                 <h2 class="entry-title">
-                  <a href="./blog.html">Blog Title</a>
+                  <a href="blog.php">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam
+                    quia</a>
                 </h2>
 
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#author">Tim Hofmann</a>
-                    </li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="./blog.html"><time
-                          datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">6
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog.php">John
+                        Doe</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog.php"><time
+                          datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog.php">12
                         Comments</a></li>
                   </ul>
                 </div>
@@ -182,7 +177,7 @@
                     Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam
                     voluptatem voluptatem accusamus mollitia aut atque aut.
                   </p>
-                  <img src="../assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
+                  <img src="assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
 
                   <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
                   <p>
@@ -199,7 +194,7 @@
 
                 </div>
 
-                <!-- <div class="entry-footer">
+                <div class="entry-footer">
                   <i class="bi bi-folder"></i>
                   <ul class="cats">
                     <li><a href="#">Business</a></li>
@@ -211,14 +206,13 @@
                     <li><a href="#">Tips</a></li>
                     <li><a href="#">Marketing</a></li>
                   </ul>
-                </div> -->
+                </div>
 
               </article>
               <!-- End blog entry -->
 
-              <!-- Start blog author bio -->
-              <section id="author" class="blog-author d-flex align-items-center">
-                <img src="../assets/img/blog/blog-author.gif" class="rounded-circle float-left" alt="">
+              <div class="blog-author d-flex align-items-center">
+                <img src="assets/img/blog/blog-author.jpg" class="rounded-circle float-left" alt="">
                 <div>
                   <h4>Tim</h4>
                   <div class="social-links">
@@ -227,26 +221,25 @@
                     <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
                   </div>
                   <p>
-                    I am in an apprenticeship for application development and coding for 3 years now and have been
-                    working on <strong>koala</strong> in my free time. I've been a user of Discord for multiple years
-                    and created <strong>koala</strong> to improve small aspects of Discord and built ontop of it.
+                    Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas
+                    repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
                   </p>
                 </div>
-              </section>
+              </div>
               <!-- End blog author bio -->
 
-              <!-- Start blog comments -->
-              <section id="comments" class="blog-comments">
+              <!-- End blog comments -->
+              <div class="blog-comments">
 
-                <h4 class="comments-count">6 Comments</h4>
+                <h4 class="comments-count">8 Comments</h4>
 
                 <div id="comment-1" class="comment">
                   <div class="d-flex">
-                    <div class="comment-img"><img src="../assets/img/blog/comments-1.jpg" alt=""></div>
+                    <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
                     <div>
                       <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                           Reply</a></h5>
-                      <time datetime="2022-01-01">01 Jan, 2022</time>
+                      <time datetime="2020-01-01">01 Jan, 2020</time>
                       <p>
                         Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis
                         molestiae est qui cum soluta.
@@ -259,11 +252,11 @@
 
                 <div id="comment-2" class="comment">
                   <div class="d-flex">
-                    <div class="comment-img"><img src="../assets/img/blog/comments-2.jpg" alt=""></div>
+                    <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
                     <div>
                       <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                           Reply</a></h5>
-                      <time datetime="2022-01-01">01 Jan, 2022</time>
+                      <time datetime="2020-01-01">01 Jan, 2020</time>
                       <p>
                         Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut
                         beatae.
@@ -273,11 +266,11 @@
 
                   <div id="comment-reply-1" class="comment comment-reply">
                     <div class="d-flex">
-                      <div class="comment-img"><img src="../assets/img/blog/comments-3.jpg" alt=""></div>
+                      <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
                       <div>
                         <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                             Reply</a></h5>
-                        <time datetime="2022-01-01">01 Jan, 2022</time>
+                        <time datetime="2020-01-01">01 Jan, 2020</time>
                         <p>
                           Enim ipsa eum fugiat fuga repellat. Commodi quo quo dicta. Est ullam aspernatur ut vitae quia
                           mollitia id non. Qui ad quas nostrum rerum sed necessitatibus aut est. Eum officiis sed
@@ -296,11 +289,11 @@
 
                     <div id="comment-reply-2" class="comment comment-reply">
                       <div class="d-flex">
-                        <div class="comment-img"><img src="../assets/img/blog/comments-4.jpg" alt=""></div>
+                        <div class="comment-img"><img src="assets/img/blog/comments-4.jpg" alt=""></div>
                         <div>
                           <h5><a href="">Sianna Ramsay</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                               Reply</a></h5>
-                          <time datetime="2022-01-01">01 Jan, 2022</time>
+                          <time datetime="2020-01-01">01 Jan, 2020</time>
                           <p>
                             Et dignissimos impedit nulla et quo distinctio ex nemo. Omnis quia dolores cupiditate et. Ut
                             unde qui eligendi sapiente omnis ullam. Placeat porro est commodi est officiis voluptas
@@ -320,11 +313,11 @@
 
                 <div id="comment-3" class="comment">
                   <div class="d-flex">
-                    <div class="comment-img"><img src="../assets/img/blog/comments-5.jpg" alt=""></div>
+                    <div class="comment-img"><img src="assets/img/blog/comments-5.jpg" alt=""></div>
                     <div>
                       <h5><a href="">Nolan Davidson</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                           Reply</a></h5>
-                      <time datetime="2022-01-01">01 Jan, 2022</time>
+                      <time datetime="2020-01-01">01 Jan, 2020</time>
                       <p>
                         Distinctio nesciunt rerum reprehenderit sed. Iste omnis eius repellendus quia nihil ut
                         accusantium tempore. Nesciunt expedita id dolor exercitationem aspernatur aut quam ut.
@@ -341,11 +334,11 @@
 
                 <div id="comment-4" class="comment">
                   <div class="d-flex">
-                    <div class="comment-img"><img src="../assets/img/blog/comments-6.jpg" alt=""></div>
+                    <div class="comment-img"><img src="assets/img/blog/comments-6.jpg" alt=""></div>
                     <div>
                       <h5><a href="">Kay Duggan</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a>
                       </h5>
-                      <time datetime="2022-01-01">01 Jan, 2022</time>
+                      <time datetime="2020-01-01">01 Jan, 2020</time>
                       <p>
                         Dolorem atque aut. Omnis doloremque blanditiis quia eum porro quis ut velit tempore. Cumque sed
                         quia ut maxime. Est ad aut cum. Ut exercitationem non in fugiat.
@@ -384,7 +377,7 @@
 
                 </div>
 
-              </section>
+              </div>
               <!-- End blog comments -->
 
             </div>
@@ -415,49 +408,42 @@
                 </div>
                 <!-- End sidebar search formn-->
 
-                <h3 class="sidebar-title">Other Posts</h3>
+                <h3 class="sidebar-title">Recent Posts</h3>
                 <div class="sidebar-item recent-posts">
                   <div class="post-item clearfix">
-                    <img src="../assets/img/blog/blog-recent-1.jpg" alt="">
-                    <h4><a href="./blog-internationalization-languages.html">Internationalization & Languages</a></h4>
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                    <img src="assets/img/blog/blog-recent-1.jpg" alt="">
+                    <h4><a href="blog.php">Nihil blanditiis at in nihil autem</a></h4>
+                    <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
 
                   <div class="post-item clearfix">
-                    <img src="../assets/img/blog/blog-recent-2.jpg" alt="">
-                    <h4><a href="./blog-music-system.html">Music System</a></h4>
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                    <img src="assets/img/blog/blog-recent-2.jpg" alt="">
+                    <h4><a href="blog.php">Quidem autem et impedit</a></h4>
+                    <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
 
                   <div class="post-item clearfix">
-                    <img src="../assets/img/blog/blog-recent-3.jpg" alt="">
-                    <h4><a href="./blog-image-manipulation.html">Image Manipulation</a></h4>
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                    <img src="assets/img/blog/blog-recent-3.jpg" alt="">
+                    <h4><a href="blog.php">Id quia et et ut maxime similique occaecati ut</a></h4>
+                    <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
 
                   <div class="post-item clearfix">
-                    <img src="../assets/img/blog/blog-recent-4.jpg" alt="">
-                    <h4><a href="./blog-message-intents.html">Message Intents</a></h4>
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                    <img src="assets/img/blog/blog-recent-4.jpg" alt="">
+                    <h4><a href="blog.php">Laborum corporis quo dara net para</a></h4>
+                    <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
 
                   <div class="post-item clearfix">
-                    <img src="../assets/img/blog/blog-recent-5.jpg" alt="">
-                    <h4><a href="./blog-slash-commands.html">Slash Commands</a></h4>
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                  </div>
-
-                  <div class="post-item clearfix">
-                    <img src="../assets/img/blog/blog-recent-1.jpg" alt="">
-                    <h4><a href="./blog-rewrite-optimization.html">Rewrite & Optimization</a></h4>
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                    <img src="assets/img/blog/blog-recent-5.jpg" alt="">
+                    <h4><a href="blog.php">Et dolores corrupti quae illo quod dolor</a></h4>
+                    <time datetime="2020-01-01">Jan 1, 2020</time>
                   </div>
 
                 </div>
                 <!-- End sidebar recent posts-->
 
-                <!-- Sidebar tags-->
-                <!-- <h3 class="sidebar-title">Tags</h3>
+                <h3 class="sidebar-title">Tags</h3>
                 <div class="sidebar-item tags">
                   <ul>
                     <li><a href="#">App</a></li>
@@ -472,7 +458,7 @@
                     <li><a href="#">Tips</a></li>
                     <li><a href="#">Marketing</a></li>
                   </ul>
-                </div> -->
+                </div>
                 <!-- End sidebar tags-->
 
               </div>
@@ -571,14 +557,14 @@
         class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="../assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
   </body>
 
