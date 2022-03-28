@@ -1,5 +1,5 @@
 <?php
-require "./db.php";
+require "db.php";
 class Tag extends DB {
     #region ctor
     public $id;

@@ -1,6 +1,15 @@
 <?php
+require "models/utils.php";
+require "models/tag.php";
+
 $utils = new Utils();
-$tag = new Tag($utils->nextId("tags"), "API", );
+$tag = new Tag($utils->nextId("tags"), "API", date("Y-m-d H-i-s"));
+$tag2 = new Tag($utils->nextId("tags"), "Categories", date("Y-m-d H-i-s"));
+$tag3 = new Tag($utils->nextId("tags"), "Commands", date("Y-m-d H-i-s"));
+
+$tag->insert();
+$tag2->insert();
+$tag3->insert();
 
 ?>
 
