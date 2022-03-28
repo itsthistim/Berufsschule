@@ -45,7 +45,7 @@
     <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center justify-content-between">
 
-        <a href="../index.html" class="logo"><img
+        <a href="../index.php" class="logo"><img
             src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/koala_1f428.png"
             alt="" class="img-fluid"> Koala</a>
 
@@ -72,7 +72,7 @@
         <div class="container">
 
           <ol>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li>Blog</li>
           </ol>
           <h2>Blog</h2>
@@ -127,14 +127,14 @@
                 <!-- End Portfolio Details Section -->
 
                 <h2 class="entry-title">
-                  <a href="./blog.html">Blog Title</a>
+                  <a href="./blog.php">Blog Title</a>
                 </h2>
 
                 <div class="entry-meta">
                   <ul>
                     <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#author">Tim Hofmann</a>
                     </li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="./blog.html"><time
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="./blog.php"><time
                           datetime="2022-01-01">Jan 1, 2022</time></a></li>
                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">6
                         Comments</a></li>
@@ -419,37 +419,37 @@
                 <div class="sidebar-item recent-posts">
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-1.jpg" alt="">
-                    <h4><a href="./blog-internationalization-languages.html">Internationalization & Languages</a></h4>
+                    <h4><a href="./blog-internationalization-languages.php">Internationalization & Languages</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-2.jpg" alt="">
-                    <h4><a href="./blog-music-system.html">Music System</a></h4>
+                    <h4><a href="./blog-music-system.php">Music System</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-3.jpg" alt="">
-                    <h4><a href="./blog-image-manipulation.html">Image Manipulation</a></h4>
+                    <h4><a href="./blog-image-manipulation.php">Image Manipulation</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-4.jpg" alt="">
-                    <h4><a href="./blog-message-intents.html">Message Intents</a></h4>
+                    <h4><a href="./blog-message-intents.php">Message Intents</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-5.jpg" alt="">
-                    <h4><a href="./blog-slash-commands.html">Slash Commands</a></h4>
+                    <h4><a href="./blog-slash-commands.php">Slash Commands</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-1.jpg" alt="">
-                    <h4><a href="./blog-rewrite-optimization.html">Rewrite & Optimization</a></h4>
+                    <h4><a href="./blog-rewrite-optimization.php">Rewrite & Optimization</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
