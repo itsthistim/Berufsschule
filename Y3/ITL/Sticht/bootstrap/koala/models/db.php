@@ -6,8 +6,6 @@ class DB
     private $db_user = "root";
     private $db_password = "";
     
-    // revert test
-
     protected $pdo;
 
     public function __construct()
