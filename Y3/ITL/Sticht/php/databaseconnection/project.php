@@ -14,4 +14,12 @@ class Project extends Database
 
         return $projects;
     }
+
+    public function getProjectById($id)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM projects WHERE id = ?");
+        $stmt->execute([$id]);
+
+        return $stmt->fetch();
+    }
 }

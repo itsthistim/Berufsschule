@@ -14,4 +14,12 @@ class User extends Database
 
         return $users;
     }
+
+    public function getUserById($id)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+
+        return $stmt->fetch();
+    }
 }
