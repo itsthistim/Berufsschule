@@ -26,8 +26,8 @@
             <select id="project" name="project">
                 <?php
                 $projects = $project->getProjects();
-                foreach ($projects as $project) {
-                    echo "<option value=" . $project['id'] . ">" . $project['title'] . "</option>";
+                foreach ($projects as $projectelement) {
+                    echo "<option value=" . $projectelement['id'] . ">" . $projectelement['title'] . "</option>";
                 }
                 ?>
             </select>
@@ -36,8 +36,8 @@
             <select id="user" name="user">
                 <?php
                 $users = $user->getUsers();
-                foreach ($users as $user) {
-                    echo "<option value=" . $user['id'] . ">" . $user['email'] . "</option>";
+                foreach ($users as $userelement) {
+                    echo "<option value=" . $userelement['id'] . ">" . $userelement['email'] . "</option>";
                 }
                 ?>
             </select>
@@ -63,12 +63,17 @@
         <?php
         // show articles
         $articles = $article->getArticles();
-        foreach ($articles as $element) {
-            echo "<h1>" . $element['title'] . "</h1>";
-            echo "<p>" . $element['project_id'] . " " . $element['user_id'] . " " . $element['slug'] . "</p>";
-            echo "<p>" . $element['body'] . "</p>";
-            echo "<p>Created: " . $element['created'] . " Modified: " . $element['modified'] . "</p>";
-            echo "<p>" . $element['published'] . "</p>";
+
+
+        foreach ($articles as $articleelement) {
+            $projectTitle = $project->getProjectById($articleelement['project_id'])['title'];
+            $userEmail = $user->getUserById($articleelement['user_id'])['email'];
+
+            echo "<h1>" . $articleelement['title'] . "</h1>";
+            echo "<p>" . $projectTitle . " | " . $userEmail . " | " . $articleelement['slug'] . "</p>";
+            echo "<p>" . $articleelement['body'] . "</p>";
+            echo "<p>Created: " . $articleelement['created'] . " | Modified: " . $articleelement['modified'] . "</p>";
+            echo "<p>" . $articleelement['published'] = 1 ? "Published" : "Not Published" . "</p>";
         }
         ?>
     </form>
