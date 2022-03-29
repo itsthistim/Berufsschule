@@ -1,0 +1,44 @@
+{
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+    },
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "editor.inlineSuggest.enabled": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.extraLiners": " ",
+    "html.format.templating": true,
+    "workbench.iconTheme": "bearded-icons",
+    "workbench.colorTheme": "Bearded Theme Vivid Black",
+    "security.workspace.trust.untrustedFiles": "open",
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "php.suggest.basic": false,
+    "php.validate.enable": false,
+    "php.debug.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+    "phpserver.phpPath": "C:\\xampp\\php\\php.exe",
+    "php.validate.run": "onType",
+    "intelephense.environment.phpVersion": "7.9.5",
+    "emmet.excludeLanguages": [
+        "markdown",
+        "php"
+    ],
+    "discord.detailsEditing": "Editing a {LANG} file",
+    "discord.detailsDebugging": "Debugging a {LANG} file",
+    "discord.largeImage": "{LANG}",
+    "discord.removeRemoteRepository": true,
+    "discord.lowerDetailsEditing": "",
+    "discord.lowerDetailsNoWorkspaceFound": "",
+    "discord.enabled": true,
+    "surround.with.region": {
+        "label": "#region",
+        "description": "#region $regionName ... #endregion",
+        "disabled": false,
+        "snippet": "#region ${0:regionName}\n$TM_SELECTED_TEXT\n#endregion"
+    }
+}

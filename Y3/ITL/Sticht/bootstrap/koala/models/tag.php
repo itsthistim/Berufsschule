@@ -1,5 +1,5 @@
 <?php
-require "db.php";
+require_once "db.php";
 class Tag extends DB {
     #region ctor
     public $id;
@@ -28,7 +28,7 @@ class Tag extends DB {
 
     #region statics
     public static function getTags() {
-        $db = new Database();
+        $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM tags");
         $stmt->execute();
         $data = array();

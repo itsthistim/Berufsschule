@@ -1,6 +1,6 @@
 <?php
-require "db.php";
-class Utils
+require_once "db.php";
+class Utils extends DB
 {
     public static function nextId($table)
     {

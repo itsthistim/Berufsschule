@@ -1,5 +1,5 @@
 <?php
-require "./db.php";
+require_once "db.php";
 class User extends DB
 {
     #region ctor
@@ -37,7 +37,7 @@ class User extends DB
     #region statics
     public static function getUsers()
     {
-        $db = new Database();
+        $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM users");
         $stmt->execute();
         $data = array();
@@ -53,7 +53,7 @@ class User extends DB
     public static function getUserById($id)
     {
 
-        $db = new Database();
+        $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM users WHERE id = ?");
         $stmt->execute([$id]);
         $res = $stmt->fetch();

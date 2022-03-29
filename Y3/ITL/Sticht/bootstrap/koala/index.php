@@ -20,6 +20,7 @@
   </head>
 
   <body>
+
     <!-- ======= Header ======= -->
     <?php include "./views/elements/header.php" ?>
 
@@ -31,17 +32,10 @@
       <!-- ======= About Section ======= -->
       <?php include "./views/elements/about.php" ?>
 
-      <!-- ======= Portfolio Section ======= -->
-      <?php include "./views/elements/portfolio.php" ?>
-
-      <section id="blog">
-        <!-- ======= Services Section ======= -->
-        <?php include "./views/elements/services.php" ?>
-
-        <!-- ======= Features Section ======= -->
-        <?php include "./views/elements/features.php" ?>
-      </section>
-
+      <!-- ======= Blog ======= -->
+      <?php include "./views/elements/blog_portfolio.php" ?>
+      <?php include "./views/elements/blog_features.php" ?>
+  
       <!-- ======= Cta Section ======= -->
       <?php //include "./views/elements/cta.php" ?>
 
@@ -55,6 +49,7 @@
         class="bi bi-arrow-up-short"></i></a>
 
     <?php include './views/elements/body_end.php'; ?>
+
   </body>
 
   <!-- Template Main JS File -->

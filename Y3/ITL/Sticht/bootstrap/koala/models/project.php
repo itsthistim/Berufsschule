@@ -1,5 +1,5 @@
 <?php
-require "./db.php";
+require_once "db.php";
 class Project extends DB
 {
     #region ctor
@@ -35,7 +35,7 @@ class Project extends DB
     #region statics
     public static function getProjects()
     {
-        $db = new Database();
+        $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM projects");
         $stmt->execute();
         $data = array();

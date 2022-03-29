@@ -1,5 +1,5 @@
 <?php
-require "./db.php";
+require_once "db.php";
 class Article extends DB
 {
     #region ctor
@@ -43,7 +43,7 @@ class Article extends DB
     #region statics
     public static function getArticles()
     {
-        $db = new Database();
+        $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM user");
         $stmt->execute();
         $data = array();
@@ -59,7 +59,7 @@ class Article extends DB
     public static function getArticleById($id)
     {
 
-        $db = new Database();
+        $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM articles WHERE id = ?");
         $stmt->execute([$id]);
         $res = $stmt->fetch();
@@ -74,7 +74,7 @@ class Article extends DB
 
     public static function getArticleBySlug($slug)
     {
-        $db = new Database();
+        $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM articles WHERE slug = ?");
         $stmt->execute([$slug]);
         $res = $stmt->fetch();

@@ -213,26 +213,17 @@
 
 })()
 
-
-document.getElementById("services").style.display = "none";
-document.getElementById("features").style.display = "none";
-// document.getElementById("portfolio").style.display = "none";
+document.getElementById("blog_cards").style.display = "none";
+// document.getElementById("blog_portfolio").style.display = "none";
 
 function changeview() {
-  let port = document.getElementById("portfolio");
-  let serv = document.getElementById("services");
-  let feat = document.getElementById("features");
+  let port = document.getElementById("blog_portfolio");
+  let cards = document.getElementById("blog_cards");
 
-  if (serv.style.display === "none") {
-    serv.style.display = "block";
+  if (cards.style.display === "none") {
+    cards.style.display = "block";
   } else {
-    serv.style.display = "none";
-  }
-
-  if (feat.style.display === "none") {
-    feat.style.display = "block";
-  } else {
-    feat.style.display = "none";
+    cards.style.display = "none";
   }
 
   if (port.style.display === "none") {
