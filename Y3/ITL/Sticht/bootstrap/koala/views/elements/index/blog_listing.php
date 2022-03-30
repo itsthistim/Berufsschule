@@ -18,9 +18,9 @@ require_once "./models/article.php";
         <ul id="portfolio-flters">
           <li data-filter="*" class="filter-active">All</li>
           <!-- todo: get tags from db -->
-          <li data-filter=".filter-api">API</li>
-          <li data-filter=".filter-categories">Categories</li>
-          <li data-filter=".filter-commands">Commands</li>
+          <li data-filter=".filter-API">API</li>
+          <li data-filter=".filter-Categories">Categories</li>
+          <li data-filter=".filter-Misc">Misc</li>
         </ul>
       </div>
     </div>
@@ -49,7 +49,7 @@ require_once "./models/article.php";
 
             <div class="portfolio-info">
               <h4><a href="<?php echo "./views/$article->slug.php"; ?>"><?php echo $article->title; ?></a></h4>
-              <p><?php echo $article->body ?></p>
+              <p><?php echo $article->description ?></p>
             </div>
           </div>
         </div>

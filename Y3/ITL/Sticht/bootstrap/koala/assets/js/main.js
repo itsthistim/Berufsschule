@@ -201,6 +201,15 @@
   });
 
   /**
+   * TopFive carousel
+   */
+  var myCarousel = document.querySelector('#topFiveCarousel')
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 5000,
+    wrap: true
+  })
+
+  /**
    * Scroll with ofset on page load with hash links in the url
    */
   window.addEventListener('load', () => {

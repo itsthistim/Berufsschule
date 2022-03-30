@@ -1,5 +1,13 @@
 <?php
 
+require_once "./models/db.php";
+require_once "./models/utils.php";
+require_once "./models/user.php";
+require_once "./models/article.php";
+require_once "./models/project.php";
+require_once "./models/tag.php";
+
+// Utils::resetDB();
 const active_project = 1;
 
 ?>
