@@ -49,11 +49,11 @@ $user = new User();
             <figure>
               <img src="<?php echo "assets/img/portfolio/$article->image"; ?>" class="img-fluid" alt="">
               <a href="<?php echo "assets/img/portfolio/$article->image"; ?>" class="link-preview" data-lightbox="portfolio" data-title="<?php echo $article->title; ?>" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="<?php echo "./views/$article->slug"; ?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              <a href="<?php echo "./views/$article->slug.php"; ?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
 
             <div class="portfolio-info">
-              <h4><a href="<?php echo $article->slug; ?>"><?php echo $article->title; ?></a></h4>
+              <h4><a href="<?php echo "./views/$article->slug.php"; ?>"><?php echo $article->title; ?></a></h4>
               <p><?php echo $article->body ?></p>
             </div>
           </div>

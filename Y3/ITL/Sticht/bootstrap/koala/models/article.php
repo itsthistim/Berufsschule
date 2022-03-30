@@ -58,10 +58,10 @@ class Article extends DB
         return $data;
     }
 
-    public static function getMostRecent() {
+    public static function getMostRecent($amount) {
         $db = new DB();
-        $stmt = $db->pdo->prepare("SELECT * FROM articles ORDER BY created DESC LIMIT 5");
-        $stmt->execute();
+        $stmt = $db->pdo->prepare("SELECT * FROM articles ORDER BY created DESC LIMIT ?");
+        $stmt->execute([$amount]);
         $data = array();
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
