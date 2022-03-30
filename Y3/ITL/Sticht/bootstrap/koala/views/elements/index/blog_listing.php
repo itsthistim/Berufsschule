@@ -1,13 +1,8 @@
 <?php
-require_once "./models/db.php";
-require_once "./models/utils.php";
 require_once "./models/user.php";
+require_once "./models/utils.php";
 require_once "./models/tag.php";
 require_once "./models/article.php";
-
-$db = new DB();
-$utils = new Utils();
-$user = new User();
 
 ?>
 

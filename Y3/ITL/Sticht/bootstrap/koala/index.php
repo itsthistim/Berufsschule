@@ -35,6 +35,8 @@ const active_project = 1;
 
     <main id="main">
 
+      <?php // phpinfo(); ?>
+
       <!-- ======= About Section ======= -->
       <?php include "./views/elements/index/about.php" ?>
 

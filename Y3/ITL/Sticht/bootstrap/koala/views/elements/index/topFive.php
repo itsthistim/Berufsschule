@@ -5,13 +5,9 @@
 
         <div id="carouselExampleCaptions" class="carousel slide col-lg-4 col-md-6" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <?php
-
-// for ($i = 0; $i < count($articles); $i++) {
-//     echo "<button type=\"button\" data-bs-target=\"#carouselExampleCaptions\" data-bs-slide-to=\"$i\" aria-label=\"Slide $i\" class=" . $i < 1 ? "\"active\" aria-current=\"true\"" : "\"\"></button>";
-// }
-
-?>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1" class=""></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
             </div>
             <div class="carousel-inner">
 
@@ -68,56 +64,5 @@
         </div>
         <div class="col-lg-4 col-md-3"></div>
     </div>
-
-    <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="assets/img/portfolio/internationalization.jpg" width="50%">
-            <div class="container">
-                <div class="carousel-caption text-start">
-                    <h1 style="color: black">Dust T</h1>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="assets/img/portfolio/internationalization.jpg" width="50%">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Dust CT</h1>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="assets/img/portfolio/internationalization.jpg" width="50%">
-            <div class="container">
-                <div class="carousel-caption text-end">
-                    <h1>Inferno CT</h1>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="assets/img/portfolio/internationalization.jpg" width="50%">
-            <div class="container">
-                <div class="carousel-caption text-end">
-                    <h1>Inferno CT</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div> -->
 
 </section>
