@@ -431,7 +431,7 @@
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-3.jpg" alt="">
-                    <h4><a href="./blog-image-manipulation.php">Image Manipulation</a></h4>
+                    <h4><a href="./image-manipulation.php">Image Manipulation</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 

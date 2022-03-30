@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Image Manipulation</title>
+    <title>Blog</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -419,7 +419,7 @@
                 <div class="sidebar-item recent-posts">
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-1.jpg" alt="">
-                    <h4><a href="./blog-internationalization-languages.php">Internationalization & Languages</a></h4>
+                    <h4><a href="./internationalization-languages.php">Internationalization & Languages</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
@@ -431,7 +431,7 @@
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-3.jpg" alt="">
-                    <h4><a href="./blog-image-manipulation.php">Image Manipulation</a></h4>
+                    <h4><a href="./image-manipulation.php">Image Manipulation</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 

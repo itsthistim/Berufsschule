@@ -101,7 +101,7 @@ $user = new User();
             <div>
               <a href="assets/img/portfolio/art.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                 title="Image Manipulation"><i class="bi bi-plus"></i></a>
-              <a href="./views/blog-image-manipulation.php" title="Image Manipulation"><i class="bi bi-link"></i></a>
+              <a href="./views/image-manipulation.php" title="Image Manipulation"><i class="bi bi-link"></i></a>
             </div>
           </div>
         </div>

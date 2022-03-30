@@ -214,10 +214,10 @@
 })()
 
 document.getElementById("blog_cards").style.display = "none";
-// document.getElementById("blog_portfolio").style.display = "none";
+// document.getElementById("blog_listing").style.display = "none";
 
 function changeview() {
-  let port = document.getElementById("blog_portfolio");
+  let port = document.getElementById("blog_listing");
   let cards = document.getElementById("blog_cards");
 
   if (cards.style.display === "none") {

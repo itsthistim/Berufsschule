@@ -8,12 +8,13 @@ class Article extends DB
     public $user_id;
     public $title;
     public $slug;
+    public $image;
     public $body;
     public $published;
     public $created;
     public $modified;
 
-    function __construct($id = null, $project_id = null, $user_id = null, $title = null, $slug = null, $body = null, $published = null, $created = null, $modified = null)
+    function __construct($id = null, $project_id = null, $user_id = null, $title = null, $slug = null, $body = null, $image = null, $published = null, $created = null, $modified = null)
     {
         parent::__construct();
         $this->id = $id;
@@ -22,6 +23,7 @@ class Article extends DB
         $this->title = $title;
         $this->slug = $slug;
         $this->body = $body;
+        $this->image = $image;
         $this->published = $published;
         $this->created = $created;
         $this->modified = $modified;
@@ -30,8 +32,8 @@ class Article extends DB
 
     public function insert()
     {
-        $stmt = $this->pdo->prepare("INSERT INTO articles (id, project_id, user_id, title, slug, body, published, created, modified) VALUES (?,?,?,?,?,?,?,?,?)");
-        $stmt->execute([$this->id, $this->project_id, $this->user_id, $this->title, $this->slug, $this->body, $this->published, $this->created, $this->modified]);
+        $stmt = $this->pdo->prepare("INSERT INTO articles (id, project_id, user_id, title, slug, body, image, published, created, modified) VALUES (?,?,?,?,?,?,?,?,?)");
+        $stmt->execute([$this->id, $this->project_id, $this->user_id, $this->title, $this->slug, $this->body, $this->image, $this->published, $this->created, $this->modified]);
     }
 
     public function delete()
@@ -44,13 +46,27 @@ class Article extends DB
     public static function getArticles()
     {
         $db = new DB();
-        $stmt = $db->pdo->prepare("SELECT * FROM user");
+        $stmt = $db->pdo->prepare("SELECT * FROM articles");
         $stmt->execute();
         $data = array();
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
             $row = $stmt->fetch();
-            $data[$i] = new Article($row["id"], $row["firstName"], $row["lastName"], $row["nickName"], $row["password"], $row["guest"]);
+            $data[$i] = new Article($row['id'], $row['project_id'], $row['user_id'], $row['title'], $row['slug'], $row['body'], $row['image'], $row['published'], $row['created'], $row['modified']);
+        }
+
+        return $data;
+    }
+
+    public static function getMostRecent() {
+        $db = new DB();
+        $stmt = $db->pdo->prepare("SELECT * FROM articles ORDER BY created DESC LIMIT 5");
+        $stmt->execute();
+        $data = array();
+
+        for ($i = 0; $i < $stmt->rowCount(); $i++) {
+            $row = $stmt->fetch();
+            $data[$i] = new Article($row['id'], $row['project_id'], $row['user_id'], $row['title'], $row['slug'], $row['body'], $row['image'], $row['published'], $row['created'], $row['modified']);
         }
 
         return $data;
@@ -65,7 +81,7 @@ class Article extends DB
         $res = $stmt->fetch();
 
         if ($res) {
-            return new Article($res["id"], $res["project_id"], $res["user_id"], $res["title"], $res["slug"], $res["body"], $res["published"], $res["created"], $res["modified"]);
+            return new Article($res['id'], $res['project_id'], $res['user_id'], $res['title'], $res['slug'], $res['body'], $res['image'], $res['published'], $res['created'], $res['modified']);
         }
         else {
             return false;
@@ -80,7 +96,7 @@ class Article extends DB
         $res = $stmt->fetch();
 
         if ($res) {
-            return new Article($res["id"], $res["project_id"], $res["user_id"], $res["title"], $res["slug"], $res["body"], $res["published"], $res["created"], $res["modified"]);
+            return new Article($res['id'], $res['project_id'], $res['user_id'], $res['title'], $res['slug'], $res['body'], $res['image'], $res['published'], $res['created'], $res['modified']);
         }
         else {
             return false;

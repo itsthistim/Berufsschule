@@ -40,5 +40,19 @@ class Tag extends DB {
 
         return $data;
     }
+
+    public static function getTagsByArticle($article_id) {
+        $db = new DB();
+        $stmt = $db->pdo->prepare("SELECT tags.id, tags.title, tags.created, tags.modified FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE articles_tags.article_id = ?");
+        $stmt->execute([$article_id]);
+        $data = array();
+
+        for ($i = 0; $i < $stmt->rowCount(); $i++) {
+            $row = $stmt->fetch();
+            $data[$i] = new Tag($row["id"], $row["title"], $row["created"], $row["modified"]);
+        }
+
+        return $data;
+    }
     #endregion
 }

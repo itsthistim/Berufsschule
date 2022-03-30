@@ -1,3 +1,9 @@
+<?php
+
+const active_project = 1;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,9 +39,10 @@
       <?php include "./views/elements/index/about.php" ?>
 
       <!-- ======= Blog ======= -->
-      <?php include "./views/elements/index/blog_portfolio.php" ?>
-      <?php include "./views/elements/index/blog_features.php" ?>
-  
+      <?php include "./views/elements/index/blog_listing.php" ?>
+      <?php //include "./views/elements/index/blog_features.php" ?>
+      <?php include "./views/elements/index/topFive.php" ?>
+
       <!-- ======= Cta Section ======= -->
       <?php //include "./views/elements/index/cta.php" ?>
 

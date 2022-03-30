@@ -425,19 +425,19 @@
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-2.jpg" alt="">
-                    <h4><a href="./blog-music-system.php">Music System</a></h4>
+                    <h4><a href="./music-system.php">Music System</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-3.jpg" alt="">
-                    <h4><a href="./blog-image-manipulation.php">Image Manipulation</a></h4>
+                    <h4><a href="./image-manipulation.php">Image Manipulation</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-4.jpg" alt="">
-                    <h4><a href="./blog-message-intents.php">Message Intents</a></h4>
+                    <h4><a href="./message-intents.php">Message Intents</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 
@@ -449,7 +449,7 @@
 
                   <div class="post-item clearfix">
                     <img src="../assets/img/blog/blog-recent-1.jpg" alt="">
-                    <h4><a href="./blog-rewrite-optimization.php">Rewrite & Optimization</a></h4>
+                    <h4><a href="./rewrite-optimization.php">Rewrite & Optimization</a></h4>
                     <time datetime="2022-01-01">Jan 1, 2022</time>
                   </div>
 

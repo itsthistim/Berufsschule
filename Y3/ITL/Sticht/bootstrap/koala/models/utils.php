@@ -10,4 +10,13 @@ class Utils extends DB
 
         return $stmt->fetch()["AUTO_INCREMENT"];
     }
+
+    public function truncate($body, $length) {
+        $body = strip_tags($body);  
+        $body = substr($body, 0, $length);
+        $body = substr($body, 0, strrpos($body, ' '));
+        $body = $body."...";
+
+        return $body;
+    }
 }

@@ -34,7 +34,7 @@
     "discord.removeRemoteRepository": true,
     "discord.lowerDetailsEditing": "",
     "discord.lowerDetailsNoWorkspaceFound": "",
-    "discord.enabled": true,
+    "discord.enabled": false,
     "surround.with.region": {
         "label": "#region",
         "description": "#region $regionName ... #endregion",
