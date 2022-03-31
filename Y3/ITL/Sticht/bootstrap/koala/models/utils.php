@@ -11,11 +11,12 @@ class Utils extends DB
         return $stmt->fetch()["AUTO_INCREMENT"];
     }
 
-    public function truncate($body, $length) {
-        $body = strip_tags($body);  
+    public function truncate($body, $length)
+    {
+        $body = strip_tags($body);
         $body = substr($body, 0, $length);
         $body = substr($body, 0, strrpos($body, ' '));
-        $body = $body."...";
+        $body = $body . "...";
 
         return $body;
     }
@@ -42,7 +43,8 @@ class Utils extends DB
         $stmt->execute([$table, $int]);
     }
 
-    public static function resetDB() {
+    public static function resetDB()
+    {
         $db = new DB();
 
         #region drop tables, recreate tables, reset increment
@@ -146,7 +148,7 @@ class Utils extends DB
 
         $stmt = $db->pdo->prepare("INSERT INTO articles(project_id, user_id, title, slug, description, body, image, published, created, modified) VALUES(1, 1, \"Music System\", \"music-system\", \"Playing music to your friends the easy way\", \"Play high quality music in your Discord server for free. If it's on YouTube, then koala can find it!\", \"music-system.jpg\", 1, NOW(), NOW());");
         $stmt->execute();
-        
+
         $stmt = $db->pdo->prepare("INSERT INTO articles(project_id, user_id, title, slug, description, body, image, published, created, modified) VALUES(1, 1, \"Logging & Moderation\", \"logging-moderation\", \"How logging and moderation makes a better community\", \"Discord moderation bots help organize your server, act as a welcome bot for new members, and work as a Discord anti spam bot for troublemakers. koala fills all these roles and if you are working as a Discord moderator, then you try it for yourself!\", \"logging-moderation.jpg\", 1, NOW(), NOW());");
         $stmt->execute();
 
@@ -156,10 +158,10 @@ class Utils extends DB
         // tags
         $stmt = $db->pdo->prepare("INSERT INTO tags (title, created, modified) VALUES (\"API\", NOW(), NOW());");
         $stmt->execute();
-        
+
         $stmt = $db->pdo->prepare("INSERT INTO tags (title, created, modified) VALUES (\"Categories\", NOW(), NOW());");
         $stmt->execute();
-        
+
         $stmt = $db->pdo->prepare("INSERT INTO tags (title, created, modified) VALUES (\"Misc\", NOW(), NOW());");
         $stmt->execute();
 
@@ -181,6 +183,6 @@ class Utils extends DB
 
         $stmt = $db->pdo->prepare("INSERT INTO articles_tags (article_id, tag_id) VALUES (6, 1);");
         $stmt->execute();
-        #endregion
+    #endregion
     }
 }
