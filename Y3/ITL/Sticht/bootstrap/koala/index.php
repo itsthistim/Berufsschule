@@ -7,11 +7,11 @@ require_once "./models/article.php";
 require_once "./models/project.php";
 require_once "./models/tag.php";
 
-// $newArticle = new Article(Utils::nextId("articles"), 1, 1, "TEST TITLE", "blog", "This is a test article", "This is the body of the test article", "message-intents.jpg", 1, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
+const active_project = 1;
+// $newArticle = new Article(Utils::nextId("articles"), active_project, 1, "TEST TITLE", "blog", "This is a test article", "This is the body of the test article", "message-intents.jpg", 1, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
 // $newArticle->insert();
 
-// Utils::resetDB();
-const active_project = 1;
+//Utils::resetDB();
 
 ?>
 

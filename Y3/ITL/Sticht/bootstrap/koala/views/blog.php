@@ -196,7 +196,7 @@
                 <div>
                   <h4>blog-author-name</h4>
                   <div class="social-links">
-                    <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
+                    <a href="https://twitter.com/#"><i class="bi bi-twitter"></i></a>
                     <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
                     <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
                   </div>

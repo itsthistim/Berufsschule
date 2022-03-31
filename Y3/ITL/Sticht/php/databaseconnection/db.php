@@ -2,11 +2,11 @@
 
 class Database
 {
-    public $db_host = "127.0.0.1";
-    public $db_user = "root";
-    public $db_database = "blog_cms";
-    public $db_password = "";
-    public $pdo;
+    private $db_host = "127.0.0.1";
+    private $db_user = "root";
+    private $db_database = "blog_cms";
+    private $db_password = "";
+    protected $pdo;
 
     function __construct()
     {

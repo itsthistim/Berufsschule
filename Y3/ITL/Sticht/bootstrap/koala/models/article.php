@@ -54,7 +54,7 @@ class Article extends DB
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
             $row = $stmt->fetch();
-            $data[$i] = new Article($row["id"], $row["project_id"], $row["user_id"], $row["title"], $row["slug"], $row["description"], $row["body"], $row["image"], $row["published"], $row["created"], $row["modified"]);
+            $data[$i] = new Article($row['id'], $row['project_id'], $row['user_id'], $row['title'], $row['slug'], $row['description'], $row['body'], $row['image'], $row['published'], $row['created'], $row['modified']);
         }
 
         return $data;
@@ -64,12 +64,13 @@ class Article extends DB
     {
         $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM articles ORDER BY created DESC LIMIT ?");
-        $stmt->execute([$amount]);
+        $stmt->bindParam(1, $amount, PDO::PARAM_INT);
+        $stmt->execute();
         $data = array();
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
             $row = $stmt->fetch();
-            $data[$i] = new Article($row["id"], $row["project_id"], $row["user_id"], $row["title"], $row["slug"], $row["description"], $row["body"], $row["image"], $row["published"], $row["created"], $row["modified"]);
+            $data[$i] = new Article($row['id'], $row['project_id'], $row['user_id'], $row['title'], $row['slug'], $row['description'], $row['body'], $row['image'], $row['published'], $row['created'], $row['modified']);
         }
 
         return $data;

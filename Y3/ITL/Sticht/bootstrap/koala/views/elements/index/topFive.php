@@ -7,7 +7,7 @@
             <div class="carousel-indicators">
 
                 <?php
-                $articles = Article::getArticles();
+                $articles = Article::getMostRecent(5);
                 $i = 0;
                 foreach ($articles as $article) {
                     ?>
@@ -25,7 +25,6 @@
             <div class="carousel-inner">
 
                 <?php
-                $articles = Article::getArticles();
                 $i = 0;
                 foreach ($articles as $article) {
                     ?>
