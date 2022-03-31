@@ -18,9 +18,16 @@ require_once "./models/article.php";
         <ul id="portfolio-flters">
           <li data-filter="*" class="filter-active">All</li>
           <!-- todo: get tags from db -->
-          <li data-filter=".filter-API">API</li>
+          <?php
+          $tags = Tag::getTags();
+          foreach ($tags as $tag) {
+            echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
+          }
+          ?>
+          
+          <!-- <li data-filter=".filter-API">API</li>
           <li data-filter=".filter-Categories">Categories</li>
-          <li data-filter=".filter-Misc">Misc</li>
+          <li data-filter=".filter-Misc">Misc</li> -->
         </ul>
       </div>
     </div>

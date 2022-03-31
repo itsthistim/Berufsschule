@@ -52,9 +52,13 @@
         // insert new article
         if (isset($_POST['submit'])) {
             try {
-                $article->insert($_POST['project'], $_POST['user'], $_POST['title'], $_POST['slug'], $_POST['body'], isset($_POST['published']) ? 0 : 1, date("Y-m-d H-i-s"), date("Y-m-d H-i-s"));
-                echo "<p style=\"color: green\">Inserted new article.</p>";
-            } catch (PDOException $e) {
+                if ($article->insert($_POST['project'], $_POST['user'], $_POST['title'], $_POST['slug'], "", "", $_POST['body'], isset($_POST['published']) ? 0 : 1, date("Y-m-d H-i-s"), date("Y-m-d H-i-s"))) {
+                    echo "<p style=\"color: green\">Inserted new article.</p>";
+                }
+                else {
+                    throw new PDOException("Insert failed.");
+                }
+            } catch (Exception $e) {
                 echo "<p style=\"color: red\">" . $e->getMessage() . "</p>";
             }
         }
