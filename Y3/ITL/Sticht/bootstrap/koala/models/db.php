@@ -5,7 +5,7 @@ class DB
     private $db_name = "blog_cms";
     private $db_user = "root";
     private $db_password = "";
-    
+
     protected $pdo;
 
     public function __construct()
