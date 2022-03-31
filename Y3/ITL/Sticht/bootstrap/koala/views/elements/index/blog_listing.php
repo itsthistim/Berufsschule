@@ -17,7 +17,6 @@ require_once "./models/article.php";
       <div class="col-lg-12">
         <ul id="portfolio-flters">
           <li data-filter="*" class="filter-active">All</li>
-          <!-- todo: get tags from db -->
           <?php
           $tags = Tag::getTags();
           foreach ($tags as $tag) {

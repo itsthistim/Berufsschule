@@ -18,9 +18,6 @@
                     $i++;
                 }
                 ?>
-                <!-- <button type="button" data-bs-target="#topFiveCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#topFiveCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-                <button type="button" data-bs-target="#topFiveCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button> -->
             </div>
             <div class="carousel-inner">
 
