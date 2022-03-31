@@ -12,7 +12,6 @@ const active_project = 1;
 // $newArticle->insert();
 
 //Utils::resetDB();
-
 ?>
 
 <!DOCTYPE html>
