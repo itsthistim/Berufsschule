@@ -632,11 +632,60 @@ section {
 }
 
 /*--------------------------------------------------------------
+# article table
+--------------------------------------------------------------*/
+.article-table {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px #DDEEEE;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
+}
+.article-table thead th {
+  background-color: #DDEFEF;
+  border: solid 1px #DDEEEE;
+  color: #111;
+  padding: 10px;
+  text-align: left;
+}
+.article-table tbody td {
+  border: solid 1px #DDEEEE;
+  color: #fff;
+  padding: 10px;
+}
+
+.table-button {
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.table-button:hover {
+  background: #9babb3;
+  border: 2px solid #9babb3;
+}
+
+
+/*--------------------------------------------------------------
 # TopFive Carousel
 --------------------------------------------------------------*/
 .carousel-item p {
   color: #fff;
   /* font-weight: 600; */
+}
+
+.carousel-item:hover img {
+  opacity: 0.4;
 }
 
 /*--------------------------------------------------------------

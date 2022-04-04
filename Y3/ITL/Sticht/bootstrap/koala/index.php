@@ -11,7 +11,7 @@ const active_project = 1;
 // $newArticle = new Article(Utils::nextId("articles"), active_project, 1, "TEST TITLE", "blog", "This is a test article", "This is the body of the test article", "message-intents.jpg", 1, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
 // $newArticle->insert();
 
-//Utils::resetDB();
+// Utils::resetDB();
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +31,7 @@ const active_project = 1;
     <link href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/koala_1f428.png"
       rel="apple-touch-icon">
 
+    <!-- ======= Body Begin ======= -->
     <?php include "./views/elements/index/body_begin.php" ?>
 
   </head>
@@ -43,8 +44,8 @@ const active_project = 1;
     <!-- ======= Hero Section ======= -->
     <?php include "./views/elements/index/hero.php" ?>
 
+    <!-- ======= Main ======= -->
     <main id="main">
-
       <?php // phpinfo(); ?>
 
       <!-- ======= About Section ======= -->
@@ -56,17 +57,13 @@ const active_project = 1;
       <?php include "./views/elements/index/topFive.php" ?>
 
       <!-- ======= Cta Section ======= -->
-      <?php //include "./views/elements/index/cta.php" ?>
-
+      <?php // include "./views/elements/index/cta.php" ?>
     </main>
-    <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <?php include './views/elements/index/footer.php'; ?>
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
-
+    
+    <!-- ======= Body End ======= -->
     <?php include './views/elements/index/body_end.php'; ?>
 
   </body>
