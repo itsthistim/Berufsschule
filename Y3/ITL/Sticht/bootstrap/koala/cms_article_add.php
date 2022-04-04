@@ -19,7 +19,7 @@
     
     <!-- ======= Main ======= -->
     <main id="main">
-        <?php include "./views/elements/articles/article_table.php" ?>
+        <?php include "./views/elements/articles/form.php" ?>
     </main>
 
     <!-- ======= Footer ======= -->
