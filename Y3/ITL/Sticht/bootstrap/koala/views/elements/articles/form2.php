@@ -21,15 +21,10 @@
                     </div>
                     <div class="form-group mt-3">
                         <?php
-                            //$tags = Tag::getTags();
-                            //while($tag = $tags)
-                            //{
-                        ?>
-                        <input type="checkbox" name="tag_<?='$tag[\'title\']'?>"><?='$tag[\'title\']'?>
-                        <input type="checkbox" name="tag_<?='$tag[\'title\']'?>"><?='$tag[\'title\']'?>
-                        <input type="checkbox" name="tag_<?='$tag[\'title\']'?>"><?='$tag[\'title\']'?>
-                        <?php
-                        //}
+                        $tags = Tag::getTags();
+                        foreach ($tags as $tag) {
+                            echo '<input type="checkbox" name="tags[]" value="' . $tag->id . '"> ' . $tag->name . '<br>';
+                        }
                         ?>
                     </div>
                     

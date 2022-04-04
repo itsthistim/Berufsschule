@@ -1,12 +1,12 @@
 <section id="contact" class="contact">
     <div class="container">
 
-        <!-- <div class="section-title">
+        <div class="section-title">
             <h2>Articles</h2>
             <h3><span>Add</span> an article</h3>
             <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque
                 vitae autem.</p>
-        </div> -->
+        </div>
 
         <div class="row">
             <div class="col-lg-3"></div>
@@ -37,8 +37,18 @@
                     </div>
 
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="published" style="height: 15px;">
-                        <label class="form-check-label" for="published">Published</label>
+                        <input type="checkbox" class="form-check-input" id="published" name="published" style="height: 15px;"> Published
+                    </div>
+
+                    <h5>Tags</h5>
+                    <div class="form-group form-check">
+                        <?php
+                        require_once "./models/tag.php";
+                        $tags = Tag::getTags();
+                        foreach ($tags as $tag) {
+                            echo "<input type=\"checkbox\" class=\"form-check-input\" id=\"tag[]\" name=\"tags[]\" value=\"$tag->id\" style=\"height: 15px;\">" . $tag->title . "<br>";
+                        }
+                        ?>
                     </div>
 
                     <div class="text-center"><button type="submit">Send Message</button></div>
