@@ -38,6 +38,12 @@ class Article extends DB
         $stmt->execute([$this->id, $this->project_id, $this->user_id, $this->title, $this->slug, $this->description, $this->body, $this->image, $this->published, $this->created, $this->modified]);
     }
 
+    /*
+     $stmt = $this->pdo->prepare("INSERT INTO articles (project_id, user_id, title, slug, description, body, image, published, created, modified) VALUES (?,?,?,?,?,?,?,?,?,?);");
+        $stmt->execute([$this->project_id, $this->user_id, $this->title, $this->slug, $this->description, $this->body, $this->image, $this->published, $this->created, $this->modified]);
+        $this->id = $this->pdo->lastInsertId();
+    */
+
     public function delete()
     {
         $stmt = $this->pdo->prepare("DELETE FROM articles WHERE id = ?");
