@@ -38,9 +38,13 @@ class Article extends DB
         $stmt->execute([$this->id, $this->project_id, $this->user_id, $this->title, $this->slug, $this->description, $this->body, $this->image, $this->published, $this->created, $this->modified]);
     }
 
+    // delete article and its tags
     public function delete()
     {
-        $stmt = $this->pdo->prepare("DELETE FROM articles WHERE id = ?");
+        $stmt = $this->pdo->prepare("DELETE FROM articles_tags WHERE article_id = ?");
+        $stmt->execute([$this->id]);
+
+        $stmt = $this->pdo->prepare("DELETE FROM articles WHERE id = ?;");
         $stmt->execute([$this->id]);
     }
 
