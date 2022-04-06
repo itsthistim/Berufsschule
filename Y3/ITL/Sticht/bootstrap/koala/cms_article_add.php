@@ -16,7 +16,7 @@ $_SESSION['user_id'] = 1;
     <meta content="" name="keywords">
 
     <!-- ======= Body Begin ======= -->
-    <?php include "./views/elements/index/body_begin.php" ?>
+    <?php include "./views/elements/blog/body_begin.php" ?>
   </head>
 
   <body>
