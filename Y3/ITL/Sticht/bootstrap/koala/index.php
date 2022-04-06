@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "./models/db.php";
 require_once "./models/utils.php";
 require_once "./models/user.php";
@@ -8,6 +8,11 @@ require_once "./models/project.php";
 require_once "./models/tag.php";
 
 const active_project = 1;
+const user_id = 1;
+
+$SESSION['active_project'] = active_project;
+$SESSION['user_id'] = user_id;
+
 // $newArticle = new Article(Utils::nextId("articles"), active_project, 1, "TEST TITLE", "blog", "This is a test article", "This is the body of the test article", "message-intents.jpg", 1, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
 // $newArticle->insert();
 

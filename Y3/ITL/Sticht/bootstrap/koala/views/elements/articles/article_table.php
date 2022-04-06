@@ -27,7 +27,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <a class="table-button" href="./views/elements/articles/article_add_form.php">New Article</a>
+            <a class="table-button" href="./cms_article_add.php">New Article</a>
         </div>
     </div>
 </section>

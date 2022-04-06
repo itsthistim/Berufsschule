@@ -34,7 +34,7 @@ class Article extends DB
 
     public function insert()
     {
-        $stmt = $this->pdo->prepare("INSERT INTO articles (project_id, user_id, title, slug, description, body, image, published, created, modified) VALUES (?,?,?,?,?,?,?,?,?,?,?);");
+        $stmt = $this->pdo->prepare("INSERT INTO articles (id, project_id, user_id, title, slug, description, body, image, published, created, modified) VALUES (?,?,?,?,?,?,?,?,?,?,?);");
         $stmt->execute([$this->id, $this->project_id, $this->user_id, $this->title, $this->slug, $this->description, $this->body, $this->image, $this->published, $this->created, $this->modified]);
     }
 
@@ -42,6 +42,12 @@ class Article extends DB
     {
         $stmt = $this->pdo->prepare("DELETE FROM articles WHERE id = ?");
         $stmt->execute([$this->id]);
+    }
+
+    public function addTag($tag_id)
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO articles_tags (article_id, tag_id) VALUES (?,?);");
+        $stmt->execute([$this->id, $tag_id]);
     }
 
     #region statics

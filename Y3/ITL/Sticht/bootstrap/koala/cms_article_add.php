@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION['project_id'] = 1;
+$_SESSION['user_id'] = 1;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +25,7 @@
     
     <!-- ======= Main ======= -->
     <main id="main">
-        <?php include "./views/elements/articles/form.php" ?>
+      <?php include "./views/elements/articles/form.php"?>
     </main>
 
     <!-- ======= Footer ======= -->
