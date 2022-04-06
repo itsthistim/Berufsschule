@@ -9,6 +9,7 @@
                         <th>Author</th>
                         <th>Created</th>
                         <th>Modified</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,7 @@
                         <td><?php echo $article->user_id; ?></td>
                         <td><?php echo $article->created; ?></td>
                         <td><?php echo $article->modified; ?></td>
+                        <td><a href="./cms_article_update.php?id=<?= $article->id ?>">Edit</a></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
