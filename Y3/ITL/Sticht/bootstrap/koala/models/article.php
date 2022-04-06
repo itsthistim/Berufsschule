@@ -71,14 +71,6 @@ class Article extends DB
         return $stmt->fetchAll();
     }
 
-    // get all articles
-    public static function getAllArticles() {
-        $pdo = new DB();
-        $stmt = $pdo->pdo->prepare("SELECT * FROM articles");
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
     public function getById()
     {
         $stmt = $this->pdo->prepare("SELECT * FROM articles WHERE id = ?");
