@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
                             <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug"
-                                value="<?=$article->title?>" required>
+                                value="<?=$article->slug?>" required>
                         </div>
                     </div>
 
