@@ -13,6 +13,7 @@
             <div class="col-lg-6 mt-4 mt-md-0">
 
                 <form action="cms_article_update.php?id=<?=$article->id?>" method="post" class="php-email-form">
+                    <input type="hidden" name="article_id" value="<?=$article->id?>"></input>
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="text" class="form-control" name="title" id="title" placeholder="Title"
@@ -65,18 +66,16 @@
 
                     <br>
                     <div class="row">
+                        <div class="col-md-3 form-group mt-3 mt-md-0"></div>
                         <div class="col-md-3 form-group mt-3 mt-md-0">
-
+                            <div class="text-center"><button name="update" type="submit"
+                                    value="Update Article">Update</button></div>
                         </div>
                         <div class="col-md-3 form-group mt-3 mt-md-0">
-                            <div class="text-center"><button name="submit" type="submit" value="Add Article">Update</button></div>
+                            <div class="text-center"><button name="delete" type="submit"
+                                    value="Delete Article">Delete</button></div>
                         </div>
-                        <div class="col-md-3 form-group mt-3 mt-md-0">
-                            <div class="text-center"><button name="submit" type="submit" value="Add Article">Delete</button></div>
-                        </div>
-                        <div class="col-md-3 form-group mt-3 mt-md-0">
-
-                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0"></div>
                     </div>
                 </form>
             </div>
@@ -85,7 +84,7 @@
                 if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '' && $_POST['tags'] != '') {
                     
                     
-                    $newArticle = new Article($article->id, $_SESSION['project_id'], $_SESSION['user_id'], $_POST['title'], $_POST['slug'], $_POST['description'], $_POST['body'], $_POST['image'], isset($_POST['published']) ? 1 : 0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
+                    $newArticle = new Article($_POST['article_id'], $_SESSION['project_id'], $_SESSION['user_id'], $_POST['title'], $_POST['slug'], $_POST['description'], $_POST['body'], $_POST['image'], isset($_POST['published']) ? 1 : 0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
                     $success;
                     
                     try {
@@ -109,6 +108,10 @@
                         echo "<script>window.location.href = './cms_articles_list.php';</script>";
                     }
                 }
+            }
+            if (isset($_POST['delete'])) {
+                $article->delete();
+                echo "<script>window.location.href = './cms_articles_list.php';</script>";
             }
             ?>
         </div>
