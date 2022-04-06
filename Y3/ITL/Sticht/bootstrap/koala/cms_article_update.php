@@ -10,6 +10,7 @@ require_once "./models/utils.php";
 if(isset($_GET['id'])) {
   $article = Article::getById($_GET['id']);
 } else {
+  $article = Article::getById(1);
 }
 ?>
 <!DOCTYPE html>

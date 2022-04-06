@@ -55,8 +55,7 @@ foreach ($tags as $tag) {
 ?>
                     </div>
 
-                    <div class="text-center"><button name="submit" type="submit" value="Add Article">Add
-                            Article</button></div>
+                    <div class="text-center"><button name="submit" type="submit" value="Add Article">Add Article</button></div>
                 </form>
 
                 <?php
