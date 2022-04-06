@@ -8,7 +8,6 @@ require_once "./models/article.php";
 require_once "./models/utils.php";
 
 $article = Article::getArticleById($_GET['id']);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

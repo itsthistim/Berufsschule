@@ -47,59 +47,58 @@
                     <h5>Tags</h5>
                     <div class="form-group form-check">
                         <?php
-$tags = Tag::getTags();
-$articleTags = Tag::getTagsByArticle($article->id);
+                        $tags = Tag::getTags();
+                        $articleTags = Tag::getTagsByArticle($article->id);
 
-    foreach ($tags as $tag) {
-        $checked = '';
-        foreach ($articleTags as $articleTag) {
-            if ($articleTag->id == $tag->id) {
-                $checked = 'checked';
-                break;
-            }
-        }
-        echo '<input type="checkbox" style="height: 15px;" class="form-check-input" id="tag_' . $tag->id . '" name="tags[]" value="' . $tag->id . '" ' . $checked . '> ' . $tag->title . '<br>';
-    }
-?>
+                            foreach ($tags as $tag) {
+                                $checked = '';
+                                foreach ($articleTags as $articleTag) {
+                                    if ($articleTag->id == $tag->id) {
+                                        $checked = 'checked';
+                                        break;
+                                    }
+                                }
+                                echo '<input type="checkbox" style="height: 15px;" class="form-check-input" id="tag_' . $tag->id . '" name="tags[]" value="' . $tag->id . '" ' . $checked . '> ' . $tag->title . '<br>';
+                            }
+                        ?>
                     </div>
-
                     <div class="text-center"><button name="update" type="update" value="Update Article">Update
                             Article</button></div>
-                </form>
-                <?php
-                
-if (isset($_POST['update'])) {
-    if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '' && $_POST['tags'] != '') {
-        
-        
-        $newArticle = new Article($article->id, $_SESSION['project_id'], $_SESSION['user_id'], $_POST['title'], $_POST['slug'], $_POST['description'], $_POST['body'], $_POST['image'], isset($_POST['published']) ? 1 : 0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
-        $success;
-        
-        try {
-            $newArticle->update();
-            $success = true;
-        }
-        catch (PDOException $th) {
-            $success = false;
-            echo $th;
-        }
-
-        try {
-            $newArticle->updateTags($_POST['tags']);
-            $success = true;
-        } catch (PDOException $th) {
-            $success = false;
-            echo $th;
-        }
-
-        if ($success) {
-            echo "<script>window.location.href = './cms_articles_list.php';</script>";
-        }
-    }
-}
-?>
             </div>
+            </form>
+            <?php
+            if (isset($_POST['update'])) {
+                if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '' && $_POST['tags'] != '') {
+                    
+                    
+                    $newArticle = new Article($article->id, $_SESSION['project_id'], $_SESSION['user_id'], $_POST['title'], $_POST['slug'], $_POST['description'], $_POST['body'], $_POST['image'], isset($_POST['published']) ? 1 : 0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
+                    $success;
+                    
+                    try {
+                        $newArticle->update();
+                        $success = true;
+                    }
+                    catch (PDOException $th) {
+                        $success = false;
+                        echo $th;
+                    }
+
+                    try {
+                        $newArticle->updateTags($_POST['tags']);
+                        $success = true;
+                    } catch (PDOException $th) {
+                        $success = false;
+                        echo $th;
+                    }
+
+                    if ($success) {
+                        echo "<script>window.location.href = './cms_articles_list.php';</script>";
+                    }
+                }
+            }
+            ?>
         </div>
+    </div>
 
     </div>
 </section>
