@@ -62,7 +62,7 @@ foreach ($tags as $tag) {
                 <?php
 if (isset($_POST['submit'])) {
     if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '') {
-        if (Article::getArticleBySlug($_POST['slug']) !== false) {
+        if (Article::getBySlug($_POST['slug']) !== false) {
             echo "<p>Article with this slug already exists!</p>";
         }
         else {

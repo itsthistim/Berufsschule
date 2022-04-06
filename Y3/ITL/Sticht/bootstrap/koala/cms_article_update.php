@@ -7,7 +7,10 @@ require_once "./models/tag.php";
 require_once "./models/article.php";
 require_once "./models/utils.php";
 
-$article = Article::getArticleById($_GET['id']);
+if(isset($_GET['id'])) {
+  $article = Article::getById($_GET['id']);
+} else {
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
