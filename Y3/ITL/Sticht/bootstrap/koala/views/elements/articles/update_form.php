@@ -15,10 +15,12 @@
                 <form action="cms_article_update.php?id=<?=$article->id?>" method="post" class="php-email-form">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" name="title" id="title" placeholder="Title" value="<?=$article->title?>" required>
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Title"
+                                value="<?=$article->title?>" required>
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug" value="<?=$article->slug?>" required>
+                            <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug"
+                                value="<?=$article->slug?>" required>
                         </div>
                     </div>
 
@@ -60,12 +62,24 @@
                             }
                         ?>
                     </div>
-                    <div class="text-center"><button name="submit" type="submit" value="Update Article">Update Article</button></div>
 
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
 
-                    
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <div class="text-center"><button name="submit" type="submit" value="Add Article">Update</button></div>
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+                            <div class="text-center"><button name="submit" type="submit" value="Add Article">Delete</button></div>
+                        </div>
+                        <div class="col-md-3 form-group mt-3 mt-md-0">
+
+                        </div>
+                    </div>
+                </form>
             </div>
-            </form>
             <?php
             if (isset($_POST['submit'])) {
                 if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '' && $_POST['tags'] != '') {
