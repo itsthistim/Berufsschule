@@ -12,44 +12,44 @@
             <div class="col-lg-3"></div>
             <div class="col-lg-6 mt-4 mt-md-0">
 
-                <form action="cms_article_update.php?id=<?=$article->id?>" method="post" class="php-email-form">
-                    <input type="hidden" name="article_id" value="<?=$article->id?>"></input>
+                <form action="cms_article_update.php?id=<?=$updatearticle->id?>" method="post" class="php-email-form">
+                    <input type="hidden" name="article_id" value="<?=$updatearticle->id?>"></input>
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="text" class="form-control" name="title" id="title" placeholder="Title"
-                                value="<?=$article->title?>" required>
+                                value="<?=$updatearticle->title?>" required>
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
                             <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug"
-                                value="<?=$article->slug?>" required>
+                                value="<?=$updatearticle->slug?>" required>
                         </div>
                     </div>
 
                     <div class="form-group mt-3">
                         <input type="text" class="form-control" name="description" id="description"
-                            placeholder="Description" value="<?=$article->description?>" required>
+                            placeholder="Description" value="<?=$updatearticle->description?>" required>
                     </div>
 
                     <div class="form-group mt-3">
                         <textarea class="form-control" name="body" rows="5" placeholder="Body"
-                            required><?=$article->body?></textarea>
+                            required><?=$updatearticle->body?></textarea>
                     </div>
 
                     <div class="form-group mt-3">
                         <input type="text" class="form-control" name="image" id="image" placeholder="Image"
-                            value="<?=$article->image?>">
+                            value="<?=$updatearticle->image?>">
                     </div>
 
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="published" name="published"
-                            value="<?=$article->published ? 'checked' : ''?>" style="height: 15px;"> Published
+                            value="<?=$updatearticle->published ? 'checked' : ''?>" style="height: 15px;"> Published
                     </div>
 
                     <h5>Tags</h5>
                     <div class="form-group form-check">
                         <?php
                         $tags = Tag::getTags();
-                        $articleTags = Tag::getTagsByArticle($article->id);
+                        $articleTags = Tag::getTagsByArticle($updatearticle->id);
 
                             foreach ($tags as $tag) {
                                 $checked = '';
@@ -80,7 +80,7 @@
                 </form>
             </div>
             <?php
-            if (isset($_POST['submit'])) {
+            if (isset($_POST['update'])) {
                 if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '' && $_POST['tags'] != '') {
                     
                     
@@ -110,7 +110,7 @@
                 }
             }
             if (isset($_POST['delete'])) {
-                $article->delete();
+                $updatearticle->delete();
                 echo "<script>window.location.href = './cms_articles_list.php';</script>";
             }
             ?>

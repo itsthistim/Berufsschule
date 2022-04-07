@@ -19,8 +19,8 @@
                                 <?php
                                 require_once './models/article.php';
                                 $articles = Article::getArticles();
-                                foreach ($articles as $article) {
-                                  echo "<li><a href='./views/$article->slug.php'>$article->title</a></li>";
+                                foreach ($articles as $currarticle) {
+                                  echo "<li><a href='./views/$currarticle->slug.php'>$currarticle->title</a></li>";
                                 }
                                 ?>
                             </ul>

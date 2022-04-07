@@ -7,7 +7,12 @@ require_once "./models/tag.php";
 require_once "./models/article.php";
 require_once "./models/utils.php";
 
-$article = Article::getById($_GET['id']);
+if (isset($_GET['id'])) {
+  $updatearticle = Article::getById($_GET['id']);
+} else {
+  echo "<script>window.location.href = './cms_articles_list.php';</script>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
