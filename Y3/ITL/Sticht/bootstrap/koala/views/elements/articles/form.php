@@ -55,14 +55,13 @@ foreach ($tags as $tag) {
 ?>
                     </div>
 
-                    <div class="text-center"><button name="submit" type="submit" value="Add Article">Add
-                            Article</button></div>
+                    <div class="text-center"><button name="submit" type="submit" value="Add Article">Add Article</button></div>
                 </form>
 
                 <?php
 if (isset($_POST['submit'])) {
-    if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '' && $_POST['tags'] != '') {
-        if (Article::getArticleBySlug($_POST['slug']) !== false) {
+    if ($_POST['title'] != '' && $_POST['slug'] != '' && $_POST['description'] != '' && $_POST['body'] != '') {
+        if (Article::getBySlug($_POST['slug']) !== false) {
             echo "<p>Article with this slug already exists!</p>";
         }
         else {

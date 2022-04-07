@@ -32,13 +32,13 @@ class Article extends DB
     }
     #endregion
 
+    #region insert, delete, update
     public function insert()
     {
         $stmt = $this->pdo->prepare("INSERT INTO articles (id, project_id, user_id, title, slug, description, body, image, published, created, modified) VALUES (?,?,?,?,?,?,?,?,?,?,?);");
         $stmt->execute([$this->id, $this->project_id, $this->user_id, $this->title, $this->slug, $this->description, $this->body, $this->image, $this->published, $this->created, $this->modified]);
     }
 
-    // delete article and its tags
     public function delete()
     {
         $stmt = $this->pdo->prepare("DELETE FROM articles_tags WHERE article_id = ?");
@@ -52,8 +52,9 @@ class Article extends DB
         $stmt = $this->pdo->prepare("UPDATE articles SET project_id = ?, user_id = ?, title = ?, slug = ?, description = ?, body = ?, image = ?, published = ?, created = ?, modified = ? WHERE id = ?");
         $stmt->execute([$this->project_id, $this->user_id, $this->title, $this->slug, $this->description, $this->body, $this->image, $this->published, $this->created, $this->modified, $this->id]);
     }
+    #endregion
 
-    // update tags of article
+    #region tags
     public function updateTags($tags) {
         $stmt = $this->pdo->prepare("DELETE FROM articles_tags WHERE article_id = ?");
         $stmt->execute([$this->id]);
@@ -64,46 +65,9 @@ class Article extends DB
         }
     }
 
-    // get tags of article
     public function getTags() {
         $stmt = $this->pdo->prepare("SELECT t.id, t.name FROM tags t INNER JOIN articles_tags at ON t.id = at.tag_id WHERE at.article_id = ?");
         $stmt->execute([$this->id]);
-        return $stmt->fetchAll();
-    }
-
-    // get all articles
-    public static function getAllArticles() {
-        $pdo = new DB();
-        $stmt = $pdo->pdo->prepare("SELECT * FROM articles");
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
-    public function getById()
-    {
-        $stmt = $this->pdo->prepare("SELECT * FROM articles WHERE id = ?");
-        $stmt->execute([$this->id]);
-        return $stmt->fetch();
-    }
-
-    public function getBySlug()
-    {
-        $stmt = $this->pdo->prepare("SELECT * FROM articles WHERE slug = ?");
-        $stmt->execute([$this->slug]);
-        return $stmt->fetch();
-    }
-
-    public function getByProjectId()
-    {
-        $stmt = $this->pdo->prepare("SELECT * FROM articles WHERE project_id = ?");
-        $stmt->execute([$this->project_id]);
-        return $stmt->fetchAll();
-    }
-
-    public function getByUserId()
-    {
-        $stmt = $this->pdo->prepare("SELECT * FROM articles WHERE user_id = ?");
-        $stmt->execute([$this->user_id]);
         return $stmt->fetchAll();
     }
 
@@ -112,8 +76,8 @@ class Article extends DB
         $stmt = $this->pdo->prepare("INSERT INTO articles_tags (article_id, tag_id) VALUES (?,?);");
         $stmt->execute([$this->id, $tag_id]);
     }
+    #endregion
 
-    #region statics
     public static function getArticles()
     {
         $db = new DB();
@@ -145,7 +109,7 @@ class Article extends DB
         return $data;
     }
 
-    public static function getArticleById($id)
+    public static function getById($id)
     {
 
         $db = new DB();
@@ -161,7 +125,7 @@ class Article extends DB
         }
     }
 
-    public static function getArticleBySlug($slug)
+    public static function getBySlug($slug)
     {
         $db = new DB();
         $stmt = $db->pdo->prepare("SELECT * FROM articles WHERE slug = ?");
@@ -175,5 +139,18 @@ class Article extends DB
             return false;
         }
     }
-#endregion
+
+    public function getByProjectId()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM articles WHERE project_id = ?");
+        $stmt->execute([$this->project_id]);
+        return $stmt->fetchAll();
+    }
+
+    public function getByUserId()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM articles WHERE user_id = ?");
+        $stmt->execute([$this->user_id]);
+        return $stmt->fetchAll();
+    }
 }

@@ -48,8 +48,8 @@ class Utils extends DB
         $db = new DB();
 
         #region drop tables, recreate tables, reset increment
-        $stmt = $db->pdo->prepare("SET GLOBAL information_schema_stats_expiry = 0;");
-        $stmt->execute();
+        //$stmt = $db->pdo->prepare("SET GLOBAL information_schema_stats_expiry = 0;");
+        //$stmt->execute();
         
         // drop tables
         $stmt = $db->pdo->prepare("SET FOREIGN_KEY_CHECKS = 0;");

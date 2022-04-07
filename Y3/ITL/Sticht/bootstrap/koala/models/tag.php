@@ -60,5 +60,16 @@ class Tag extends DB
 
         return $data;
     }
+
+    public static function getById($id)
+    {
+        $db = new DB();
+        $stmt = $db->pdo->prepare("SELECT * FROM tags WHERE id = ?");
+        $stmt->execute([$id]);
+        $row = $stmt->fetch();
+        $data = new Tag($row["id"], $row["title"], $row["created"], $row["modified"]);
+
+        return $data;
+    }
 #endregion
 }
