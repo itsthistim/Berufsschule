@@ -9,7 +9,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li class="dropdown"><a class="nav-link scrollto active" href="#"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="./cms_article_add.php">Add Article</a></li>
                         <li><a href="./cms_articles_list.php">List Articles</a></li>
