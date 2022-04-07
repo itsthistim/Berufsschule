@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
             }
 
             if ($success) {
-                echo "<script>window.location.href = './cms_articles_list.php';</script>";
+                echo "<script>window.location.href = './index.php';</script>";
             }
         }
     }

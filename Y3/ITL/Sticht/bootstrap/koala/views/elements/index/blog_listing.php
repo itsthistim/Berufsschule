@@ -39,13 +39,12 @@ require_once "./models/article.php";
         $tags = Tag::getTagsByArticle($article->id);
         
         $tags_string = "";
-        
         foreach ($tags as $tag) {
-          $tags_string .= $tag->title . " ";
+          $tags_string .= "filter-$tag->title ";
         }
         
         ?>
-        <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $tags_string; ?>">
+        <div class="col-lg-4 col-md-6 portfolio-item <?php echo "filter-$tags_string"; ?>">
           <div class="portfolio-wrap">
             <figure>
               <img src="<?php echo "assets/img/portfolio/$article->image"; ?>" class="img-fluid" alt="">

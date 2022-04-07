@@ -103,13 +103,13 @@
                     }
 
                     if ($success) {
-                        echo "<script>window.location.href = './cms_articles_list.php';</script>";
+                        echo "<script>window.location.href = './index.php';</script>";
                     }
                 }
             }
             if (isset($_POST['delete'])) {
                 $updatearticle->delete();
-                echo "<script>window.location.href = './cms_articles_list.php';</script>";
+                echo "<script>window.location.href = './index.php';</script>";
             }
             ?>
         </div>
