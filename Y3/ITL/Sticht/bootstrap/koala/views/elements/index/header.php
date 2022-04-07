@@ -9,13 +9,13 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li class="dropdown"><a href="#"><span>Tools</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="#" class="nav-link scrollto active"><span>Home</span>
+                        <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="./cms_article_add.php">Add Article</a></li>
                         <li><a href="./cms_articles_list.php">List Articles</a></li>
-                        <li class="dropdown"><a href="#"><span>All Articles</span> <i class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>All Articles</span> <i
+                                    class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <?php
                                 $articles = Article::getArticles();
@@ -28,13 +28,8 @@
                         <li><a href="./cms_reset.php">Reset Database</a></li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto " href="#blog_listing">Blog Entries</a></li>
-                <!-- <li>
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onchange="changeview(this)">
-            <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-          </div>
-        </li> -->
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>

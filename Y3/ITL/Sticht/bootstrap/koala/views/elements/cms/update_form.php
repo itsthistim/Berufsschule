@@ -68,12 +68,10 @@
                     <div class="row">
                         <div class="col-md-3 form-group mt-3 mt-md-0"></div>
                         <div class="col-md-3 form-group mt-3 mt-md-0">
-                            <div class="text-center"><button name="update" type="submit"
-                                    value="Update Article">Update</button></div>
+                            <div class="text-center"><button name="update" type="submit" value="Update Article">Update</button></div>
                         </div>
                         <div class="col-md-3 form-group mt-3 mt-md-0">
-                            <div class="text-center"><button name="delete" type="submit"
-                                    value="Delete Article">Delete</button></div>
+                            <div class="text-center"><button name="delete" type="submit" value="Delete Article">Delete</button></div>
                         </div>
                         <div class="col-md-3 form-group mt-3 mt-md-0"></div>
                     </div>
