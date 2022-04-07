@@ -21,11 +21,11 @@ $_SESSION['user_id'] = 1;
 
   <body>
     <!-- ======= Header ======= -->
-    <?php include "./views/elements/articles/header.php" ?>
+    <?php include "./views/elements/cms/header.php" ?>
     
     <!-- ======= Main ======= -->
     <main id="main">
-      <?php include "./views/elements/articles/form.php"?>
+      <?php include "./views/elements/cms/form.php"?>
     </main>
 
     <!-- ======= Footer ======= -->

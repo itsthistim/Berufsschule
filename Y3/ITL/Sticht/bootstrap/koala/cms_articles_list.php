@@ -15,11 +15,11 @@
 
   <body>
     <!-- ======= Header ======= -->
-    <?php include "./views/elements/articles/header.php" ?>
+    <?php include "./views/elements/cms/header.php" ?>
     
     <main id="main">
         <!-- ======= Article Table ======= -->
-        <?php include "./views/elements/articles/article_table.php" ?>
+        <?php include "./views/elements/cms/article_table.php" ?>
     </main>
 
     <!-- ======= Footer ======= -->

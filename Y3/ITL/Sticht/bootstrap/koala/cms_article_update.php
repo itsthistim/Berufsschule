@@ -31,11 +31,11 @@ if (isset($_GET['id'])) {
 
   <body>
     <!-- ======= Header ======= -->
-    <?php include "./views/elements/articles/header.php" ?>
+    <?php include "./views/elements/cms/header.php" ?>
     
     <!-- ======= Main ======= -->
     <main id="main">
-      <?php include "./views/elements/articles/update_form.php"?>
+      <?php include "./views/elements/cms/update_form.php"?>
     </main>
 
     <!-- ======= Footer ======= -->
