@@ -413,7 +413,7 @@
                     <button type="submit"><i class="bi bi-search"></i></button>
                   </form>
                 </div>
-                <!-- End sidebar search formn-->
+                <!-- End sidebar search form-->
 
                 <h3 class="sidebar-title">Other Posts</h3>
                 <div class="sidebar-item recent-posts">

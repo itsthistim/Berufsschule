@@ -93,6 +93,21 @@ class Article extends DB
         return $data;
     }
 
+    public static function getBySearch($search)
+    {
+        $db = new DB();
+        $stmt = $db->pdo->prepare("SELECT * FROM articles WHERE title LIKE ? OR slug LIKE ? OR description LIKE ? OR body LIKE ?");
+        $stmt->execute(["%$search%", "%$search%", "%$search%"]);
+        $data = array();
+
+        for ($i = 0; $i < $stmt->rowCount(); $i++) {
+            $row = $stmt->fetch();
+            $data[$i] = new Article($row['id'], $row['project_id'], $row['user_id'], $row['title'], $row['slug'], $row['description'], $row['body'], $row['image'], $row['published'], $row['created'], $row['modified']);
+        }
+
+        return $data;
+    }
+
     public static function getMostRecent($amount)
     {
         $db = new DB();

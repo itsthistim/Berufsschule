@@ -3,38 +3,56 @@ require_once "./models/user.php";
 require_once "./models/utils.php";
 require_once "./models/tag.php";
 require_once "./models/article.php";
-
 ?>
 
 <section id="blog_listing" class="portfolio">
-  <div class="container">
+    <div class="container">
 
-    <div class="section-title">
-      <h2>Blog Entries</h2>
-    </div>
+        <div class="section-title">
+            <h2>Blog Entries</h2>
+        </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <ul id="portfolio-flters">
-          <li data-filter="*" class="filter-active">All</li>
-          <?php
-          $tags = Tag::getTags();
-          foreach ($tags as $tag) {
-            echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
-          }
-          ?>
-          
-          <!-- <li data-filter=".filter-API">API</li>
-          <li data-filter=".filter-Categories">Categories</li>
-          <li data-filter=".filter-Misc">Misc</li> -->
-        </ul>
-      </div>
-    </div>
+        <!-- search form -->
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="article-search-form col-md-4">
+                <form action="./index.php#blog_listing" method="post">
+                    <?php
+                      $searchtext = isset($_POST["anrede"]) ? $_POST["anrede"] : '';
+                    ?>
+                    <input type="text" name="search" value="<?=$searchtext?>">
+                    <button type="submit"><i class="bi bi-search"></i></button>
 
-    <div class="row portfolio-container">
+                    <?php
+                      if(isset($_POST["search"])) {
+                        $_SESSION["search_text"] = $_POST["search"];
+                      } else {
+                        $_SESSION["search_text"] = '';
+                      }
+                    ?>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 
-      <?php
-      $articles = Article::getArticles();
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul id="portfolio-flters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <?php
+                      $tags = Tag::getTags();
+                      foreach ($tags as $tag) {
+                        echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
+                      }
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+            <?php
       foreach ($articles as $article) {
         $tags = Tag::getTagsByArticle($article->id);
         
@@ -44,117 +62,26 @@ require_once "./models/article.php";
         }
         
         ?>
-        <div class="col-lg-4 col-md-6 portfolio-item <?php echo "filter-$tags_string"; ?>">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="<?php echo "assets/img/portfolio/$article->image"; ?>" class="img-fluid" alt="">
-              <a href="<?php echo "assets/img/portfolio/$article->image"; ?>" class="link-preview" data-lightbox="portfolio" data-title="<?php echo $article->title; ?>" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="<?php echo "./views/$article->slug.php"; ?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
+            <div class="col-lg-4 col-md-6 portfolio-item <?php echo "$tags_string"; ?>">
+                <div class="portfolio-wrap">
+                    <figure>
+                        <img src="<?php echo "assets/img/portfolio/$article->image"; ?>" class="img-fluid" alt="">
+                        <a href="<?php echo "assets/img/portfolio/$article->image"; ?>" class="link-preview"
+                            data-lightbox="portfolio" data-title="<?php echo $article->title; ?>" title="Preview"><i
+                                class="ion ion-eye"></i></a>
+                        <a href="<?php echo "./views/$article->slug.php"; ?>" class="link-details"
+                            title="More Details"><i class="ion ion-android-open"></i></a>
+                    </figure>
 
-            <div class="portfolio-info">
-              <h4><a href="<?php echo "./views/$article->slug.php"; ?>"><?php echo $article->title; ?></a></h4>
-              <p><?php echo $article->description ?></p>
+                    <div class="portfolio-info">
+                        <h4><a href="<?php echo "./views/$article->slug.php"; ?>"><?php echo $article->title; ?></a>
+                        </h4>
+                        <p><?php echo $article->description ?></p>
+                    </div>
+                </div>
             </div>
-          </div>
+            <?php } ?>
         </div>
-      <?php } ?>
-
-<!--
-       <div class="col-lg-4 col-md-6 portfolio-item filter-api">
-        <div class="portfolio-wrap">
-          <img src="assets/img/portfolio/slashcommands.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h3><a href="assets/img/portfolio/slashcommands.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="Slash Commands">Slash Commands</a></h3>
-            <div>
-              <a href="assets/img/portfolio/slashcommands.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="Slash Commands"><i class="bi bi-plus"></i></a>
-              <a href="./views/blog-slash-commands.php" title="Slash Commands"><i class="bi bi-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-api">
-        <div class="portfolio-wrap">
-          <img src="assets/img/portfolio/messages_blue.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h3><a href="assets/img/portfolio/messages_blue.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="Message Intents">Message Intents</a></h3>
-            <div>
-              <a href="assets/img/portfolio/messages_blue.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="Message Intents"><i class="bi bi-plus"></i></a>
-              <a href="./views/message-intents.php" title="Message Intents"><i class="bi bi-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-categories">
-        <div class="portfolio-wrap">
-          <img src="assets/img/portfolio/music.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h3><a href="assets/img/portfolio/music.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                title="Music System">Music System</a></h3>
-            <div>
-              <a href="assets/img/portfolio/music.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                title="Music System"><i class="bi bi-plus"></i></a>
-              <a href="./views/music-system.php" title="Music System"><i class="bi bi-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-commands">
-        <div class="portfolio-wrap">
-          <img src="assets/img/portfolio/internationalization.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h3><a href="assets/img/portfolio/internationalization.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="Internationalization & Languages">Internationalization & Languages</a>
-            </h3>
-            <div>
-              <a href="assets/img/portfolio/internationalization.jpg" data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="Internationalization & Languages"><i class="bi bi-plus"></i></a>
-              <a href="./views/internationalization-languages.php" title="Internationalization & Languages"><i
-                  class="bi bi-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-categories">
-        <div class="portfolio-wrap">
-          <img src="assets/img/portfolio/art.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h3><a href="assets/img/portfolio/art.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                title="Image Manipulation">Image Manipulation</a></h3>
-            <div>
-              <a href="assets/img/portfolio/art.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                title="Image Manipulation"><i class="bi bi-plus"></i></a>
-              <a href="./views/image-manipulation.php" title="Image Manipulation"><i class="bi bi-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-commands">
-        <div class="portfolio-wrap">
-          <img src="assets/img/portfolio/street.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h3><a href="assets/img/portfolio/street.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                title="Web 1">Rewrite & Optimization</a></h3>
-            <div>
-              <a href="assets/img/portfolio/street.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                title="Web 1"><i class="bi bi-plus"></i></a>
-              <a href="./views/rewrite-optimization.php" title="Rewrite & Optimization"><i
-                  class="bi bi-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
     </div>
-
-  </div>
 </section>

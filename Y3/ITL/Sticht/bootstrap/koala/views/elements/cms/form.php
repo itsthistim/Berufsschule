@@ -44,15 +44,15 @@
                     <h5>Tags</h5>
                     <div class="form-group form-check">
                         <?php
-require_once "./models/tag.php";
-require_once "./models/article.php";
-require_once "./models/utils.php";
+                        require_once "./models/tag.php";
+                        require_once "./models/article.php";
+                        require_once "./models/utils.php";
 
-$tags = Tag::getTags();
-foreach ($tags as $tag) {
-    echo "<input type=\"checkbox\" class=\"form-check-input\" id=\"tags[]\" name=\"tags[]\" value=\"$tag->id\" style=\"height: 15px;\">" . $tag->title . "<br>";
-}
-?>
+                        $tags = Tag::getTags();
+                        foreach ($tags as $tag) {
+                            echo "<input type=\"checkbox\" class=\"form-check-input\" id=\"tags[]\" name=\"tags[]\" value=\"$tag->id\" style=\"height: 15px;\">" . $tag->title . "<br>";
+                        }
+                        ?>
                     </div>
 
                     <div class="text-center"><button name="submit" type="submit" value="Add Article">Add Article</button></div>

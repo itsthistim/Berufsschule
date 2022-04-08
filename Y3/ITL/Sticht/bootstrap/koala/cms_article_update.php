@@ -25,12 +25,10 @@ if (isset($_GET['id'])) {
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <!-- ======= Body Begin ======= -->
     <?php include "./views/elements/index/body_begin.php" ?>
   </head>
 
   <body>
-    <!-- ======= Header ======= -->
     <?php include "./views/elements/cms/header.php" ?>
     
     <!-- ======= Main ======= -->
