@@ -10,8 +10,8 @@ require_once "./models/tag.php";
 const active_project = 1;
 const user_id = 1;
 
-$SESSION['active_project'] = active_project;
-$SESSION['user_id'] = user_id;
+$_SESSION['active_project'] = active_project;
+$_SESSION['user_id'] = user_id;
 ?>
 
 <!DOCTYPE html>
