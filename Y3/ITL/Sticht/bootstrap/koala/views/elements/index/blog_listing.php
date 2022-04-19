@@ -18,40 +18,26 @@ require_once "./models/article.php";
             <form action="./index.php#blog_listing" method="post">
                 <div class="article-search-form col-md-4 center">
                     <?php
-                        $searchtext = isset($_POST["search"]) ? $_POST["search"] : '';
-                        $activetag = isset($_POST["activetag"]) ? $_POST["activetag"] : '';
+                        $_SESSION["search_text"] = isset($_POST["search"]) ? $_POST["search"] : '';
+                        $_SESSION["active_tag"] = isset($_POST["activetag"]) ? $_POST["activetag"] : '';
                     ?>
-                    <input type="text" name="search" placeholder="Search" value="<?=$searchtext?>">
+                    <input type="text" name="search" placeholder="Search" value="<?=$_SESSION["search_text"]?>">
                     <button type="submit"><i class="bi bi-search"></i></button>
                 </div>
 
                 <br>
 
                 <div class="article-search-form col-md-4 center">
-                    <select class="form-select">
+                    <select class="form-select" name="activetag">
                         <option value="">All Tags</option>
                         <?php
                             $tags = Tag::getTags();
                             foreach ($tags as $tag) {
                                 $selected = '';
-                                if($tag->id == $activetag) {
+                                if($tag->title == $_SESSION["active_tag"]) {
                                     $selected = 'selected';
                                 }
-                                echo '<option name="'.$tag->id.'" '.$selected.'>'.$tag->title.'</option>';
-                            }
-
-                            if(isset($_POST["submit"])) {
-                                if(isset($_POST["search"])) {
-                                    $_SESSION["search_text"] = $_POST["search"];
-                                } else {
-                                    $_SESSION["search_text"] = '';
-                                }
-                                
-                                if(isset($_POST["activetag"])) {
-                                    $_SESSION["active_tag"] = $_POST["active_tag"];
-                                } else {
-                                    $_SESSION["active_tag"] = '';
-                                }
+                                echo '<option name="'.$tag->title.'" '.$selected.'>'.$tag->title.'</option>';
                             }
                         ?>
                     </select>
@@ -68,10 +54,10 @@ require_once "./models/article.php";
                 <ul id="portfolio-filters">
                     <li data-filter="*" class="filter-active">All</li>
                     <?php
-                      $tags = Tag::getTags();
-                      foreach ($tags as $tag) {
-                        echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
-                      }
+                    //   $tags = Tag::getTags();
+                    //   foreach ($tags as $tag) {
+                    //     echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
+                    //   }
                     ?>
                 </ul>
             </div>
@@ -80,7 +66,7 @@ require_once "./models/article.php";
         <div class="row portfolio-container">
 
             <?php
-                $articles = Article::getBySearch($_SESSION["search_text"]);
+                $articles = Article::getBySearch($_SESSION["search_text"], $_SESSION["active_tag"]);
                 foreach ($articles as $article) {
                     $tags = Tag::getTagsByArticle($article->id);
                     $tags_string = "";
