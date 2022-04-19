@@ -31,6 +31,12 @@ class Tag extends DB
     }
 
     #region statics
+
+    /**
+     * Gets all tags.
+     *
+     * @return Tag[]
+     */
     public static function getTags()
     {
         $db = new DB();
@@ -46,6 +52,12 @@ class Tag extends DB
         return $data;
     }
 
+    /**
+     * Get all tags for a specific article
+     *
+     * @param Article $article_id
+     * @return Tag[]
+     */
     public static function getTagsByArticle($article_id)
     {
         $db = new DB();

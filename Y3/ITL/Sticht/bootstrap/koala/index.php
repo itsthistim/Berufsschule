@@ -9,7 +9,6 @@ require_once "./models/tag.php";
 
 const active_project = 1;
 const user_id = 1;
-
 $_SESSION['active_project'] = active_project;
 $_SESSION['user_id'] = user_id;
 ?>
@@ -37,8 +36,6 @@ $_SESSION['user_id'] = user_id;
       <?php include "./views/elements/index/blog_listing.php" ?>
       <?php //include "./views/elements/index/blog_features.php" ?>
       <?php include "./views/elements/index/topFive.php" ?>
-
-      <?php // include "./views/elements/index/cta.php" ?>
     </main>
 
     <?php include './views/elements/index/footer.php'; ?>
