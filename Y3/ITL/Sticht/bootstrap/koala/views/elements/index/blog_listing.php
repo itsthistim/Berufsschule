@@ -3,6 +3,9 @@ require_once "./models/user.php";
 require_once "./models/utils.php";
 require_once "./models/tag.php";
 require_once "./models/article.php";
+
+// TODO: session unset needed?
+session_unset();
 ?>
 
 <section id="blog_listing" class="portfolio">
@@ -18,8 +21,15 @@ require_once "./models/article.php";
             <form action="./index.php#blog_listing" method="post">
                 <div class="article-search-form col-md-4 center">
                     <?php
-                        $_SESSION["search_text"] = isset($_POST["search"]) ? $_POST["search"] : '';
-                        $_SESSION["active_tag"] = isset($_POST["activetag"]) ? $_POST["activetag"] : '';
+                        if(!isset($_SESSION["search_text"]) || empty($_SESSION["search_text"]))
+                        {
+                            $_SESSION["search_text"] = isset($_POST["search"]) ? $_POST["search"] : '';
+                        }
+
+                        if(!isset($_SESSION["active_tag"]) || empty($_SESSION["active_tag"]))
+                        {
+                            $_SESSION["active_tag"] = isset($_POST["activetag"]) ? $_POST["activetag"] : '';
+                        }
                     ?>
                     <input type="text" name="search" placeholder="Search" value="<?=$_SESSION["search_text"]?>">
                     <button type="submit"><i class="bi bi-search"></i></button>
@@ -37,7 +47,7 @@ require_once "./models/article.php";
                                 if($tag->title == $_SESSION["active_tag"]) {
                                     $selected = 'selected';
                                 }
-                                echo '<option name="'.$tag->title.'" '.$selected.'>'.$tag->title.'</option>';
+                                echo '<option name="' . $tag->title . '" ' . $selected . '>' . $tag->title . '</option>';
                             }
                         ?>
                     </select>

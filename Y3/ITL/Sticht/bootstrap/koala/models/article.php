@@ -99,8 +99,8 @@ class Article extends DB
     public static function getBySearch($search, $tag)
     {
         $db = new DB();
-        $stmt = $db->pdo->prepare("SELECT a.id, a.project_id, a.user_id, a.title, a.slug, a.description, a.body, a.image, a.published, a.created, a.modified FROM articles a INNER JOIN articles_tags at ON a.id = at.article_id INNER JOIN tags t ON at.tag_id = t.id WHERE a.title LIKE ? AND t.title LIKE ?;");
-        $stmt->execute(["%$search%", "%$tag%"]);
+        $stmt = $db->pdo->prepare("SELECT a.id, a.project_id, a.user_id, a.title, a.slug, a.description, a.body, a.image, a.published, a.created, a.modified FROM articles a INNER JOIN articles_tags at ON a.id = at.article_id INNER JOIN tags t ON at.tag_id = t.id WHERE a.title LIKE ? OR a.slug LIKE ? OR a.description LIKE ? OR a.body like ? AND t.title LIKE ?;");
+        $stmt->execute(["%$search%", "%$search%", "%$search%", "%$search%", "%$tag%"]);
         $data = array();
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
@@ -110,28 +110,6 @@ class Article extends DB
 
         return $data;
     }
-    // {
-    //     $db = new DB();
-    //     $stmt = $db->pdo->prepare(" SELECT *
-    //                                     FROM articles a
-    //                                     INNER JOIN articles_tags at ON a.id = at.article_id
-    //                                     INNER JOIN tags t ON at.tag_id = t.id
-    //                                    WHERE t.title = ?
-    //                                    AND a.title LIKE ?
-    //                                    OR t.title = ?
-    //                                    AND a.description LIKE ?
-    //                                    OR t.title = ?
-    //                                    AND a.body LIKE ?
-    //                                    OR t.title = ?
-    //                                    AND a.title LIKE ?
-    //                                    OR t.title = ?
-    //                                    AND a.description LIKE ?
-    //                                    OR t.title = ?
-    //                                    AND a.body LIKE ?;");
-        
-    //     $stmt->execute(['tag1', '%search%', 'tag2', '%search%', 'tag3', '%search%', 'tag4', '%search%', 'tag5', '%search%', 'tag6', '%search%']);
-    //     return $stmt->fetchAll();
-    // }
 
     public static function getMostRecent($amount)
     {
