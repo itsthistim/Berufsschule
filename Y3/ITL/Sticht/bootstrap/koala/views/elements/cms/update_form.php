@@ -42,7 +42,7 @@
 
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="published" name="published"
-                            value="<?=$updatearticle->published ? 'checked' : ''?>" style="height: 15px;"> Published
+                        <?=$updatearticle->published == 1 ? 'checked' : ''?> style="height: 15px;"> Published
                     </div>
 
                     <h5>Tags</h5>

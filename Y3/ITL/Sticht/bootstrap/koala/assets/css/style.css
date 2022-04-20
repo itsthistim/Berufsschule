@@ -26,6 +26,15 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Center div
+--------------------------------------------------------------*/
+.center {
+  margin: auto;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+/*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
@@ -804,14 +813,14 @@ section {
   padding: 60px 0;
 }
 
-.portfolio #portfolio-flters {
+.portfolio #portfolio-filters {
   padding: 0;
   margin: 0 0 35px 0;
   list-style: none;
   text-align: center;
 }
 
-.portfolio #portfolio-flters li {
+.portfolio #portfolio-filters li {
   cursor: pointer;
   margin: 0 15px 15px 0;
   display: inline-block;
@@ -826,13 +835,13 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.portfolio #portfolio-flters li:hover,
-.portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-filters li:hover,
+.portfolio #portfolio-filters li.filter-active {
   background: #9babb3;
   color: #f0f5f6;
 }
 
-.portfolio #portfolio-flters li:last-child {
+.portfolio #portfolio-filters li:last-child {
   margin-right: 0;
 }
 
@@ -1374,7 +1383,7 @@ section {
 
 
 /* search in index */
-.article-search-form form {
+.article-search-form {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 1rem;
@@ -1382,14 +1391,21 @@ section {
   position: relative;
 }
 
-.article-search-form form input[type=text] {
+.article-search-form input[type=text] {
   border: 0;
   padding: 4px;
   border-radius: 4px;
   width: calc(100% - 40px);
 }
 
-.article-search-form form button {
+.article-search-form select {
+  border: 0px;
+  padding: 4px;
+  border-radius: 4px;
+  width: calc(100%);
+}
+
+.article-search-form button {
   position: absolute;
   top: 0;
   right: 0;

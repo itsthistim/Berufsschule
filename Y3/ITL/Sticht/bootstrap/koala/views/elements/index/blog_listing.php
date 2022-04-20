@@ -3,6 +3,9 @@ require_once "./models/user.php";
 require_once "./models/utils.php";
 require_once "./models/tag.php";
 require_once "./models/article.php";
+
+// TODO: session unset needed?
+session_unset();
 ?>
 
 <section id="blog_listing" class="portfolio">
@@ -15,54 +18,74 @@ require_once "./models/article.php";
         <!-- search form -->
         <div class="row">
             <div class="col-md-4"></div>
-            <div class="article-search-form col-md-4">
-                <form action="./index.php#blog_listing" method="post">
+            <form action="./index.php#blog_listing" method="post">
+                <div class="article-search-form col-md-4 center">
                     <?php
-                      $searchtext = isset($_POST["anrede"]) ? $_POST["anrede"] : '';
-                    ?>
-                    <input type="text" name="search" value="<?=$searchtext?>">
-                    <button type="submit"><i class="bi bi-search"></i></button>
+                        if(!isset($_SESSION["search_text"]) || empty($_SESSION["search_text"]))
+                        {
+                            $_SESSION["search_text"] = isset($_POST["search"]) ? $_POST["search"] : '';
+                        }
 
-                    <?php
-                      if(isset($_POST["search"])) {
-                        $_SESSION["search_text"] = $_POST["search"];
-                      } else {
-                        $_SESSION["search_text"] = '';
-                      }
+                        if(!isset($_SESSION["active_tag"]) || empty($_SESSION["active_tag"]))
+                        {
+                            $_SESSION["active_tag"] = isset($_POST["activetag"]) ? $_POST["activetag"] : '';
+                        }
                     ?>
-                </form>
-            </div>
+                    <input type="text" name="search" placeholder="Search" value="<?=$_SESSION["search_text"]?>">
+                    <button type="submit"><i class="bi bi-search"></i></button>
+                </div>
+
+                <br>
+
+                <div class="article-search-form col-md-4 center">
+                    <select class="form-select" name="activetag">
+                        <option value="">All Tags</option>
+                        <?php
+                            $tags = Tag::getTags();
+                            foreach ($tags as $tag) {
+                                $selected = '';
+                                if($tag->title == $_SESSION["active_tag"]) {
+                                    $selected = 'selected';
+                                }
+                                echo '<option name="' . $tag->title . '" ' . $selected . '>' . $tag->title . '</option>';
+                            }
+                        ?>
+                    </select>
+                </div>
+            </form>
             <div class="col-md-4"></div>
         </div>
-
+        <!-- end search form -->
         <br>
-        <div class="row">
+
+        <!-- original tag filtering -->
+        <!-- <div class="row">
             <div class="col-lg-12">
-                <ul id="portfolio-flters">
+                <ul id="portfolio-filters">
                     <li data-filter="*" class="filter-active">All</li>
                     <?php
-                      $tags = Tag::getTags();
-                      foreach ($tags as $tag) {
-                        echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
-                      }
+                    //   $tags = Tag::getTags();
+                    //   foreach ($tags as $tag) {
+                    //     echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
+                    //   }
                     ?>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         <div class="row portfolio-container">
 
             <?php
-      foreach ($articles as $article) {
-        $tags = Tag::getTagsByArticle($article->id);
-        
-        $tags_string = "";
-        foreach ($tags as $tag) {
-          $tags_string .= "filter-$tag->title ";
-        }
-        
-        ?>
-            <div class="col-lg-4 col-md-6 portfolio-item <?php echo "$tags_string"; ?>">
+                $articles = Article::getBySearch($_SESSION["search_text"], $_SESSION["active_tag"]);
+                foreach ($articles as $article) {
+                    $tags = Tag::getTagsByArticle($article->id);
+                    $tags_string = "";
+                    
+                    foreach ($tags as $tag) {
+                        $tags_string .= "filter-$tag->title ";
+                    }
+            ?>
+            <div class="col-lg-4 col-md-6 portfolio-item <?php echo $tags_string; ?>">
                 <div class="portfolio-wrap">
                     <figure>
                         <img src="<?php echo "assets/img/portfolio/$article->image"; ?>" class="img-fluid" alt="">

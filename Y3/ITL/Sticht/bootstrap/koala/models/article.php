@@ -48,14 +48,16 @@ class Article extends DB
         $stmt->execute([$this->id]);
     }
 
-    public function update() {
+    public function update()
+    {
         $stmt = $this->pdo->prepare("UPDATE articles SET project_id = ?, user_id = ?, title = ?, slug = ?, description = ?, body = ?, image = ?, published = ?, created = ?, modified = ? WHERE id = ?");
         $stmt->execute([$this->project_id, $this->user_id, $this->title, $this->slug, $this->description, $this->body, $this->image, $this->published, $this->created, $this->modified, $this->id]);
     }
     #endregion
 
     #region tags
-    public function updateTags($tags) {
+    public function updateTags($tags)
+    {
         $stmt = $this->pdo->prepare("DELETE FROM articles_tags WHERE article_id = ?");
         $stmt->execute([$this->id]);
 
@@ -65,8 +67,9 @@ class Article extends DB
         }
     }
 
-    public function getTags() {
-        $stmt = $this->pdo->prepare("SELECT t.id, t.name FROM tags t INNER JOIN articles_tags at ON t.id = at.tag_id WHERE at.article_id = ?");
+    public function getTags()
+    {
+        $stmt = $this->pdo->prepare("SELECT t.id, t.title FROM tags t INNER JOIN articles_tags at ON t.id = at.tag_id WHERE at.article_id = ?");
         $stmt->execute([$this->id]);
         return $stmt->fetchAll();
     }
@@ -93,11 +96,11 @@ class Article extends DB
         return $data;
     }
 
-    public static function getBySearch($search)
+    public static function getBySearch($search, $tag)
     {
         $db = new DB();
-        $stmt = $db->pdo->prepare("SELECT * FROM articles WHERE title LIKE ? OR slug LIKE ? OR description LIKE ? OR body LIKE ?");
-        $stmt->execute(["%$search%", "%$search%", "%$search%"]);
+        $stmt = $db->pdo->prepare("SELECT a.id, a.project_id, a.user_id, a.title, a.slug, a.description, a.body, a.image, a.published, a.created, a.modified FROM articles a INNER JOIN articles_tags at ON a.id = at.article_id INNER JOIN tags t ON at.tag_id = t.id WHERE a.title LIKE ? OR a.slug LIKE ? OR a.description LIKE ? OR a.body like ? AND t.title LIKE ?;");
+        $stmt->execute(["%$search%", "%$search%", "%$search%", "%$search%", "%$tag%"]);
         $data = array();
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
