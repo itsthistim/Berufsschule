@@ -1,16 +1,12 @@
 <?php
-session_start();
+include './session_vars.php';
+
 require_once "./models/db.php";
 require_once "./models/utils.php";
 require_once "./models/user.php";
 require_once "./models/article.php";
 require_once "./models/project.php";
 require_once "./models/tag.php";
-
-const active_project = 1;
-const user_id = 1;
-$_SESSION['active_project'] = active_project;
-$_SESSION['user_id'] = user_id;
 ?>
 
 <!DOCTYPE html>
