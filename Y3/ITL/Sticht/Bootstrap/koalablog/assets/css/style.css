@@ -1128,6 +1128,16 @@ section {
   margin-bottom: 20px;
 }
 
+.entry-content a {
+  color: #4ab1ca;
+  text-decoration: none;
+}
+
+.entry-content a:hover {
+  color: #cbd4dc;
+  text-decoration: none;
+}
+
 .blog .entry .entry-footer {
   padding-top: 10px;
   border-top: 1px solid #e6e6e6;

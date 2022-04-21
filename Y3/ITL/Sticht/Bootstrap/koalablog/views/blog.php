@@ -134,7 +134,7 @@ if (!isset($_GET["page"])) {
                     <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#author"><?= $article->getAuthor()->username ?></a>
                     </li>
                     <!-- TODO: make datetime more readable -->
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="./blog.php"><time datetime="<?= $article->created ?>"><?= $article->created ?></time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="./blog.php"><time datetime="YYYY-MM-DD hh:mm:ss"><?= $article->created ?></time></a></li>
                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">6 Comments</a></li>
                   </ul>
                 </div>
