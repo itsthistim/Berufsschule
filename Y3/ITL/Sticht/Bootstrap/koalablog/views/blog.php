@@ -98,13 +98,12 @@ if (!isset($_GET["page"])) {
 
               <article class="entry entry-single">
 
-                <!-- TODO: get image -->
-                <div class="entry-img">
-                  <img src="../assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
+                <!-- <div class="entry-img">
+                  <img src="../assets/img/portfolio/$article->title" alt="" class="img-fluid">
+                </div> -->
 
                 <!-- ======= Portfolio Carousel ======= -->
-                <!-- <section id="portfolio-details" class="portfolio-details">
+                <section id="portfolio-details" class="portfolio-details">
                   <div class="container">
 
                     <div class="row gy-4">
@@ -113,15 +112,7 @@ if (!isset($_GET["page"])) {
                           <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
-                              <img src="../assets/img/portfolio/portfolio-details-1.jpg" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                              <img src="../assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                              <img src="../assets/img/portfolio/portfolio-details-3.jpg" alt="">
+                              <img src="../assets/img/portfolio/<?= $article->image ?>" alt="">
                             </div>
 
                           </div>
@@ -131,7 +122,7 @@ if (!isset($_GET["page"])) {
                     </div>
 
                   </div>
-                </section> -->
+                </section>
                 <!-- End Portfolio Carousel -->
 
                 <h2 class="entry-title">
