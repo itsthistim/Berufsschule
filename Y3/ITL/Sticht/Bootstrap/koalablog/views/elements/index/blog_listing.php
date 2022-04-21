@@ -4,7 +4,6 @@ require_once "./models/utils.php";
 require_once "./models/tag.php";
 require_once "./models/article.php";
 
-// TODO: session unset needed?
 session_unset();
 ?>
 
@@ -34,10 +33,9 @@ session_unset();
                     <input type="text" name="search" placeholder="Search" value="<?=$_SESSION["search_text"]?>">
                     <button type="submit"><i class="bi bi-search"></i></button>
                 </div>
-
-                <br>
-
-                <div class="article-search-form col-md-4 center">
+                
+                <div class="article-search-form col-md-4 center" id="tag-search">
+                    <br>
                     <select class="form-select" name="activetag">
                         <option value="">All Tags</option>
                         <?php
@@ -59,19 +57,22 @@ session_unset();
         <br>
 
         <!-- original tag filtering -->
-        <!-- <div class="row">
+        <script>
+            document.getElementById("tag-search").style.display = "none";
+        </script>
+        <div class="row">
             <div class="col-lg-12">
                 <ul id="portfolio-filters">
                     <li data-filter="*" class="filter-active">All</li>
                     <?php
-                    //   $tags = Tag::getTags();
-                    //   foreach ($tags as $tag) {
-                    //     echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
-                    //   }
+                      $tags = Tag::getTags();
+                      foreach ($tags as $tag) {
+                        echo "<li data-filter='.filter-$tag->title'>$tag->title</li>";
+                      }
                     ?>
                 </ul>
             </div>
-        </div> -->
+        </div>
 
         <div class="row portfolio-container">
 
@@ -97,7 +98,7 @@ session_unset();
                     </figure>
 
                     <div class="portfolio-info">
-                        <h4><a href="<?php echo "./views/$article->slug.php"; ?>"><?php echo $article->title; ?></a>
+                        <h4><a href="<?php echo "./views/blog.php?page=$article->slug"; ?>"><?php echo $article->title; ?></a>
                         </h4>
                         <p><?php echo $article->description ?></p>
                     </div>
