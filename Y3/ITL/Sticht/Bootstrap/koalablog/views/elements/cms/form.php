@@ -65,6 +65,8 @@ if (isset($_POST['submit'])) {
             echo "<p>Article with this slug already exists!</p>";
         }
         else {
+            $_POST['body'] = str_replace('"', '\\"', $_POST['body']);
+
             $article = new Article(Utils::nextId("articles"), $_SESSION['project_id'], $_SESSION['user_id'], $_POST['title'], $_POST['slug'], $_POST['description'], $_POST['body'], $_POST['image'], isset($_POST['published']) ? 1 : 0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
             $success;
             
