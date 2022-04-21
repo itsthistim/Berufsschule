@@ -149,13 +149,28 @@ class Article extends DB
         $stmt = $db->pdo->prepare("SELECT * FROM articles WHERE slug = ?");
         $stmt->execute([$slug]);
         $row = $stmt->fetch();
+        return new Article($row["id"], $row["project_id"], $row["user_id"], $row["title"], $row["slug"], $row["description"], $row["body"], $row["image"], $row["published"], $row["created"], $row["modified"]);
+    }
 
-        if ($row) {
-            return new Article($row["id"], $row["project_id"], $row["user_id"], $row["title"], $row["slug"], $row["description"], $row["body"], $row["image"], $row["published"], $row["created"], $row["modified"]);
+    public static function slugExists($slug) {
+        $db = new DB();
+        $stmt = $db->pdo->prepare("SELECT * FROM articles WHERE slug = ?");
+        $stmt->execute([$slug]);
+        $row = $stmt->fetch();
+        
+        if($row) {
+            return true;
         }
         else {
             return false;
         }
+    }
+
+    public function getAuthor() {
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$this->user_id]);
+        $row = $stmt->fetch();
+        return new User($row["id"], $row["username"], $row["email"], $row["password"], $row["created"], $row["modified"]);
     }
 
     public function getByProjectId()

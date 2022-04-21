@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+require_once "../models/db.php";
+require_once "../models/article.php";
+
+if (!isset($_POST["page"])) {
+	//header("Location: ../index.php");
+} else {
+	$page = $_POST["page"];
+	$article = Article::getBySlug($page); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,13 +43,6 @@
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Tempo - v4.7.0
-  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   </head>
 
   <body>
@@ -75,7 +81,7 @@
             <li><a href="../index.php">Home</a></li>
             <li>Blog</li>
           </ol>
-          <h2>Blog</h2>
+          <h2><?= $article->title ?></h2>
 
         </div>
       </section>
@@ -91,12 +97,13 @@
 
               <article class="entry entry-single">
 
-                <!-- <div class="entry-img">
+                <!-- TODO: get image -->
+                <div class="entry-img">
                   <img src="../assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div> -->
+                </div>
 
                 <!-- ======= Portfolio Carousel ======= -->
-                <section id="portfolio-details" class="portfolio-details">
+                <!-- <section id="portfolio-details" class="portfolio-details">
                   <div class="container">
 
                     <div class="row gy-4">
@@ -123,16 +130,16 @@
                     </div>
 
                   </div>
-                </section>
+                </section> -->
                 <!-- End Portfolio Carousel -->
 
                 <h2 class="entry-title">
-                  <a href="./blog.php">Blog Title</a>
+                  <a href="./blog.php"><?= $article->title ?></a>
                 </h2>
 
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#author">Tim Hofmann</a>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#author"><?= $article::getAuthor()->name ?></a>
                     </li>
                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="./blog.php"><time
                           datetime="2022-01-01">Jan 1, 2022</time></a></li>

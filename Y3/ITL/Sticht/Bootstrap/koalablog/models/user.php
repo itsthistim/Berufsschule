@@ -5,15 +5,17 @@ class User extends DB
     #region ctor
 
     public $id;
+    public $username;
     public $emaiL;
     public $password;
     public $created;
     public $modified;
 
-    function __construct($id = null, $email = null, $password = null, $created = null, $modified = null)
+    function __construct($id = null, $username = null, $email = null, $password = null, $created = null, $modified = null)
     {
         parent::__construct();
         $this->id = $id;
+        $this->username = $username;
         $this->email = $email;
         $this->password = $password;
         $this->created = $created;
@@ -24,8 +26,8 @@ class User extends DB
 
     public function insert()
     {
-        $stmt = $this->pdo->prepare("INSERT INTO users(id, email, password, created, modified) VALUES (?,?,?,?,?)");
-        $stmt->execute([$this->id, $this->email, $this->password, $this->created, $this->modified]);
+        $stmt = $this->pdo->prepare("INSERT INTO users(id, username, email, password, created, modified) VALUES (?,?,?,?,?,?)");
+        $stmt->execute([$this->id, $this->username, $this->email, $this->password, $this->created, $this->modified]);
     }
 
     public function delete()
@@ -44,7 +46,7 @@ class User extends DB
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
             $row = $stmt->fetch();
-            $data[$i] = new User($row["id"], $row["email"], $row["password"], $row["created"], $row["modified"]);
+            $data[$i] = new User($row['id'], $row['username'], $row['email'], $row['password'], $row['created'], $row['modified']);
         }
 
         return $data;
