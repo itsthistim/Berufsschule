@@ -6,18 +6,19 @@ class User extends DB
 
     public $id;
     public $username;
-    public $emaiL;
+    public $email;
     public $password;
     public $created;
     public $modified;
 
-    function __construct($id = null, $username = null, $email = null, $password = null, $created = null, $modified = null)
+    function __construct($id = null, $username = null, $email = null, $password = null, $bio = null, $created = null, $modified = null)
     {
         parent::__construct();
         $this->id = $id;
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
+        $this->bio = $bio;
         $this->created = $created;
         $this->modified = $modified;
     }
@@ -26,8 +27,8 @@ class User extends DB
 
     public function insert()
     {
-        $stmt = $this->pdo->prepare("INSERT INTO users(id, username, email, password, created, modified) VALUES (?,?,?,?,?,?)");
-        $stmt->execute([$this->id, $this->username, $this->email, $this->password, $this->created, $this->modified]);
+        $stmt = $this->pdo->prepare("INSERT INTO users(id, username, email, password, bio, created, modified) VALUES (?,?,?,?,?,?,?)");
+        $stmt->execute([$this->id, $this->username, $this->email, $this->password, $this->bio, $this->created, $this->modified]);
     }
 
     public function delete()
@@ -46,7 +47,7 @@ class User extends DB
 
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
             $row = $stmt->fetch();
-            $data[$i] = new User($row['id'], $row['username'], $row['email'], $row['password'], $row['created'], $row['modified']);
+            $data[$i] = new User($row['id'], $row['username'], $row['email'], $row['password'], $row['bio'], $row['created'], $row['modified']);
         }
 
         return $data;
@@ -61,7 +62,7 @@ class User extends DB
         $res = $stmt->fetch();
 
         if ($res) {
-            return new User($res["id"], $res["email"], $res["password"], $res["created"], $res["modified"]);
+            return new User($res['id'], $res['username'], $res['email'], $res['password'], $res['bio'], $res['created'], $res['modified']);
         }
         else {
             return false;

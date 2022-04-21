@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `blog_cms`.`users` (
     `username` VARCHAR(45) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
+    `bio` TEXT NULL DEFAULT NULL,
     `created` DATETIME NULL DEFAULT NULL,
     `modified` DATETIME NULL DEFAULT NULL,
     PRIMARY KEY (`id`),
@@ -89,9 +90,9 @@ ALTER TABLE `blog_cms`.`articles_tags` AUTO_INCREMENT = 1;
 
 
 INSERT INTO
-    users (username, email, password, created, modified)
+    users (username, email, password, bio, created, modified)
 VALUES
-    ("Tim Hofmann", "timhofmann01@gmail.com", "12345", NOW(), NOW());
+    ("Tim Hofmann", "timhofmann01@gmail.com", "12345", "<p>I am in an apprenticeship for application development and coding for 3 years now and have been working on <strong>koala</strong> in my free time. I've been a user of Discord for multiple years and created <strong>koala</strong> to improve small aspects of Discord and built ontop of it.</p>", NOW(), NOW());
 
 INSERT INTO
     projects (title, description)

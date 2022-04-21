@@ -170,7 +170,7 @@ class Article extends DB
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = ?");
         $stmt->execute([$this->user_id]);
         $row = $stmt->fetch();
-        return new User($row["id"], $row["username"], $row["email"], $row["password"], $row["created"], $row["modified"]);
+        return new User($row["id"], $row["username"], $row["email"], $row["password"], $row["bio"], $row["created"], $row["modified"]);
     }
 
     public function getByProjectId()
