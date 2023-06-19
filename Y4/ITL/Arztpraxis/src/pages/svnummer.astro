@@ -31,7 +31,7 @@ if (Astro.request.method === 'POST') {
 
     // svnr validation (4 digit number)
     if (!svnr || svnr.length !== 4) {
-      errors.svnr = 'Bitte geben Sie eine gültige Sozialversicherungsnummer ein.';
+      errors.svnr = 'Ungültige SV-Nummer!';
     }
 
     // birthday validation (date)
@@ -47,17 +47,16 @@ if (Astro.request.method === 'POST') {
     }
 
     // get Behandlungsdaten
-    try {
-      const behandlungsdaten = await Patient.getBehandlungsdaten(svnr, birthday, start, end);
-      results = behandlungsdaten;
-    } catch (err) {
-      console.log(err);
-      // errors.general = err.message;
+    if (patient) {
+      try {
+        const behandlungsdaten = await Patient.getBehandlungsdaten(svnr, birthday, start, end);
+        results = behandlungsdaten;
+      } catch (err) {
+        errors.general = err.message;
+      }
     }
 
     loading = false;
-
-    console.log(patient);
   } catch (error) {
     loading = false;
     errors.general = 'Bei der Suche ist ein Fehler aufgetreten.';
@@ -95,6 +94,7 @@ if (Astro.request.method === 'POST') {
                 {errors.birthday && <div class="text-danger">{errors.birthday}</div>}
               </div>
             </div>
+            {errors.svnrFull && <div class="text-danger">{errors.svnrFull}</div>}
             <hr />
             <div class="row mt-4">
               <div class="col-md-6 form-group">
