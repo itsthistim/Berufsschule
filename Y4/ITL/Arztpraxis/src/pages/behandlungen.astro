@@ -15,6 +15,7 @@ let values = null;
 let results = null;
 const errors = { svnr: '', birthday: '', start: '', end: '', general: '', svnrFull: '' };
 let patient = null;
+
 if (Astro.request.method === 'POST') {
     loading = true;
     values = { svnr: '', birthday: '', start: '', end: '' };
