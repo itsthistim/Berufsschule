@@ -16,7 +16,7 @@ import moment from 'moment';
 let loading = null;
 let values = null;
 let results = null;
-const errors = { svnr: '', birthday: '', timerange: '', x_month: '', general: '', svnrFull: '' };
+const errors = { svnr: '', birthday: '', general: '', svnrFull: '' };
 let patient = null;
 
 if (Astro.request.method === 'POST') {
@@ -31,7 +31,6 @@ if (Astro.request.method === 'POST') {
 		const x_month: number = parseFloat(data.get('x_month').toString());
 
 		// prevent clearing the input fields
-		// TODO Radio Buttons
 		Object.assign(values, { svnr, birthday, timerange, x_month });
 
 		// svnr validation (4 digit number)
