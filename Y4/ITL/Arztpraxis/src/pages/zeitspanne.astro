@@ -7,35 +7,36 @@ import BackToTop from '../components/BackToTop.astro';
 import Footer from '../components/Footer.astro';
 //#endregion
 
-const crumbs = [{ name: 'Home', href: '/' }, { name: 'Register' }];
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Suche' }];
 
 //#region Form Validation
-// import User from '../models/user';
-import Patient from '../models/patient';
+import Patient from '../models/patient.js';
 import moment from 'moment';
 
 let loading = null;
 let values = null;
 let results = null;
-const errors = { svnr: '', birthday: '', start: '', end: '', general: '', svnrFull: '' };
+const errors = { svnr: '', birthday: '', timerange: '', x_month: '', general: '', svnrFull: '' };
 let patient = null;
+
 if (Astro.request.method === 'POST') {
 	loading = true;
-	values = { svnr: '', birthday: '', start: '', end: '' };
+	values = { svnr: '', birthday: '', timerange: '', x_month: '' };
 
 	try {
 		const data = await Astro.request.formData();
 		const svnr = data.get('svnr');
 		const birthday = data.get('birthday');
-		const start = data.get('start');
-		const end = data.get('end');
+		const timerange = data.get('timerange');
+		const x_month: number = parseFloat(data.get('x_month').toString());
 
 		// prevent clearing the input fields
-		Object.assign(values, { svnr, birthday, start, end });
+		// TODO Radio Buttons
+		Object.assign(values, { svnr, birthday, timerange, x_month });
 
 		// svnr validation (4 digit number)
 		if (!svnr || svnr.length !== 4) {
-			errors.svnr = 'Bitte geben Sie eine gültige Sozialversicherungsnummer ein.';
+			errors.svnr = 'Ungültige SV-Nummer!';
 		}
 
 		// birthday validation (date)
@@ -50,28 +51,52 @@ if (Astro.request.method === 'POST') {
 			errors.svnrFull = err.message;
 		}
 
-		// get Behandlungsdaten
-		try {
-			const behandlungsdaten = await Patient.getBehandlungsdaten(svnr, birthday, start, end);
-			results = behandlungsdaten;
-		} catch (err) {
-			console.log(err);
-			// errors.general = err.message;
+		// get behandlungsdaten
+		if (patient) {
+			let start = null;
+			let end = null;
+
+			switch (timerange) {
+				case 'last_month':
+					start = moment().subtract(1, 'months').startOf('month').format('YYYY-MM-DD');
+					end = moment().subtract(1, 'months').endOf('month').format('YYYY-MM-DD');
+					break;
+				case 'current_month':
+					start = moment().startOf('month').format('YYYY-MM-DD');
+					end = moment().endOf('month').format('YYYY-MM-DD');
+					break;
+				case 'month_year':
+					if (!x_month) {
+						throw new Error('Bitte geben Sie einen gültigen Monat ein.');
+					} else {
+						start = moment().month(x_month - 1).startOf('month').format('YYYY-MM-DD');
+						end = moment().month(x_month - 1).endOf('month').format('YYYY-MM-DD');
+					}
+					break;
+				default:
+					start = moment().subtract(100, 'years').startOf('year').format('YYYY-MM-DD');
+					end = moment().format('YYYY-MM-DD');
+			}
+
+			try {
+				const behandlungsdaten = await Patient.getBehandlungsdaten(svnr, birthday, start, end, true);
+				results = behandlungsdaten;
+			} catch (err) {
+				errors.general = err.message;
+			}
 		}
 
 		loading = false;
-
-		console.log(patient);
 	} catch (error) {
 		loading = false;
-		errors.general = 'Bei der Suche ist ein Fehler aufgetreten.';
-		console.log(error);
+		errors.general = error.message;
 	}
 }
+
 //#endregion
 ---
 
-<Layout title="Register">
+<Layout title="Suche - Zeitspanne">
 	<Header isIndex={false} />
 	<Breadcrumbs crumbs={crumbs} />
 
@@ -79,12 +104,11 @@ if (Astro.request.method === 'POST') {
 		<section id="register" class="register">
 			<div class="container">
 				<div class="center">
-					<h2>Register</h2>
-					<h3>Create Your <span>Account</span></h3>
-					<p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+					<h2>Patientensuche</h2>
+					<h3>Suche mit <span>Zeitspanne</span></h3>
+					<p>Die Datenbank nach der <strong>Sozialversicherungsnummer</strong> eines Patient durchsuchen und eine <strong>Zeitspanne</strong> angeben um die Diagnosen einzusehen.</p>
 				</div>
 
-				<!-- TODO: make responsive -->
 				<div class="mx-auto mt-4" style="width: 388px;">
 					<form method="POST" role="form" class="register-form">
 						<h2>Patient</h2>
@@ -100,43 +124,85 @@ if (Astro.request.method === 'POST') {
 								{errors.birthday && <div class="text-danger">{errors.birthday}</div>}
 							</div>
 						</div>
-
+						{errors.svnrFull && <div class="text-danger">{errors.svnrFull}</div>}
 						<hr />
 						<h2>Zeitspanne</h2>
 						<div class="mt-3">
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="timerange" id="last_month" />
+								<input class="form-check-input" type="radio" name="timerange" value="last_month" id="last_month" />
 								<label class="form-check-label" for="last_month">Letzter Monat</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="timerange" id="current_month" />
+								<input class="form-check-input" type="radio" name="timerange" value="current_month" id="current_month" />
 								<label class="form-check-label" for="current_month">Laufender Monat</label>
 							</div>
 							<div class="form-check d-flex">
-								<input class="form-check-input" type="radio" name="timerange" id="month_year" />
-								<p>  </p> <!-- TODO: make an actual space -->
-								<input type="number" class="form-control rounded" name="x_month" id="x_month" placeholder="4" style="width: 60px; height: 30px" />
+								<input class="form-check-input" type="radio" name="timerange" value="month_year" id="month_year" />
+								<input type="number" class="form-control rounded" name="x_month" id="x_month" placeholder="4" style="width: 40px; height: 25px" min="1" max="12" />
 								<label class="form-check-label" for="month_year">. Monat des laufenden Jahres</label>
 							</div>
 						</div>
 
 						<div class="my-3">
 							{loading === true && <div class="rounded loading">Loading...</div>}
-							{loading === false && Object.keys(errors).every((key) => errors[key] === '') && <div class="rounded sent-message">Successfuly created account</div>}
 						</div>
 
-						<div class="text-center"><button type="submit">Sign Up</button></div>
+						<div class="text-center"><button type="submit">Suche</button></div>
 					</form>
 				</div>
+
+				{
+					errors.general && (
+						<div class="mx-auto my-5 center" style="width: 900px">
+							<h4>{errors.general}</h4>
+							<p>Versuchen Sie es später erneut.</p>
+						</div>
+					)
+				}
+
+				{
+					patient && (
+						<div class="mx-auto my-4" style="width: 900px">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">Zeitraum</th>
+										<th scope="col">Patient</th>
+										<th scope="col">SVNr</th>
+										<th scope="col">Diagnose</th>
+									</tr>
+								</thead>
+								<tbody>
+									{results &&
+										results.map((result) => (
+											<tr>
+												<td>{result.zeitraum}</td>
+												<td>{result.patient}</td>
+												<td>{result.svnr}</td>
+												<td>{result.diagnose}</td>
+											</tr>
+										))}
+								</tbody>
+							</table>
+						</div>
+					)
+				}
 			</div>
 		</section>
 	</main>
 
-	<Footer />
+	<!-- <Footer /> -->
 	<BackToTop />
 </Layout>
 
 <style>
+	/* Hide arrow buttons in number input */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
 	.input-group-text {
 		height: 100%;
 		border-radius: 0;
