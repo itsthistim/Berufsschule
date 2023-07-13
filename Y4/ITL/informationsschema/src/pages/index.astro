@@ -1,0 +1,14 @@
+---
+//#region Layouts & Components
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Index/Hero.astro';
+import BackToTop from '../components/BackToTop.astro';
+//#endregion
+---
+
+<Layout title="Home">
+	<Header isIndex={true} />
+	<Hero />
+	<BackToTop />
+</Layout>

@@ -1,0 +1,52 @@
+---
+export interface Props {
+	data: any;
+	linkto: any;
+	schema: any;
+}
+
+let { data, linkto, schema } = Astro.props;
+
+
+if (!schema) {
+	schema = '';
+} else {
+	schema += '.'
+}
+
+---
+
+<div class="txable-responsive">
+	<table class="table table-hover slim">
+		<caption><a href="/describe">{data.length} results found</a></caption>
+		<thead>
+			<tr>
+				{
+					Object.keys(data[0]).map((key) => {
+						return <th>{key}</th><th></th>;
+					})
+				}
+			</tr>
+		</thead>
+		<tbody>
+			{
+				data.map((row) => {
+					return (
+						<tr>
+							{
+								Object.keys(row).map((key) => {
+									return (
+										<td>{row[key]}</td>
+										<td><a class="btn btn-primary" href={`/describe/${linkto}/${schema}${row[key]}`}>Describe</a></td>
+									);
+								})
+							}
+						</tr>
+					);
+				})
+			}
+		</tbody>
+	</table>
+</div>
+
+<style></style>
