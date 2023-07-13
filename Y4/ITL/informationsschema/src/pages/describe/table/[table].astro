@@ -4,14 +4,15 @@ import Header from '../../../components/Header.astro';
 import Table from '../../../components/Table2.astro';
 import BackToTop from '../../../components/BackToTop.astro';
 import Breadcrumbs from '../../../components/Single/Breadcrumbs.astro';
-const crumbs = [{ name: 'Home', href: '/' }, { name: 'Search' }];
 
 const { table } = Astro.params;
 
-import Schema from '../../../models/schema';
+let schema = table.split('.', 1)[0];;
+let tableName = table.split('.')[1];
+const crumbs = [{ name: 'Home', href: '/' }, { name: schema }, { name: tableName }];
 
+import Schema from '../../../models/schema';
 let results = await Schema.describeTable(table);
-console.log(results);
 ---
 
 <Layout title="Search">
@@ -23,7 +24,7 @@ console.log(results);
 			<div class="container">
 				<div class="center">
 					<h2>Describe</h2>
-					<h3>Eigenschaften von <span>{table}</span></h3>
+					<h3>Eigenschaften von <span>{tableName}</span></h3>
 					<!-- <p>Look through our database of users to find the one you're looking for.</p> -->
 				</div>
 
